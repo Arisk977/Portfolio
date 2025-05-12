@@ -1,0 +1,51 @@
+@mixin font-style($size, $weight, $fontColor){
+    font-family: 'Bricolage Grotesque';
+    font-size: $size;
+    font-weight: $weight;
+    color: $fontColor;
+}
+
+@mixin element-size($height, $width){
+    height: $height;
+    width: $width;
+}
+
+main{
+    @include element-size(100vh, 100%);
+    background-image: url('./../../assets/bg_hero.png');
+    background-position: center;
+    background-size: 100vh 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+  @include element-size(244px, 200px);
+  transform: rotate(8deg);
+}
+
+button{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 20%;
+    border-radius: 100px;
+    @include element-size(40px, 145px);
+    @include font-style(18px, 500, white);
+}
+
+h1{
+    @include font-style(128px, 700, white);
+}
+
+.frontend{
+    display: flex;
+    justify-content: space-between;
+
+    >img{
+        position: absolute;
+        right: 20%;
+        bottom: 55%;
+    }
+}
