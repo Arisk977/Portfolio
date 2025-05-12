@@ -8,12 +8,22 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 32px;
     width: 100%;
     position: absolute;
     top: 0;
     height: 80px;
     background-color: transparent;
+    font-family: 'Bricolage Grotesque';
+    font-weight: 700;
 }
-div{
+p{
     color: white;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+
+    gap: 4px;
 }
+

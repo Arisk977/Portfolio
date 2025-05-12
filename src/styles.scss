@@ -13,8 +13,26 @@ html {
     typography: Roboto,
     density: 0,
   ));
-}*{
+}
+*{
     margin: 0;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('assets/fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+}
+
+/* Globale Anpassung für Slide Toggle */
+mat-slide-toggle {
+  --mat-slide-toggle-label-color: #994343 !important;
+  --mat-slide-toggle-thumb-color: #d38686 !important;
+  --mat-slide-toggle-thumb-color-checked: #817e26 !important;
+  --mat-slide-toggle-track-color: #337e48 !important;
+  --mat-slide-toggle-track-color-checked: #b5743f !important;
+}
