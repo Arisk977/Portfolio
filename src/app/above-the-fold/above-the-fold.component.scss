@@ -15,6 +15,7 @@ main{
     background-image: url('./../../assets/bg_hero.png');
     background-position: center;
     background-size: 100vh 100%;
+    background-repeat: repeat-x;
     color: white;
     display: flex;
     align-items: center;
@@ -39,13 +40,25 @@ h1{
     @include font-style(128px, 700, white);
 }
 
-.frontend{
-    display: flex;
-    justify-content: space-between;
+div{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
 
-    >img{
-        position: absolute;
-        right: 20%;
-        bottom: 55%;
-    }
+.frontend{
+    margin-top: -150px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.dev{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    >h1{margin-left: -300px;}
+
 }

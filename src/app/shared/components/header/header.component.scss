@@ -4,19 +4,27 @@ a{
     font-size: 18px;
 }
 
-header{
+.header-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+}
+
+header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 32px;
-    width: 100%;
-    position: absolute;
-    top: 0;
     height: 80px;
     background-color: transparent;
     font-family: 'Bricolage Grotesque';
     font-weight: 700;
+    width: 100%;
+    max-width: 1920px;
 }
+
 span{
     color: white;
     display: flex;

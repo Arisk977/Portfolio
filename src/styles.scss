@@ -17,11 +17,10 @@ html {
 *{
     margin: 0;
 }
-html, body { height: 100vh; }
+html, body { height: 100%; }
 body { 
   margin: 0; 
   font-family: 'Bricolage Grotesque';
-  max-width: 1920px;
  }
 
 @font-face {
