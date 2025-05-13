@@ -1,0 +1,11 @@
+@mixin font-style($size, $weight, $fontColor){
+    font-family: 'Bricolage Grotesque';
+    font-size: $size;
+    font-weight: $weight;
+    color: $fontColor;
+}
+
+@mixin element-size($height, $width){
+    height: $height;
+    width: $width;
+}

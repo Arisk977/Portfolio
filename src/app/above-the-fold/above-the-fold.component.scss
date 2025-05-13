@@ -1,14 +1,4 @@
-@mixin font-style($size, $weight, $fontColor){
-    font-family: 'Bricolage Grotesque';
-    font-size: $size;
-    font-weight: $weight;
-    color: $fontColor;
-}
-
-@mixin element-size($height, $width){
-    height: $height;
-    width: $width;
-}
+@import 'mixins';
 
 main{
     @include element-size(100vh, 100%);
@@ -18,13 +8,24 @@ main{
     background-repeat: repeat-x;
     color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-img{
-  @include element-size(244px, 200px);
-  transform: rotate(8deg);
+.headline{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+.bottom{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1920px;
 }
 
 button{
@@ -60,5 +61,8 @@ gap: 20px;
     justify-content: flex-end;
     align-items: flex-end;
     >h1{margin-left: -300px;}
-
+    >img{
+  @include element-size(244px, 200px);
+  transform: rotate(8deg);
+}
 }

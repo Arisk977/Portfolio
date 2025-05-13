@@ -1,0 +1,5 @@
+@import 'mixins';
+
+img{
+    @include element-size(152px, 560px)
+}
