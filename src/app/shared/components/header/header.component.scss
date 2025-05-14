@@ -1,3 +1,5 @@
+@import 'keyframes';
+
 a{
     text-decoration: none;
     color: white;
@@ -64,3 +66,34 @@ button{
         cursor: pointer;
     }
 }
+
+
+.hover-circle {
+  position: relative;
+  display: inline-block;
+}
+
+.circle-overlay {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 120%;
+  height: 200%;
+  pointer-events: none;
+
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 0%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 0%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  
+  transition: opacity 180ms ease-in-out;
+}
+
+.hover-circle:hover .circle-overlay {
+  animation: revealMask 180ms ease-in forwards;
+}
+
+.hover-circle .circle-overlay {
+  animation: revealMaskReverse 180ms ease-in-out forwards;
+}
+

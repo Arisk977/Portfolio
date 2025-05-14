@@ -9,3 +9,22 @@
     height: $height;
     width: $width;
 }
+
+@mixin paper(){
+    @include element-size(152px, 560px);
+    @include font-style(24px, 400, white);
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px; 
+}
+
+@mixin button-transition(){
+     transition: 
+        transform 100ms ease-in,
+        box-shadow 100ms ease-in,
+        background-color 100ms ease-in;
+}
