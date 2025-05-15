@@ -4,8 +4,8 @@ main {
     @include element-size(100vh, 100%);
     background-image: url('./../../assets/bg_hero.png');
     background-position: center;
-    background-size: 100vh 100%;
-    background-repeat: repeat-x;
+    background-size:100% 100vh;
+    background-repeat: no-repeat;
     color: white;
     display: flex;
     flex-direction: column;
