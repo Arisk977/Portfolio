@@ -1,4 +1,5 @@
 @import 'keyframes';
+@import 'mixins';
 
 a{
     text-decoration: none;
@@ -68,7 +69,7 @@ button{
 }
 
 
-.hover-circle {
+.circle-animation {
   position: relative;
   display: inline-block;
 }
@@ -89,11 +90,52 @@ button{
   transition: opacity 180ms ease-in-out;
 }
 
-.hover-circle:hover .circle-overlay {
-  animation: revealMask 180ms ease-in forwards;
+.circle-animation:hover .circle-overlay {
+  animation: circleMask 180ms ease-in forwards;
 }
 
-.hover-circle .circle-overlay {
-  animation: revealMaskReverse 180ms ease-in-out forwards;
+.circle-animation .circle-overlay {
+  animation: circleMaskReverse 180ms ease-in-out forwards;
 }
 
+
+.skills-animation, .projects-animation, .contact-animation{
+  position: relative;
+  display: inline-block;
+}
+
+.contact-overlay {
+  @include header-animation-position(-5px, -15px, 150%, 180%);
+}
+
+.skills-overlay{
+  @include header-animation-position(-10px, -35px, 250%, 200%);
+}
+
+.projects-overlay{
+  @include header-animation-position(-10px, -25px, 160%, 200%);
+}
+
+.skills-animation:hover .skills-overlay{
+  animation: lineMask 180ms ease-in forwards;
+}
+
+.skills-animation .skills-overlay{
+  animation: lineMaskReverse 180ms ease-in-out forwards;
+}
+
+.projects-animation:hover .projects-overlay{
+  animation: lineMask 180ms ease-in forwards;
+}
+
+.projects-animation .projects-overlay{
+  animation: lineMaskReverse 180ms ease-in-out forwards;
+}
+
+.contact-animation:hover .contact-overlay{
+  animation: lineMask 180ms ease-in forwards;
+}
+
+.contact-animation .contact-overlay{
+  animation: lineMaskReverse 180ms ease-in-out forwards;
+}

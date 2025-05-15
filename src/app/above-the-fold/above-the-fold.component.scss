@@ -28,8 +28,12 @@ main {
     max-width: 1920px;
 }
 
-
-
+.social-media{
+    >img:hover{
+        background-color: #3355FF;
+        border-radius: 50%;
+    }
+}
 
 h1 {
     @include font-style(128px, 700, white);

@@ -28,3 +28,19 @@
         box-shadow 100ms ease-in,
         background-color 100ms ease-in;
 }
+
+@mixin header-animation-position($top, $left, $width, $height){
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $width;
+  height: $height;
+  pointer-events: none;
+
+  -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+  mask-image: linear-gradient(to right, black 0%, transparent 0%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  
+  transition: opacity 180ms ease-in-out;
+}
