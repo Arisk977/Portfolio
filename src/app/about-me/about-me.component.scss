@@ -4,7 +4,7 @@ main {
     @include element-size(100vh, 100%);
     @include font-style(20px, 400, black);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -14,7 +14,7 @@ main {
     gap: 0;
     justify-content: center;
     align-items: center;
-    padding: 50px
+    padding: 50px;
 }
 
 .yellow {

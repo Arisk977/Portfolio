@@ -1,25 +1,29 @@
 @import 'mixins';
+
 main {
     @include element-size(100vh, 100%);
     background-image: url('./../../assets/skills-bg.png');
     background-position: center;
-    background-size:100% 100vh;
+    background-size: 100% 100vh;
     background-repeat: no-repeat;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 100px;
+    gap: 48px;
 }
 
-.top{
+.top {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 48px;
+    margin-left: -300px;
 }
 
-.text{
+.text {
     @include element-size(144px, 656px);
     background-image: url('./../../assets/skills-paper.png');
     background-size: 656px 144px;
@@ -27,7 +31,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    >p{
+
+    >p {
         @include font-style(18px, 400, black);
         text-align: center;
         width: 90%;
@@ -35,14 +40,87 @@ main {
 
 }
 
-
-.headline{
+.headline {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
+    padding-bottom: 30px;
 
-    >h1{
+    >span{
+        @include font-style(20px, 500, white);
+    }
+    >h1 {
         @include font-style(64px, 700, white);
     }
+}
+
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-right: -180px;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 48px;
+    width: 640px;
+    flex-wrap: wrap;
+}
+
+.other-skills {
+    position: relative;
+    display: flex;
+
+}
+
+.skill-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    >span{
+        text-align: center;
+        @include font-style(18px, 400, white);
+    }
+    >img {
+    @include element-size(72px, 72px);
+    filter:grayscale(100%);
+    transition: filter 100ms ease-in;
+    transition: ease-in 100ms;
+    &:hover{
+        filter: grayscale(0%);
+        transform: scale(0.8);
+    }
+}
+}
+
+.pull-text{
+    z-index: 1;
+    @include font-style(40px, 400, white);
+    font-family: 'Kalam';
+    transform: rotate(8deg);
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    >img{
+        @include element-size(40px, 50px)
+    }
+}
+
+.pull {
+    @include element-size(200px, 200px);
+    transform: rotate(8deg);
+    position: absolute;
+    top: -30px;
+    left: 0;
 }
