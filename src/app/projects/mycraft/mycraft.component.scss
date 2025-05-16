@@ -1,0 +1,35 @@
+@import 'mixins';
+.project{
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 560px;
+
+    >img{
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 560px;
+}
+
+h2{
+@include font-style(24px, 700, black);
+
+}
+
+p{
+@include font-style(18px, 400, black);
+}
