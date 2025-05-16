@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { AboveTheFoldComponent } from '../above-the-fold/above-the-fold.component';
 import { AboutMeComponent } from '../about-me/about-me.component';
 import { SkillSetComponent } from '../skill-set/skill-set.component';
+import { ProjectsComponent } from '../projects/projects.component';
 
 @Component({
   selector: 'app-main',
-  imports: [AboveTheFoldComponent, AboutMeComponent, SkillSetComponent],
+  imports: [AboveTheFoldComponent, AboutMeComponent, SkillSetComponent, ProjectsComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

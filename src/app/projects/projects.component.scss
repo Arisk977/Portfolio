@@ -1,0 +1,96 @@
+@import 'mixins';
+
+main {
+    @include element-size(100vh, 100%);
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 88px;
+}
+
+.headline{
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 48px;
+    >div{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        >span{
+            @include font-style(20px, 500, black);
+        }
+        >h1{
+            @include font-style(64px, 700, black);
+            position: relative;
+            display: inline-block;
+            >img{
+                position: absolute;
+                width: 260px;
+                height: 20px;
+                left: 0px;
+                bottom: -10px;
+            }
+        }
+    }
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 88px;
+}
+
+.project{
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 560px;
+
+    >img{
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+}
+
+.laptop{
+    width: 100%;
+    height: 100%;
+}
+
+.sticker{
+    height: 168px;
+    width: 168px;
+    margin-right: -150px;
+    z-index: 1;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 560px;
+}
+
+h2{
+@include font-style(24px, 700, black);
+
+}
+
+p{
+@include font-style(18px, 400, black);
+}
