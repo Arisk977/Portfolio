@@ -1,0 +1,51 @@
+@import 'mixins';
+footer{
+    @include element-size(100vh, 100%);
+    background-image: url('./../../../../assets/footer-bg.png');
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 160px;
+}
+
+h1{
+    @include font-style(64px, 700, white);
+}
+
+
+
+.left{
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 48px;
+    >span{
+    @include font-style(20px, 500, white);
+
+    }
+    >p{
+        @include font-style(18px, 400, white);
+    }
+}
+
+.right{
+    width: 480px;
+}
+
+.right img{
+    @include element-size(168px, 168px)
+}
+
+.left img{
+    @include element-size(44px, 280px);
+    align-self: flex-end;
+}
+form{
+    display: flex;
+    flex-direction: column;
+
+}

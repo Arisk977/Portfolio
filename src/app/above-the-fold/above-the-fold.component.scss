@@ -36,8 +36,39 @@ main {
 }
 
 h1 {
-    @include font-style(128px, 700, white);
+    @include font-style(128px, 700, white);    
 }
+
+.frontend h1 span {
+  transition: all 75ms;
+  text-transform: lowercase;
+  &:hover {
+  text-transform: uppercase;
+  color: #eab30e;
+  cursor: default;
+}
+}
+
+#first{
+    text-transform: uppercase;
+    &:hover{
+        text-transform: lowercase;
+        color: #eab30e;
+    }
+}
+
+.dev h1 span {
+  transition: all 75ms;
+  text-transform: uppercase;
+  &:hover {
+  text-transform: lowercase;
+  color: #eab30e;
+  cursor: default;
+}
+}
+
+
+
 
 div {
     display: flex;
