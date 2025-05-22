@@ -42,9 +42,15 @@ h1 {
     gap: 40px;
 }
 
-.right img {
-    @include element-size(168px, 168px);
+app-svg {
+    @include element-size(200px, 200px);
     align-self: flex-end;
+    background-image: url('./../../../../assets/orange.png');
+    background-size: 100% 100%;
+    background-position: cover;
+    background-repeat: no-repeat;
+    margin-bottom: -50px;
+    transform: rotate(-15deg);
 }
 
 .left img {
@@ -63,14 +69,15 @@ form {
         padding: 16px 24px;
         gap: 8px;
         border-bottom: 1px solid #F7C518;
-        &:hover{
+
+        &:hover {
             border-bottom: 1px solid #3355FF;
             border-top: 1px solid #3355FF;
             color: #F87A55;
         }
 
         >input {
-            background-color: transparent;
+            background-color: transparent !important;
             border: none;
             outline: none;
             @include font-style(18px, 400, white);
@@ -81,6 +88,10 @@ form {
         }
 
     }
+}
+
+input:is(:-webkit-autofill, :autofill) {
+  background-color: transparent !important;
 }
 
 .checkbox {

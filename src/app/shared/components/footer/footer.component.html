@@ -13,27 +13,25 @@
     </section>
 
     <section class="right">
-        <img src="assets/orange.png" alt="">
-        <form>
+        <app-svg></app-svg>
+
+        <form onsubmit="">
             <label for="name">What's your name?
 
-                <input type="text" id="name" placeholder="Your name goes here"> </label>
+                <input type="text" id="name" placeholder="Your name goes here" required> </label>
 
             <label for="email"> What's your email?
-                <input type="text" id="email" placeholder="youremail@email.com">
+                <input type="text" id="email" placeholder="youremail@email.com" required>
             </label>
             <label for="help"> How can I help you?
-                <input type="text" id="help" placeholder="Hello Lukas, I am interested in...">
+                <input type="text" id="help" placeholder="Hello Lukas, I am interested in..." required>
             </label>
 
             <div class="checkbox">
-                <input type="checkbox" id="custom-checkbox">
+                <input type="checkbox" id="custom-checkbox" required>
                 <label>I've read the <a href="#">privacy policy</a> and agree to the processing of my
                     data as outlined.</label>
             </div>
-
-
-
             <button disabled>Send</button>
         </form>
     </section>
