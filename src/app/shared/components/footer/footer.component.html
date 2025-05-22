@@ -16,19 +16,25 @@
         <img src="assets/orange.png" alt="">
         <form>
             <label for="name">What's your name?
-            </label> 
-            <input type="text" id="name">
+
+                <input type="text" id="name" placeholder="Your name goes here"> </label>
 
             <label for="email"> What's your email?
-            </label><input type="text" id="email">
+                <input type="text" id="email" placeholder="youremail@email.com">
+            </label>
+            <label for="help"> How can I help you?
+                <input type="text" id="help" placeholder="Hello Lukas, I am interested in...">
+            </label>
 
-            <label for="help"> How can I help you? </label>
-            <input type="text" id="help">
-            <input type="checkbox"> 
-            
-            <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my
-                data as outlined.</span>
-            <button>Send</button>
+            <div class="checkbox">
+                <input type="checkbox" id="custom-checkbox">
+                <label>I've read the <a href="#">privacy policy</a> and agree to the processing of my
+                    data as outlined.</label>
+            </div>
+
+
+
+            <button disabled>Send</button>
         </form>
     </section>
 

@@ -1,5 +1,6 @@
 @import 'mixins';
-footer{
+
+footer {
     @include element-size(100vh, 100%);
     background-image: url('./../../../../assets/footer-bg.png');
     background-size: 100% 100vh;
@@ -11,41 +12,152 @@ footer{
     gap: 160px;
 }
 
-h1{
+h1 {
     @include font-style(64px, 700, white);
 }
 
-
-
-.left{
+.left {
     width: 560px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 48px;
-    >span{
-    @include font-style(20px, 500, white);
+
+    >span {
+        @include font-style(20px, 500, white);
 
     }
-    >p{
+
+    >p {
         @include font-style(18px, 400, white);
     }
 }
 
-.right{
+.right {
     width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
 }
 
-.right img{
-    @include element-size(168px, 168px)
+.right img {
+    @include element-size(168px, 168px);
+    align-self: flex-end;
 }
 
-.left img{
+.left img {
     @include element-size(44px, 280px);
     align-self: flex-end;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
 
+    >label {
+        @include font-style(24px, 500, white);
+        display: flex;
+        flex-direction: column;
+        padding: 16px 24px;
+        gap: 8px;
+        border-bottom: 1px solid #F7C518;
+        &:hover{
+            border-bottom: 1px solid #3355FF;
+            border-top: 1px solid #3355FF;
+            color: #F87A55;
+        }
+
+        >input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            @include font-style(18px, 400, white);
+
+            &::placeholder {
+                @include font-style(18px, 400, white);
+            }
+        }
+
+    }
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 40px 0;
+}
+
+.checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    padding: 8px;
+    border: 2px solid #3355FF;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: all 75ms ease;
+}
+
+.checkbox input[type="checkbox"]:hover {
+    border-color: #3355FF;
+    background-color: #3355FF4D;
+    box-shadow: 0 0 2px 4px #3355FF4D;
+}
+
+.checkbox input[type="checkbox"]:checked {
+    background-image: url('./../../../../assets/check.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.checkbox input[type="checkbox"]:checked:hover {
+    border-color: #3355FF;
+    background-color: #3355FF4D;
+    box-shadow: 0 0 2px 4px #3355FF4D;
+}
+
+.checkbox a {
+    color: #3355FF;
+    text-decoration: none;
+
+    &:hover {
+        color: #F7C518;
+    }
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    align-self: flex-end;
+    border-radius: 20%;
+    border-radius: 100px;
+    box-shadow: 2px 4px 0px white;
+    @include button-transition();
+    @include element-size(40px, 154px);
+    @include font-style(18px, 500, white);
+
+    &:disabled {
+        color: rgba(248, 249, 250, 0.3);
+        border-color: rgba(248, 249, 250, 0.3);
+        box-shadow: 2px 4px 0px rgba(248, 249, 250, 0.3);
+        cursor: default;
+    }
+
+    &:hover:not(:disabled) {
+        cursor: pointer;
+        color: white;
+        background-color: #F87A55;
+        box-shadow: 0px 0px 0px white;
+        transform: translate(2px, 4px);
+    }
 }
