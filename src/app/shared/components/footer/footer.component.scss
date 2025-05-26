@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'keyframes';
 
 footer {
     @include element-size(100vh, 100%);
@@ -51,11 +52,35 @@ app-svg {
     background-repeat: no-repeat;
     margin-bottom: -50px;
     transform: rotate(-15deg);
+    z-index: 2;
 }
 
 .left img {
     @include element-size(44px, 280px);
     align-self: flex-end;
+}
+
+.footer-line {
+  width: 280px;
+  height: 44px;
+  display: block;
+  position: relative;
+  pointer-events: none;
+
+  -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+  mask-image: linear-gradient(to right, black 0%, transparent 0%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+// Einblenden
+.footer-line.show {
+  animation: lineMask 200ms ease-in forwards !important;
+}
+
+// Ausblenden
+.footer-line.hide {
+  animation: lineMaskReverse 200ms ease-in-out forwards !important;
 }
 
 form {
