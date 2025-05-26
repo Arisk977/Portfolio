@@ -10,31 +10,31 @@ import { SvgComponent } from './svg/svg.component';
 })
 export class FooterComponent implements OnInit, OnDestroy {
   private intervalId: any;
+  private timeoutId: any;
 
-ngOnInit(): void {
+ ngOnInit(): void {
   const footerLine = document.querySelector('.footer-line');
 
   if (footerLine) {
-    let showing = true;
+    const showFooterLine = () => {
+      footerLine.classList.remove('hide');
+      footerLine.classList.add('show');
 
-    this.intervalId = setInterval(() => {
-      if (showing) {
+      this.timeoutId = setTimeout(() => {
         footerLine.classList.remove('show');
         footerLine.classList.add('hide');
-      } else {
-        footerLine.classList.remove('hide');
-        footerLine.classList.add('show');
-      }
 
-      showing = !showing;
-    }, 3000);
+        this.timeoutId = setTimeout(showFooterLine, 400);
+      }, 3000);
+    };
+
+    showFooterLine();
   }
 }
 
-
-  ngOnDestroy(): void {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
+ngOnDestroy(): void {
+  if (this.timeoutId) {
+    clearTimeout(this.timeoutId);
   }
+}
 }

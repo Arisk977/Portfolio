@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { Feedback } from './../interfaces/feedback.interface';
 
@@ -8,7 +8,10 @@ import { Feedback } from './../interfaces/feedback.interface';
   templateUrl: './colleagues-thoughts.component.html',
   styleUrl: './colleagues-thoughts.component.scss'
 })
-export class ColleaguesThoughtsComponent {
+export class ColleaguesThoughtsComponent implements OnInit, OnDestroy {
+  private intervalId: any;
+  private timeoutId: any;
+
   feedback1: Feedback = {
     name: 'Tobias Lange',
     title: 'Frontend Developer',
@@ -29,4 +32,29 @@ export class ColleaguesThoughtsComponent {
     p: `Karl was a top team colleague at DA. His positive commitment and willingness to take on responsibility made a significant contribution to us achieving our goals.`,
     img: './../../../assets/feedback-card-1.png'
   };
+
+ngOnInit(): void {
+  const blueArrow = document.getElementById('blue-arrow');
+
+  if (blueArrow) {
+    const showArrow = () => {
+      blueArrow.classList.remove('hide');
+      blueArrow.classList.add('show');
+      this.timeoutId = setTimeout(() => {
+        blueArrow.classList.remove('show');
+        blueArrow.classList.add('hide');
+        this.timeoutId = setTimeout(showArrow, 800);
+      }, 3000);
+    };
+
+    showArrow();
+  }
+}
+
+ngOnDestroy(): void {
+  if (this.timeoutId) {
+    clearTimeout(this.timeoutId);
+  }
+}
+
 }
