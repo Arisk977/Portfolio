@@ -8,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AboveTheFoldComponent {
 
+    buttonText = 'Hello World';
+
+ onHover() {
+  this.buttonText = "I'M ARIS KARAMAT";
+  document.getElementById('waving-hand')?.classList.add('rotateAnimation');
+}
+
+
+  onLeave() {
+    this.buttonText = 'Hello World';
+  }
 }

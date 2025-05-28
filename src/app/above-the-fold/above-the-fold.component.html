@@ -2,7 +2,11 @@
 
     <div class="headline">
         <div class="frontend">
-            <button>Hello World</button>
+            <div>
+                <img src="assets/waving_hand.png" id="waving-hand" alt="">
+            <button (mouseenter)="onHover()" (mouseleave)="onLeave()">
+                <span>{{ buttonText }}</span></button>
+            </div>
             <h1>
                 <span id="first">F</span>
                 <span>r</span>

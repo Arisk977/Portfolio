@@ -1,10 +1,11 @@
 @import 'mixins';
+@import 'keyframes';
 
 main {
     @include element-size(100vh, 100%);
     background-image: url('./../../assets/bg_hero.png');
     background-position: center;
-    background-size:100% 100vh;
+    background-size: 100% 100vh;
     background-repeat: no-repeat;
     color: white;
     display: flex;
@@ -28,43 +29,46 @@ main {
     max-width: 1920px;
 }
 
-.social-media{
-    >img:hover{
+.social-media {
+    >img:hover {
         background-color: #3355FF;
         border-radius: 50%;
     }
 }
 
 h1 {
-    @include font-style(128px, 700, white);    
+    @include font-style(128px, 700, white);
 }
 
 .frontend h1 span {
-  transition: all 75ms;
-  text-transform: lowercase;
-  &:hover {
-  text-transform: uppercase;
-  color: #F7C518;
-  cursor: default;
-}
+    transition: all 75ms;
+    text-transform: lowercase;
+
+    &:hover {
+        text-transform: uppercase;
+        color: #F7C518;
+        cursor: default;
+    }
 }
 
-#first{
+#first {
     text-transform: uppercase;
-    &:hover{
+
+    &:hover {
         text-transform: lowercase;
         color: #F7C518;
     }
 }
 
 .dev h1 span {
-  transition: all 75ms;
-  text-transform: uppercase;
-  &:hover {
-  text-transform: lowercase;
-  color: #F7C518;
-  cursor: default;
-}
+    transition: all 75ms;
+    text-transform: uppercase;
+
+    &:hover {
+        text-transform: lowercase;
+        color: #F7C518;
+        cursor: default;
+    }
 }
 
 
@@ -83,15 +87,60 @@ div {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    
-    >button{
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 20%;
-    border-radius: 100px;
-    @include element-size(40px, 145px);
-    @include font-style(18px, 500, white);
+
+    >div{
+        display:flex;
+        flex-direction: column;
+
+        >img{
+            @include element-size(40px, 40px);
+            margin-bottom: -20px;
+            align-self: flex-end;
+            visibility: hidden;
+          
+        }
+    >button {
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 100px;
+        padding: 12px 24px;
+        @include font-style(18px, 500, white);
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: #3355FF;
+            z-index: 0;
+
+            -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+            mask-image: linear-gradient(to right, black 0%, transparent 0%);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+        }
+
+        &:hover::before {
+            animation: lineMask 200ms ease-in-out forwards;
+        }
+
+        &:hover{
+            animation: springExpand 820ms ease-out;
+        }
+        >* {
+        position: relative;
+        z-index: 1;
+    }
+    }
 }
+}
+
+.rotateAnimation{
+        animation: rotate 820ms ease-out;
+        visibility: visible !important;
 }
 
 .dev {
