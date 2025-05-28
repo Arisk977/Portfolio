@@ -1,22 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
 
 @Component({
   selector: 'app-above-the-fold',
-  imports: [],
+  imports: [CommonModule, HelloWorldComponent],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss'
 })
 export class AboveTheFoldComponent {
 
-    buttonText = 'Hello World';
 
- onHover() {
-  this.buttonText = "I'M ARIS KARAMAT";
-  document.getElementById('waving-hand')?.classList.add('rotateAnimation');
-}
-
-
-  onLeave() {
-    this.buttonText = 'Hello World';
-  }
 }

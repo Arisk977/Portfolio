@@ -86,62 +86,9 @@ div {
     margin-top: -150px;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: flex-start;}
 
-    >div{
-        display:flex;
-        flex-direction: column;
-
-        >img{
-            @include element-size(40px, 40px);
-            margin-bottom: -20px;
-            align-self: flex-end;
-            visibility: hidden;
-          
-        }
-    >button {
-        position: relative;
-        overflow: hidden;
-        background-color: transparent;
-        border: 1px solid white;
-        border-radius: 100px;
-        padding: 12px 24px;
-        @include font-style(18px, 500, white);
-
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-color: #3355FF;
-            z-index: 0;
-
-            -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
-            mask-image: linear-gradient(to right, black 0%, transparent 0%);
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-            -webkit-mask-position: center;
-            mask-position: center;
-        }
-
-        &:hover::before {
-            animation: lineMask 200ms ease-in-out forwards;
-        }
-
-        &:hover{
-            animation: springExpand 820ms ease-out;
-        }
-        >* {
-        position: relative;
-        z-index: 1;
-    }
-    }
-}
-}
-
-.rotateAnimation{
-        animation: rotate 820ms ease-out;
-        visibility: visible !important;
-}
+   
 
 .dev {
     display: flex;

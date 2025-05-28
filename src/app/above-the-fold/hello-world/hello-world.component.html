@@ -1,0 +1,7 @@
+<div>
+<img src="assets/waving_hand.png" id="waving-hand"
+    [ngClass]="{'rotateAnimation': isHovered, 'rotateAnimationBack': isLeaving}" alt="">
+<button [ngClass]="{'buttonExpand': isHovered, 'buttonContract': isLeaving}" (mouseenter)="onHover()"
+    (mouseleave)="onLeave()">
+    <span>{{ buttonText }}</span></button>
+</div>

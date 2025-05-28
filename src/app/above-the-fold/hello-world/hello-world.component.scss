@@ -1,0 +1,67 @@
+@import 'mixins';
+@import 'keyframes';
+
+div {
+    display: flex;
+    flex-direction: column;
+
+    >img {
+        @include element-size(40px, 40px);
+        margin-bottom: 0px;
+        align-self: flex-end;
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+    }
+
+    >button {
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 100px;
+        padding: 12px 24px;
+        @include font-style(18px, 500, white);
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: #3355FF;
+            z-index: 0;
+
+            -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+            mask-image: linear-gradient(to right, black 0%, transparent 0%);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+        }
+
+        &:hover::before {
+            animation: lineMask 200ms ease-in-out forwards;
+        }
+
+        >* {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+.buttonExpand {
+    animation: springExpand 500ms ease-in;
+}
+
+.buttonContract {
+    animation: springContract 500ms ease-in;
+}
+
+.rotateAnimation {
+    animation: rotate 500ms linear;
+    opacity: 1 !important;
+}
+
+.rotateAnimationBack {
+    animation: rotateBack 500ms linear;
+    opacity: 0 !important;
+}

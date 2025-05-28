@@ -277,23 +277,30 @@
   }
 }
 
-@keyframes rotate {
+@keyframes springContract {
   0% {
-    transform: rotate(180deg);
-  }
-  20% {
-    transform: rotate(360deg);
-  }
-  40% {
-       transform: rotate(540deg);
-  }
-  60% {
-      transform: rotate(630deg);
-  }
-  80% {
-      transform: rotate(720deg);
+    width: 218px;
   }
   100% {
-       transform: rotate(810deg);
+    width: 160px;
   }
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateBack {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
 }
