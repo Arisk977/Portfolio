@@ -1,0 +1,5 @@
+<div (mouseenter)="onHover()" (mouseleave)="onLeave()">
+    <div><img [ngClass]="{'image-filter': isHovered}" src="assets/profile_pic.jpg" alt=""></div>
+    
+    <span>{{imageText}}</span>
+</div>

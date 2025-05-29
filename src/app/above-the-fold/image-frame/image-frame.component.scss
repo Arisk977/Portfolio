@@ -1,0 +1,36 @@
+@import 'mixins';
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-family: 'Kalam' !important;
+    @include font-style(24px, 700, black);
+    gap: 20px;
+    padding: 12px;
+    padding-bottom: 12px;
+
+    >div {
+        width: 175px;
+        height: 175px;
+        position: relative;
+        overflow: hidden;
+
+        >img {
+            width: 100%;
+            height: 120%;
+            object-position: top;
+            object-fit: cover;
+            filter: grayscale(1);
+        }
+
+    }
+}
+
+.image-filter {
+    filter: grayscale(0) !important;
+    filter: contrast(1.2);
+    filter: brightness(1.2);
+}

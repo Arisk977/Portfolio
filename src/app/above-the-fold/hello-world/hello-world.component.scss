@@ -35,10 +35,11 @@ div {
             mask-repeat: no-repeat;
             -webkit-mask-position: center;
             mask-position: center;
+            animation: radialMaskReverse 200ms ease-in-out forwards;
         }
 
         &:hover::before {
-            animation: lineMask 200ms ease-in-out forwards;
+            animation: radialMask 200ms ease-in-out forwards;
         }
 
         >* {

@@ -192,67 +192,70 @@
   }
 }
 
+
+
 @keyframes radialMask {
   0% {
-    -webkit-mask-image: radial-gradient(black 0%, transparent 0%);
-    mask-image: radial-gradient(black 0%, transparent 0%);
+    -webkit-mask-image: radial-gradient(circle, black 0%, transparent 0%);
+    mask-image: radial-gradient(circle, black 0%, transparent 0%);
   }
 
   20% {
-    -webkit-mask-image: radial-gradient(black 20%, transparent 20%);
-    mask-image: radial-gradient(black 20%, transparent 20%);
+    -webkit-mask-image: radial-gradient(circle, black 20%, transparent 20%);
+    mask-image: radial-gradient(circle, black 20%, transparent 20%);
   }
 
   40% {
-    -webkit-mask-image: radial-gradient(black 40%, transparent 40%);
-    mask-image: radial-gradient(black 40%, transparent 40%);
+    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 40%);
+    mask-image: radial-gradient(circle, black 40%, transparent 40%);
   }
 
   60% {
-    -webkit-mask-image: radial-gradient(black 60%, transparent 60%);
-    mask-image: radial-gradient(black 60%, transparent 60%);
+    -webkit-mask-image: radial-gradient(circle, black 60%, transparent 60%);
+    mask-image: radial-gradient(circle, black 60%, transparent 60%);
   }
 
   80% {
-    -webkit-mask-image: radial-gradient( black 80%, transparent 80%);
-    mask-image: radial-gradient(black 80%, transparent 80%);
+    -webkit-mask-image: radial-gradient( circle, black 80%, transparent 80%);
+    mask-image: radial-gradient(circle, black 80%, transparent 80%);
   }
 
   100% {
-    -webkit-mask-image: radial-gradient(black 100%, transparent 100%);
-    mask-image: radial-gradient(black 100%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 100%, transparent 100%);
+    mask-image: radial-gradient(circle, black 100%, transparent 100%);
   }
 }
 
+
 @keyframes radialMaskReverse {
   0% {
-    -webkit-mask-image: radial-gradient(black 100%, transparent 100%);
-    mask-image: radial-gradient(black 100%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 100%, transparent 100%);
+    mask-image: radial-gradient(circle, black 100%, transparent 100%);
   }
 
   20% {
-    -webkit-mask-image: radial-gradient(black 80%, transparent 80%);
-    mask-image: radial-gradient(black 80%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle, black 80%, transparent 80%);
+    mask-image: radial-gradient(circle, black 80%, transparent 80%);
   }
 
   40% {
-    -webkit-mask-image: radial-gradient(black 60%, transparent 60%);
-    mask-image: radial-gradient(black 60%, transparent 60%);
+    -webkit-mask-image: radial-gradient(circle, black 60%, transparent 60%);
+    mask-image: radial-gradient(circle, black 60%, transparent 60%);
   }
 
   60% {
-    -webkit-mask-image: radial-gradient(black 40%, transparent 40%);
-    mask-image: radial-gradient(black 40%, transparent 40%);
+    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 40%);
+    mask-image: radial-gradient(circle, black 40%, transparent 40%);
   }
 
   80% {
-    -webkit-mask-image: radial-gradient( black 20%, transparent 20%);
-    mask-image: radial-gradient(black 20%, transparent 20%);
+    -webkit-mask-image: radial-gradient( circle, black 20%, transparent 20%);
+    mask-image: radial-gradient(circle, black 20%, transparent 20%);
   }
 
   100% {
-    -webkit-mask-image: radial-gradient(black 0%, transparent 0%);
-    mask-image: radial-gradient(black 0%, transparent 0%);
+    -webkit-mask-image: radial-gradient(circle, black 0%, transparent 0%);
+    mask-image: radial-gradient(circle, black 0%, transparent 0%);
   }
 }
 
@@ -267,7 +270,7 @@
     width: 200px;
   }
   60% {
-    width: 235px;
+    width: 225px;
   }
   80% {
     width: 212px;
