@@ -11,12 +11,14 @@ div {
     gap: 20px;
     padding: 12px;
     padding-bottom: 12px;
+    border-radius: 2px;
 
     >div {
         width: 175px;
         height: 175px;
         position: relative;
         overflow: hidden;
+        border-radius: 8px;
 
         >img {
             width: 100%;

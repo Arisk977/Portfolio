@@ -26,6 +26,15 @@ header {
     font-weight: 700;
     width: 100%;
     max-width: 1920px;
+    >h1{
+      font-family: 'Protest Revolution';
+      color: #3355FF;
+      font-size: 64px;
+      letter-spacing: -10px;
+      &:hover{
+        color: #F7C518;
+      }
+    }
 }
 
 span{

@@ -10,6 +10,16 @@ import { ImageFrameComponent } from './image-frame/image-frame.component';
   styleUrl: './above-the-fold.component.scss'
 })
 export class AboveTheFoldComponent {
+ onHover(event: MouseEvent) {
+  const target = (event.currentTarget as HTMLElement);
+  target.classList.remove('unhovered');
+  target.classList.add('hovered');
+}
 
+onLeave(event: MouseEvent) {
+  const target = (event.currentTarget as HTMLElement);
+  target.classList.remove('hovered');
+  target.classList.add('unhovered');
+}
 
 }
