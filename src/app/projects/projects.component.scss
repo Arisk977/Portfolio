@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'keyframes';
 
 main {
     @include element-size(100vh, 100%);
@@ -12,25 +13,29 @@ main {
     padding-top: 144px;
 }
 
-.headline{
+.headline {
     width: 560px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 48px;
-    >div{
+
+    >div {
         display: flex;
         flex-direction: column;
         gap: 16px;
-        >span{
+
+        >span {
             @include font-style(20px, 500, black);
         }
-        >h1{
+
+        >h1 {
             @include font-style(64px, 700, black);
             position: relative;
             display: inline-block;
-            >img{
+
+            >img {
                 position: absolute;
                 width: 260px;
                 height: 20px;
@@ -41,57 +46,105 @@ main {
     }
 }
 
-section{
+section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 88px;
 }
 
-.project{
+.join {
     width: 560px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.img-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 560px;
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 560px;
+  height: 330px;
+  border-radius: 20px;
+  position: relative;
+  transition: transform 250ms ease-in-out;
 
-    >img{
-        width: 100%;
-        border-radius: 20px;
-    }
-    
-}
-
-.laptop{
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 20px;
+    box-shadow: inset 0px -150px 80px -60px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
-.sticker{
+.laptop {
+  width: 100%;
+  height: 90%;
+  animation: laptopAnimation 5s ease-in-out infinite;
+  position: relative;
+  transition: transform 250ms ease-in-out, animation 0ms;
+
+  .img-container:hover & {
+    animation: none;
+    transform: scale(1.2);
+  }
+}
+
+
+.sticker {
     height: 168px;
     width: 168px;
-    margin-right: -150px;
+    margin-right: -170px;
     z-index: 1;
 }
 
-.description{
+.description {
     display: flex;
     flex-direction: column;
     gap: 32px;
     width: 560px;
 }
 
-h2{
-@include font-style(24px, 700, black);
+h2 {
+    @include font-style(24px, 700, black);
 
 }
 
-p{
-@include font-style(18px, 400, black);
+p {
+    @include font-style(18px, 400, black);
+}
+
+button {
+        background-color: rgba(0, 0, 0, 0.01);
+        border: 1px solid white;
+        border-radius: 100px;
+        padding: 12px 24px;
+        box-shadow: 2px 4px 0px white;
+        @include button-transition();
+        @include font-style(18px, 500, white);
+
+        &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: #F87A55;
+            box-shadow: 0px 0px 0px white;
+            transform: translate(2px, 4px);
+        }
+    }
+
+.d_none{
+    display: none;
 }
