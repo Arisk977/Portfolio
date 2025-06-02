@@ -1,7 +1,7 @@
 <div class="project">
-  <div class="img-container">
+  <div class="img-container" (mouseenter)="onHover()" (mouseleave)="onLeave()" (click)="navigateToProject()">
     <img [src]="craft.img" alt="">
-    <button class="d_none">Project details</button>
+    <button class="d_none" id="button-{{craft.button}}">Project details</button>
   </div>
 
   <div class="description">

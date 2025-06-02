@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Craft } from '../../interfaces/craft.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mycraft',
@@ -11,5 +12,20 @@ import { Craft } from '../../interfaces/craft.interface';
 })
 export class MycraftComponent {
   @Input() craft!:Craft;
+  constructor(private router: Router) {}
+   onHover(){
+    let button = document.getElementById(`button-${this.craft.button}`);
 
+    if(button) button?.classList.remove('d_none');
+  }
+
+    onLeave(){
+    let button = document.getElementById(`button-${this.craft.button}`);
+
+    if(button) button?.classList.add('d_none');
+  }
+
+    navigateToProject() {
+    this.router.navigate(['/singelProject']);
+  }
 }

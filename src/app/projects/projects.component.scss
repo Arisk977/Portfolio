@@ -135,6 +135,9 @@ button {
         box-shadow: 2px 4px 0px white;
         @include button-transition();
         @include font-style(18px, 500, white);
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
 
         &:hover {
             cursor: pointer;

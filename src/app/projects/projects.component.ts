@@ -12,12 +12,26 @@ export class ProjectsComponent {
   sharkie: Craft = {
     h2: 'Sharkie',
     p: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poison bottles to fight against the big boss.',
-    img: 'assets/sharky.jpg'
+    img: 'assets/sharky.jpg',
+    button: '2'
   };
 
   daBubble: Craft = {
     h2: 'DABubble',
     p: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
-    img: 'assets/da-bubble.jpg'
+    img: 'assets/da-bubble.jpg',
+    button: '3',
   };
+
+  onHover(){
+    let button = document.getElementById('button');
+
+    if(button) button?.classList.remove('d_none');
+  }
+
+    onLeave(){
+    let button = document.getElementById('button');
+
+    if(button) button?.classList.add('d_none');
+  }
 }

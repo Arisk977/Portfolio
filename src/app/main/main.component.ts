@@ -4,10 +4,11 @@ import { AboutMeComponent } from '../about-me/about-me.component';
 import { SkillSetComponent } from '../skill-set/skill-set.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { ColleaguesThoughtsComponent } from '../colleagues-thoughts/colleagues-thoughts.component';
+import { FooterComponent } from '../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-main',
-  imports: [AboveTheFoldComponent, AboutMeComponent, SkillSetComponent, ProjectsComponent, ColleaguesThoughtsComponent],
+  imports: [AboveTheFoldComponent, AboutMeComponent, SkillSetComponent, ProjectsComponent, ColleaguesThoughtsComponent, FooterComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
