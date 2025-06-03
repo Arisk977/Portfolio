@@ -3,4 +3,5 @@ export interface Craft {
     p: string;
     img: string;
     button: string;
+    routeId: string;
 }

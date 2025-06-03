@@ -1,42 +1,41 @@
 <main>
     <div class="container-wrapper">
-        <div class="back">Go Back</div>
+        <div class="back"><img src="assets/back.png" alt="back-arrow">Go Back</div>
 
         <div class="project-wrapper">
             <div class="project-details">
                 <div class="headline">
-                <h1>Project Name</h1>
-                <img class="head-img" src="assets/notebook-line.png" alt="line">
-                
+                    <h1>{{project.h1}}</h1>
+                    <img width="200px" src="assets/notebook-line.png" alt="line">
+
                 </div>
-                
-                <span>
+
+                <span class="description">
                     <h2>Description</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam nam eum excepturi corrupti
-                    officia quia quas. Sint sit officia neque molestiae perspiciatis, aspernatur officiis et doloribus
-                    unde, alias sequi illum?</p>
+                    <p>{{project.description}}</p>
                 </span>
-                
-                <span>
+
+                <span class="implementation">
                     <h2>Implementation Details</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis vitae tempora minima, numquam
-                    similique nemo sapiente maiores doloremque, officiis explicabo quam quos, odit repellendus
-                    consectetur! Minus mollitia perspiciatis ipsa unde.</p>
+                    <p>{{project.implementation}}</p>
                 </span>
-                
+
 
                 <span id="duration">
                     <h3>Duration:</h3>
-                    <p>3 weeks</p>
+                    <p>{{project.duration}}</p>
                 </span>
-                <div>
-                    <img src="" alt="Javascript"> <span>Javascript</span>
-                    <img src="" alt="HTML"> <span>HTML</span>
-                    <img src="" alt="CSS"> <span>CSS</span>
+                <div id="skills-container">
+                    <div *ngFor="let skill of project.skills">
+                        <img [src]="skill.imagePath" [alt]="skill.name" class="skill-image">
+                        <span class="skill-name">{{ skill.name }}</span>
+                    </div>
                 </div>
+
             </div>
             <div class="project-showcase">
-                <div> <img src="" alt="project"> <img src="" alt="sticker"></div>
+                <div class="images"> <img src={{project.imagePath}} alt="project" class="project-img"> <img
+                        class="sticker" src={{project.stickerPath}} alt="sticker"></div>
                 <div class="buttons">
                     <button>GitHub</button>
                     <button>Live Test</button>
@@ -44,6 +43,6 @@
 
             </div>
         </div>
-        <div class="next">Next Project</div>
+        <div class="next">Next Project <img src="assets/next.png" alt="next-arrow"></div>
     </div>
 </main>

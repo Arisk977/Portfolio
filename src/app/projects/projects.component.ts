@@ -13,7 +13,8 @@ export class ProjectsComponent {
     h2: 'Sharkie',
     p: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poison bottles to fight against the big boss.',
     img: 'assets/sharky.jpg',
-    button: '2'
+    button: '2',
+    routeId: 'sharkie'
   };
 
   daBubble: Craft = {
@@ -21,6 +22,7 @@ export class ProjectsComponent {
     p: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
     img: 'assets/da-bubble.jpg',
     button: '3',
+    routeId: 'daBubble'
   };
 
   onHover(){

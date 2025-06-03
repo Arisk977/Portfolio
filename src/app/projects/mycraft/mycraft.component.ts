@@ -25,7 +25,7 @@ export class MycraftComponent {
     if(button) button?.classList.add('d_none');
   }
 
-    navigateToProject() {
-    this.router.navigate(['/singelProject']);
+    navigateToProject(projectId: string) {
+      this.router.navigate(['/project', projectId]);
   }
 }

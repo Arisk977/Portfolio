@@ -43,7 +43,15 @@ p{
         flex-direction: column;
         gap: 16px;
     }
+}
 
+.description, .implementation{
+    >h2{
+        @include font-style(24px, 700, black);
+    }
+    >p{
+        @include font-style(18px, 400, black);
+    }
 }
 
 #duration{
@@ -51,6 +59,12 @@ p{
     align-items: center;
     justify-content: center;
     gap: 5px;
+    >h3{
+        @include font-style(18px, 700, black);
+    }
+    >p{
+        @include font-style(18px, 400, black);
+    }
 }
 
 .project-showcase{
@@ -62,6 +76,8 @@ p{
 
 .buttons{
     display: flex;
+    align-self: flex-end;
+    margin-right: 60px;
     gap: 32px;
 }
 
@@ -86,16 +102,67 @@ button {
     .next{
         align-self: flex-end;
         color: white;
+        @include font-style(18px, 700, white);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        >img{
+            @include element-size(24px, 24px);
+        }
     }
 
-.headline {
-  display: inline-flex;     /* oder inline-block */
-  flex-direction: column;   /* vertikal anordnen */
-  align-items: flex-start;  /* nicht dehnen */
-}
+    .back{
+        @include font-style(18px, 700, black);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: -40px;
+            >img{
+            @include element-size(24px, 24px);
+        }
+    }
 
-.head-img{
- display: inline-block             /* Bild passt sich an */
-}
+    .headline{
+        display: inline-flex;
+        flex-direction: column;
+        gap: 4px;
+    }
 
+    h1{
+        display: inline-block;
+        @include font-style(64px, 700, black);
 
+    }
+
+    .images{
+        display: flex;
+        align-items: center;
+    }
+
+    .project-img{
+        @include element-size(400px, 560px);
+        border-radius: 20px;
+    }
+
+    .sticker{
+        @include element-size(120px, 120px);
+        margin-left: -60px;
+    }
+
+    #skills-container{
+        display: flex;
+        gap: 8px;
+        >div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            >span{
+                @include font-style(16px, 400, black)
+            }
+        }
+    }
+    .skill-image{
+        @include element-size (24px, 24px);
+
+    }
