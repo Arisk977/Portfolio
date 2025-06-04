@@ -7,5 +7,6 @@ export interface Project {
     imagePath: string;
     stickerPath: string;
     duration: string;
+    arrowWidth: string;
     skills: Skill[];
 }

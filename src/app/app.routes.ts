@@ -4,5 +4,5 @@ import { SingleProjectComponent } from './single-project/single-project.componen
 
 export const routes: Routes = [
      {path: '', component: MainComponent},
-      { path: 'project/:id', component: SingleProjectComponent },
+      {path: 'project/:id', component: SingleProjectComponent },
 ];

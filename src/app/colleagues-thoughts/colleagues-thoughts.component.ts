@@ -9,7 +9,6 @@ import { Feedback } from './../interfaces/feedback.interface';
   styleUrl: './colleagues-thoughts.component.scss'
 })
 export class ColleaguesThoughtsComponent implements OnInit, OnDestroy {
-  private intervalId: any;
   private timeoutId: any;
 
   feedback1: Feedback = {
@@ -34,26 +33,31 @@ export class ColleaguesThoughtsComponent implements OnInit, OnDestroy {
   };
 
 ngOnInit(): void {
-  const blueArrow = document.getElementById('blue-arrow');
-
-  if (blueArrow) {
-    const showArrow = () => {
-      blueArrow.classList.remove('hide');
-      blueArrow.classList.add('show');
-      this.timeoutId = setTimeout(() => {
-        blueArrow.classList.remove('show');
-        blueArrow.classList.add('hide');
-        this.timeoutId = setTimeout(showArrow, 800);
-      }, 3000);
-    };
-
-    showArrow();
-  }
+this.arrowAnimation();
 }
 
 ngOnDestroy(): void {
   if (this.timeoutId) {
     clearTimeout(this.timeoutId);
+  }
+}
+
+arrowAnimation(){
+  const blueLine = document.getElementById('blue-line');
+
+  if (blueLine) {
+    const showArrow = () => {
+      blueLine.classList.remove('hide');
+      blueLine.classList.add('show');
+
+      this.timeoutId = setTimeout(() => {
+        blueLine.classList.remove('show');
+        blueLine.classList.add('hide');
+        this.timeoutId = setTimeout(showArrow, 800);
+      }, 3000);
+    };
+
+    showArrow();
   }
 }
 

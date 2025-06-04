@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Craft } from './../interfaces/craft.interface';
 import { MycraftComponent } from './mycraft/mycraft.component';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-projects',
@@ -9,6 +11,7 @@ import { MycraftComponent } from './mycraft/mycraft.component';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
+    constructor(private router: Router) {}
   sharkie: Craft = {
     h2: 'Sharkie',
     p: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poison bottles to fight against the big boss.',
@@ -25,15 +28,19 @@ export class ProjectsComponent {
     routeId: 'daBubble'
   };
 
-  onHover(){
+  onHover() {
     let button = document.getElementById('button');
 
-    if(button) button?.classList.remove('d_none');
+    if (button) button?.classList.remove('d_none');
   }
 
-    onLeave(){
+  onLeave() {
     let button = document.getElementById('button');
 
-    if(button) button?.classList.add('d_none');
+    if (button) button?.classList.add('d_none');
+  }
+
+  navigateToProject(projectId: string) {
+    this.router.navigate(['/project', projectId]);
   }
 }

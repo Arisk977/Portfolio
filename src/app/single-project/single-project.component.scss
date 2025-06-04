@@ -12,69 +12,74 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;  
-   
+    justify-content: center;
+
 }
 
-.container-wrapper{
+.container-wrapper {
     display: flex;
     flex-direction: column;
     gap: 48px;
     width: calc(100% - 240px);
 }
 
-p{
+p {
     width: 488px;
 }
 
-.project-wrapper{
-    display:flex;
+.project-wrapper {
+    display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.project-details{
+.project-details {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 48px;
-    >span{
+
+    >span {
         display: flex;
         flex-direction: column;
         gap: 16px;
     }
 }
 
-.description, .implementation{
-    >h2{
+.description,
+.implementation {
+    >h2 {
         @include font-style(24px, 700, black);
     }
-    >p{
+
+    >p {
         @include font-style(18px, 400, black);
     }
 }
 
-#duration{
+#duration {
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    >h3{
+
+    >h3 {
         @include font-style(18px, 700, black);
     }
-    >p{
+
+    >p {
         @include font-style(18px, 400, black);
     }
 }
 
-.project-showcase{
+.project-showcase {
     display: flex;
     flex-direction: column;
     gap: 48px;
     color: white;
 }
 
-.buttons{
+.buttons {
     display: flex;
     align-self: flex-end;
     margin-right: 60px;
@@ -82,87 +87,136 @@ p{
 }
 
 button {
-        background-color: rgba(0, 0, 0, 0.01);
-        border: 1px solid white;
-        border-radius: 100px;
-        padding: 12px 24px;
-        box-shadow: 2px 4px 0px white;
-        @include button-transition();
-        @include font-style(18px, 500, white);
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 1px solid white;
+    border-radius: 100px;
+    padding: 12px 24px;
+    box-shadow: 2px 4px 0px white;
+    @include button-transition();
+    @include font-style(18px, 500, white);
 
-        &:hover {
-            cursor: pointer;
-            color: white;
-            background-color: #F87A55;
-            box-shadow: 0px 0px 0px white;
-            transform: translate(2px, 4px);
-        }
-    }
-
-    .next{
-        align-self: flex-end;
+    &:hover {
+        cursor: pointer;
         color: white;
-        @include font-style(18px, 700, white);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        >img{
-            @include element-size(24px, 24px);
-        }
+        background-color: #F87A55;
+        box-shadow: 0px 0px 0px white;
+        transform: translate(2px, 4px);
+    }
+}
+
+.next {
+    align-self: flex-end;
+    color: white;
+    @include font-style(18px, 700, white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    >img {
+        @include element-size(24px, 24px);
     }
 
-    .back{
-        @include font-style(18px, 700, black);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-left: -40px;
-            >img{
-            @include element-size(24px, 24px);
-        }
+    &:hover {
+        color: #F7C518;
+        cursor: pointer;
+    }
+}
+
+.back {
+    @include font-style(18px, 700, black);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: -40px;
+
+    >img {
+        @include element-size(24px, 24px);
     }
 
-    .headline{
-        display: inline-flex;
-        flex-direction: column;
+    &:hover {
+        color: #F87A55;
+        cursor: pointer;
+    }
+}
+
+.headline {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+h1 {
+    display: inline-block;
+    @include font-style(64px, 700, black);
+}
+
+#blue-line {
+    display: block;
+    position: relative;
+    pointer-events: none;
+    height: 20px;
+
+    -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+#blue-line.show {
+    animation: lineMask 200ms ease-in forwards !important;
+}
+
+#blue-line.hide {
+    animation: lineMaskReverse 200ms ease-out forwards !important;
+}
+
+#images {
+    display: flex;
+    align-items: center;
+}
+
+.project-img {
+    @include element-size(400px, 560px);
+    border-radius: 20px;
+}
+
+.sticker {
+    @include element-size(120px, 120px);
+    margin-left: -60px;
+}
+
+#skills-container {
+    display: flex;
+    gap: 8px;
+
+    >div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 4px;
-    }
 
-    h1{
-        display: inline-block;
-        @include font-style(64px, 700, black);
-
-    }
-
-    .images{
-        display: flex;
-        align-items: center;
-    }
-
-    .project-img{
-        @include element-size(400px, 560px);
-        border-radius: 20px;
-    }
-
-    .sticker{
-        @include element-size(120px, 120px);
-        margin-left: -60px;
-    }
-
-    #skills-container{
-        display: flex;
-        gap: 8px;
-        >div{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4px;
-            >span{
-                @include font-style(16px, 400, black)
-            }
+        >span {
+            @include font-style(16px, 400, black)
         }
     }
-    .skill-image{
-        @include element-size (24px, 24px);
+}
 
-    }
+.skill-image {
+    @include element-size (24px, 24px);
+
+}
+
+.d_none {
+    display: none;
+}
+
+app-svg {
+    @include element-size(120px, 120px);
+    background-image: url('./../../assets/yellow-sticker.png');
+    background-size: 100% 100%;
+    background-position: cover;
+    background-repeat: no-repeat;
+    transform: rotate(15deg);
+    margin-left: -60px;
+    z-index: 2;
+}

@@ -1,13 +1,12 @@
 <main>
     <div class="container-wrapper">
-        <div class="back"><img src="assets/back.png" alt="back-arrow">Go Back</div>
+        <div class="back" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">Go Back</div>
 
         <div class="project-wrapper">
             <div class="project-details">
                 <div class="headline">
                     <h1>{{project.h1}}</h1>
-                    <img width="200px" src="assets/notebook-line.png" alt="line">
-
+                    <img [ngStyle]="{ 'width': project.arrowWidth }" src="assets/notebook-line.png" id="blue-line" alt="line">
                 </div>
 
                 <span class="description">
@@ -34,8 +33,14 @@
 
             </div>
             <div class="project-showcase">
-                <div class="images"> <img src={{project.imagePath}} alt="project" class="project-img"> <img
-                        class="sticker" src={{project.stickerPath}} alt="sticker"></div>
+                <div id="images">
+                    <img [src]="project.imagePath" alt="project" class="project-img" />
+
+                    <img *ngIf="project.h1 === 'Join'" src="assets/sticker.png" alt="" class="sticker">
+                    <app-svg class="notebook-sticker"
+                        *ngIf="project.h1 === 'Sharkie' || project.h1 === 'DABubble'"></app-svg>
+                </div>
+
                 <div class="buttons">
                     <button>GitHub</button>
                     <button>Live Test</button>
@@ -43,6 +48,6 @@
 
             </div>
         </div>
-        <div class="next">Next Project <img src="assets/next.png" alt="next-arrow"></div>
+        <div class="next" (click)="navigateNextProject()">Next Project <img src="assets/next.png" alt="next-arrow"></div>
     </div>
 </main>
