@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Craft } from './../interfaces/craft.interface';
 import { MycraftComponent } from './mycraft/mycraft.component';
 import { Router } from '@angular/router';
@@ -10,8 +10,10 @@ import { Router } from '@angular/router';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
-    constructor(private router: Router) {}
+export class ProjectsComponent implements OnInit, OnDestroy {
+  private timeoutId: any;
+
+  constructor(private router: Router) { }
   sharkie: Craft = {
     h2: 'Sharkie',
     p: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poison bottles to fight against the big boss.',
@@ -27,6 +29,38 @@ export class ProjectsComponent {
     button: '3',
     routeId: 'daBubble'
   };
+
+  ngOnInit(): void {
+    this.lineAnimation();
+  }
+
+  ngOnDestroy(): void {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+  }
+  lineAnimation() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+
+    const line = document.getElementById('line');
+
+    if (line) {
+      const showLine = () => {
+        line.classList.remove('hide');
+        line.classList.add('show');
+
+        this.timeoutId = setTimeout(() => {
+          line.classList.remove('show');
+          line.classList.add('hide');
+          this.timeoutId = setTimeout(showLine, 800);
+        }, 3000);
+      };
+
+      showLine();
+    }
+  }
 
   onHover() {
     let button = document.getElementById('button');

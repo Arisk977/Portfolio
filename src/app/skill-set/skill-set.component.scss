@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'keyframes';
 
 main {
     @include element-size(100vh, 100%);
@@ -47,9 +48,10 @@ main {
     align-items: flex-end;
     padding-bottom: 30px;
 
-    >span{
+    >span {
         @include font-style(20px, 500, white);
     }
+
     >h1 {
         @include font-style(64px, 700, white);
     }
@@ -79,29 +81,32 @@ main {
 
 }
 
-.skill-container{
+.skill-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 4px;
-    >span{
+
+    >span {
         text-align: center;
         @include font-style(18px, 400, white);
     }
+
     >img {
-    @include element-size(72px, 72px);
-    filter:grayscale(100%);
-    transition: filter 100ms ease-in;
-    transition: ease-in 100ms;
-    &:hover{
-        filter: grayscale(0%);
-        transform: scale(0.8);
+        @include element-size(72px, 72px);
+        filter: grayscale(100%);
+        transition: filter 100ms ease-in;
+        transition: ease-in 100ms;
+
+        &:hover {
+            filter: grayscale(0%);
+            transform: scale(0.8);
+        }
     }
 }
-}
 
-.pull-text{
+.pull-text {
     z-index: 1;
     @include font-style(40px, 400, white);
     font-family: 'Kalam';
@@ -112,7 +117,8 @@ main {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    >img{
+
+    >img {
         @include element-size(40px, 50px)
     }
 }
@@ -123,4 +129,32 @@ main {
     position: absolute;
     top: -30px;
     left: 0;
+}
+
+#skill-head {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+
+#circle-line {
+    position: absolute;
+    top: -5px;
+    left: -18px;
+    width: 120%;
+    height: 120%;
+
+    -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    z-index: 1;
+}
+
+#circle-line.show {
+    animation: lineMask 200ms ease-in forwards !important;
+}
+
+#circle-line.hide {
+    animation: lineMaskReverse 200ms ease-out forwards !important;
 }

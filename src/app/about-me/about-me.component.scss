@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'keyframes';
 
 main {
     @include element-size(100vh, 100%);
@@ -80,4 +81,23 @@ main {
     >p {
         max-width: 540px;
     }
+}
+
+#blue-line {
+    display: block;
+    position: relative;
+    pointer-events: none;
+
+    -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+#blue-line.show {
+    animation: lineMask 200ms ease-in forwards !important;
+}
+
+#blue-line.hide {
+    animation: lineMaskReverse 200ms ease-out forwards !important;
 }

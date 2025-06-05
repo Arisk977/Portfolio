@@ -151,3 +151,22 @@ button {
 .d_none{
     display: none;
 }
+
+#line {
+    display: block;
+    position: relative;
+    pointer-events: none;
+
+    -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+#line.show {
+    animation: lineMask 200ms ease-in forwards !important;
+}
+
+#line.hide {
+    animation: lineMaskReverse 200ms ease-out forwards !important;
+}
