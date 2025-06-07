@@ -16,58 +16,62 @@
             <div class="skill-container">
                 <img src="assets/skills/html.png" alt="">
                 <span>HTML</span>
-            
+
             </div>
             <div class="skill-container">
                 <img src="assets/skills/css.png" alt="">
                 <span>CSS</span>
-            
+
             </div>
             <div class="skill-container">
                 <img src="assets/skills/js.png" alt="">
                 <span>JavaScript</span>
-            
+
             </div>
             <div class="skill-container">
                 <img src="assets/skills/ts.png" alt="">
                 <span>TypeScript</span>
-            
+
             </div>
             <div class="skill-container">
                 <img src="assets/skills/angular.png" alt="">
                 <span>Angular</span>
-            
+
             </div>
             <div class="skill-container">
                 <img src="assets/skills/firebase.png" alt="">
                 <span>Firebase</span>
-            
+
             </div>
             <div class="skill-container">
                 <img src="assets/skills/git.png" alt="">
                 <span>Git</span>
-            
+
             </div>
             <div class="skill-container">
                 <img src="assets/skills/rest-api.png" alt="">
                 <span>Rest-Api</span>
-            
+
             </div>
             <div class="skill-container">
                 <img src="assets/skills/scrum.png" alt="">
                 <span>Scrum</span>
-            
+
             </div>
             <div class="skill-container">
                 <img src="assets/skills/material-design.png" alt="">
                 <span>Material <br> Design</span>
-            
+
             </div>
 
         </div>
         <div class="other-skills">
-            <div class="pull-text"><img src="assets/skills/arrow.png" alt=""> Pull to Peel</div>
-            <img class="pull" src="assets/skills/pull-to-peel.png" alt="">
+            <div id="image-container" (mouseenter)="onHover()" (mouseleave)="onLeave()" (click)="showOtherSkills()">
+                <div class="pull-text" id="pull-text"><img src="assets/skills/arrow.png" alt=""> Pull to Peel</div>
+                <img class="pull" id="bg-image" src="assets/skills/pull-to-peel.png" alt="">
+                <img src="assets/hover-image.png" alt="hoveredImage" id="hover-image" class="d_none">
+                <div id="click-image" class="d_none"><img src="assets/clicked-image.png" alt=""></div>
+            </div>
 
         </div>
     </section>

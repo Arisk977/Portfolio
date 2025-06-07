@@ -106,12 +106,23 @@ main {
     }
 }
 
+#image-container{
+     z-index: 1;
+    @include font-style(40px, 400, white);
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    transform: rotate(8deg);
+}
+
 .pull-text {
     z-index: 1;
     @include font-style(40px, 400, white);
+    width: 100%;
+   
     font-family: 'Kalam';
-    transform: rotate(8deg);
-    width: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,12 +134,30 @@ main {
     }
 }
 
-.pull {
+.pull{
     @include element-size(200px, 200px);
-    transform: rotate(8deg);
     position: absolute;
     top: -30px;
     left: 0;
+    z-index: 0;
+}
+
+#hover-image{
+    @include element-size(200px, 200px);
+    position: absolute;
+    top: -110px;
+    left: 0;
+    z-index: 0;
+}
+
+#click-image{
+    >img{
+  @include element-size(200px, 200px);
+    position: absolute;
+    top: -110px;
+    left: 0;
+    z-index: 0;
+    }
 }
 
 #skill-head {
@@ -157,4 +186,8 @@ main {
 
 #circle-line.hide {
     animation: lineMaskReverse 200ms ease-out forwards !important;
+}
+
+.d_none{
+    display: none;
 }

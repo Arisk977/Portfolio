@@ -32,7 +32,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
   }
 
   sharkie: Project = {
-    description: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poison bottles to fight against the big endboss.',
+    description: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poison bottles to fight against the killer whale.',
     implementation: 'string',
     h1: 'Sharkie',
     imagePath: 'assets/sharky.jpg',

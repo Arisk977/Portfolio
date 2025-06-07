@@ -43,7 +43,7 @@ ngOnDestroy(): void {
 }
 
 arrowAnimation(){
-  const blueLine = document.getElementById('blue-line');
+  const blueLine = document.getElementById('blue-arrow');
 
   if (blueLine) {
     const showArrow = () => {

@@ -8,6 +8,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class SkillSetComponent implements OnInit, OnDestroy {
  private timeoutId: any;
+ clicked: boolean = false;
 
     ngOnInit(): void {
     this.lineAnimation();
@@ -40,4 +41,48 @@ export class SkillSetComponent implements OnInit, OnDestroy {
       showLine();
     }
   }
+
+
+
+onHover(){
+  // Nur reagieren, wenn NICHT geklickt wurde
+  if (!this.clicked) {
+    let hoverImageRef = document.getElementById('hover-image');
+    let textRef = document.getElementById('pull-text');
+    let bgImageRef = document.getElementById('bg-image');
+
+    hoverImageRef?.classList.remove('d_none');
+    textRef?.classList.add('d_none');
+    bgImageRef?.classList.add('d_none');
+  }
+}
+
+onLeave(){
+  // Nur reagieren, wenn NICHT geklickt wurde
+  if (!this.clicked) {
+    let hoverImageRef = document.getElementById('hover-image');
+    let textRef = document.getElementById('pull-text');
+    let bgImageRef = document.getElementById('bg-image');
+
+    hoverImageRef?.classList.add('d_none');
+    textRef?.classList.remove('d_none');
+    bgImageRef?.classList.remove('d_none');
+  }
+}
+
+showOtherSkills(){
+  // Klick-Status setzen
+  this.clicked = true;
+
+  let hoverImageRef = document.getElementById('hover-image');
+  let textRef = document.getElementById('pull-text');
+  let bgImageRef = document.getElementById('bg-image');
+  let clickImageRef = document.getElementById('click-image');
+
+  hoverImageRef?.classList.add('d_none');
+  textRef?.classList.add('d_none');
+  bgImageRef?.classList.add('d_none');
+  clickImageRef?.classList.remove('d_none');
+}
+
 }
