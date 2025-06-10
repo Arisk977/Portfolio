@@ -21,6 +21,7 @@ main {
     flex-direction: column;
     gap: 48px;
     width: calc(100% - 240px);
+    max-width: 1920px;
 }
 
 p {

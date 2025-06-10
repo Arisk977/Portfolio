@@ -106,14 +106,14 @@ main {
     }
 }
 
-#image-container{
-     z-index: 1;
+#image-container {
+    z-index: 1;
     @include font-style(40px, 400, white);
     width: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
     transform: rotate(8deg);
 }
 
@@ -121,7 +121,7 @@ main {
     z-index: 1;
     @include font-style(40px, 400, white);
     width: 100%;
-   
+
     font-family: 'Kalam';
     display: flex;
     justify-content: center;
@@ -134,7 +134,7 @@ main {
     }
 }
 
-.pull{
+.pull {
     @include element-size(200px, 200px);
     position: absolute;
     top: -30px;
@@ -142,21 +142,66 @@ main {
     z-index: 0;
 }
 
-#hover-image{
+#hover-image {
     @include element-size(200px, 200px);
     position: absolute;
-    top: -110px;
+    top: -113px;
     left: 0;
     z-index: 0;
 }
 
-#click-image{
-    >img{
-  @include element-size(200px, 200px);
-    position: absolute;
-    top: -110px;
-    left: 0;
-    z-index: 0;
+#click-image {
+    background-image: url('./../../assets/clicked-image.png');
+    background-size: 100% 100%;
+    width: 200px;
+    height: 200px;
+    margin-top: -15px;
+    margin-right: -15px;
+
+    >h4 {
+        padding: 40px 16px;
+        padding-bottom: 16px;
+        text-align: center;
+        @include font-style(18px, 700, white);
+
+    }
+
+    >div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+
+.react {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    >p {
+        @include font-style(16px, 400, white);
+    }
+
+    >img {
+        @include element-size(40px, 40px);
+    }
+}
+
+.vue-js {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    >p {
+        @include font-style(16px, 400, white);
+    }
+
+    >img {
+        @include element-size(40px, 40px);
     }
 }
 
@@ -188,6 +233,6 @@ main {
     animation: lineMaskReverse 200ms ease-out forwards !important;
 }
 
-.d_none{
+.d_none {
     display: none;
 }

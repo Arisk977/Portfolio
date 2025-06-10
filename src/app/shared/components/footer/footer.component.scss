@@ -61,26 +61,26 @@ app-svg {
 }
 
 .footer-line {
-  width: 280px;
-  height: 44px;
-  display: block;
-  position: relative;
-  pointer-events: none;
+    width: 280px;
+    height: 44px;
+    display: block;
+    position: relative;
+    pointer-events: none;
 
-  -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
-  mask-image: linear-gradient(to right, black 0%, transparent 0%);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+    -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 // Einblenden
 .footer-line.show {
-  animation: lineMask 200ms ease-in forwards !important;
+    animation: lineMask 200ms ease-in forwards !important;
 }
 
 // Ausblenden
 .footer-line.hide {
-  animation: lineMaskReverse 200ms ease-out forwards !important;
+    animation: lineMaskReverse 200ms ease-out forwards !important;
 }
 
 form {
@@ -116,7 +116,7 @@ form {
 }
 
 input:is(:-webkit-autofill, :autofill) {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .checkbox {
@@ -196,4 +196,28 @@ button {
         box-shadow: 0px 0px 0px white;
         transform: translate(2px, 4px);
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #1a1a1a inset !important;
+    -webkit-text-fill-color: white !important;
+    background-color: transparent !important;
+}
+
+
+input:-moz-autofill {
+    background-color: transparent !important;
+}
+
+.missingText::placeholder {
+    color: red !important;
+}
+
+.missingTextLabel {
+    border-bottom: 1px solid #ff3333 !important;
+    border-top: 1px solid #ff3333 !important;
+    color: #F87A55 !important;
 }

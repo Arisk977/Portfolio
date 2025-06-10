@@ -15,24 +15,42 @@
     <section class="right">
         <app-svg></app-svg>
 
-        <form onsubmit="">
-            <label for="name">What's your name?
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <label for="name" [class.missingTextLabel]="!name.valid && name.touched">What's your name? 
 
-                <input type="text" id="name" placeholder="Your name goes here" required> </label>
-
-            <label for="email"> What's your email?
-                <input type="text" id="email" placeholder="youremail@email.com" required>
+                <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" #name="ngModel" type="text" id="name"
+                    [placeholder]="!name.valid && name.touched ? 'Oops! it seems your name is missing' : 'Your name goes here'" 
+                    [class.missingText]="!name.valid && name.touched"
+                    required>
             </label>
-            <label for="help"> How can I help you?
-                <input type="text" id="help" placeholder="Hello Lukas, I am interested in..." required>
+
+            <label for="email" [class.missingTextLabel]="!email.valid && email.touched"> What's your email?
+                <input [(ngModel)]="formData.email" [ngModelOptions]="{standalone: true}" #email="ngModel" type="text" id="email"
+                    [placeholder]="!email.valid && email.touched ? 'Hoppla! your email is required' : 'youremail@email.com'" 
+                    [class.missingText]="!email.valid && email.touched"
+                    required
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            </label>
+
+            <label for="help" [class.missingTextLabel]="!message.valid && message.touched"> How can I help you?
+                <input [(ngModel)]="formData.message" [ngModelOptions]="{standalone: true}" #message="ngModel" type="text"
+                    id="help" 
+                    [placeholder]="!message.valid && message.touched ? 'What do you need to develop?' : 'Hello Lukas, I am interested in...'"
+                    [class.missingText]="!message.valid && message.touched"
+                    required>
             </label>
 
             <div class="checkbox">
-                <input type="checkbox" id="custom-checkbox" required>
+                <input type="checkbox" id="custom-checkbox" [(ngModel)]="formData.accepted"
+                    [ngModelOptions]="{standalone: true}" #checkbox="ngModel" required>
                 <label>I've read the <a href="#">privacy policy</a> and agree to the processing of my
                     data as outlined.</label>
+
+                @if(!checkbox.valid && checkbox.touched){
+                <span>Please accept the privacy policy</span>
+                }
             </div>
-            <button disabled>Send</button>
+            <button type="submit" [disabled]="!isFormValid() && !checkbox.valid">Send</button>
         </form>
     </section>
 
