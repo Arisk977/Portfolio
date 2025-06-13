@@ -40,4 +40,11 @@ export class AboutMeComponent implements OnInit, OnDestroy {
       showLine();
     }
   }
+
+   scrollToContact() {
+  const element = document.getElementById("contact-page");
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+}
 }

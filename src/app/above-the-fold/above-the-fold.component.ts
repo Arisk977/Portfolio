@@ -22,4 +22,10 @@ onLeave(event: MouseEvent) {
   target.classList.add('unhovered');
 }
 
+ scrollToContact() {
+  const element = document.getElementById("contact-page");
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+}
 }

@@ -85,17 +85,13 @@ app-svg {
     z-index: 2;
 }
 
-.left img {
-    @include element-size(44px, 280px);
-    align-self: flex-end;
-}
-
 .footer-line {
     width: 280px;
     height: 44px;
     display: block;
     position: relative;
     pointer-events: none;
+    align-self: flex-end;
 
     -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
     mask-image: linear-gradient(to right, black 0%, transparent 0%);
@@ -113,3 +109,19 @@ app-svg {
     animation: lineMaskReverse 200ms ease-out forwards !important;
 }
 
+.contact-animation{
+  position: relative;
+  display: inline-block;
+}
+
+.contact-overlay {
+  @include header-animation-position(-5px, -15px, 130%, 180%);
+}
+
+.contact-animation:hover .contact-overlay{
+  animation: lineMask 180ms ease-in forwards;
+}
+
+.contact-animation .contact-overlay{
+  animation: lineMaskReverse 180ms ease-in-out forwards;
+}
