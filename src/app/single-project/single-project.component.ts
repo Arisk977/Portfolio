@@ -3,10 +3,11 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from '../interfaces/project.interface';
 import { SvgComponent } from '../shared/components/footer/svg/svg.component';
+import { HeaderComponent } from '../shared/components/header/header.component';
 
 @Component({
   selector: 'app-single-project',
-  imports: [CommonModule, SvgComponent],
+  imports: [CommonModule, SvgComponent, HeaderComponent],
   templateUrl: './single-project.component.html',
   styleUrl: './single-project.component.scss',
 })

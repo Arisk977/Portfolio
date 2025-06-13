@@ -1,9 +1,9 @@
 
 <div class="header-wrapper">
-  <header>
-  <h1>Ak</h1>
-  <a class="circle-animation" href="#">About me <img class="circle-overlay" src="assets/circle.png" alt=""></a>
-  <a class="skills-animation" href="#">Skills <img class="skills-overlay" src="assets/skills-line.png" alt=""></a>
+  <header id="topHeader">
+  <h1 (click)="navigateHome()">Ak</h1>
+  <a class="circle-animation" href="#" [ngClass]="{ 'black-text': isSingleProjectPage() }">About me <img class="circle-overlay" src="assets/circle.png" alt=""></a>
+  <a class="skills-animation" href="#" [ngClass]="{ 'black-text': isSingleProjectPage() }">Skills <img class="skills-overlay" src="assets/skills-line.png" alt=""></a>
   <a class="projects-animation" href="#">Projects <img class="projects-overlay" src="assets/project-line.png" alt=""></a>
   <a class="contact-animation" href="#">Contact <img class="contact-overlay" src="assets/contact-line.png" alt=""></a>
 

@@ -17,15 +17,14 @@ a{
 
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     gap: 32px;
     height: 80px;
     background-color: transparent;
     font-family: 'Bricolage Grotesque';
     font-weight: 700;
-    width: 100%;
-    max-width: 1920px;
+    width: 90%;
     >h1{
       font-family: 'Protest Revolution';
       color: #3355FF;
@@ -148,4 +147,8 @@ button{
 
 .contact-animation .contact-overlay{
   animation: lineMaskReverse 180ms ease-in-out forwards;
+}
+
+.black-text {
+  color: black !important;
 }

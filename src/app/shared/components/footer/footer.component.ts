@@ -1,37 +1,45 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SvgComponent } from './svg/svg.component';
-import { FormsModule, NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormComponent } from './form/form.component';
+import { FooterNavComponent } from '../footer-nav/footer-nav.component';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, SvgComponent, FormsModule],
+  imports: [CommonModule, SvgComponent, FormComponent, FooterNavComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent implements OnInit, OnDestroy {
   private intervalId: any;
   private timeoutId: any;
-  formData = {
-    name: "",
-    email: "",
-    message: "",
-    accepted: "",
+
+  email = {
+    name: 'Email',
+    img: 'assets/mail-footer.png',
+    href: 'mailto:karamataris@gmail.com',
   };
-  http = inject(HttpClient);
-  mailTest = true;
-  post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
-    body: (payload: any) => JSON.stringify(payload),
-    options: {
-      headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
-      },
-    },
+
+  linkedIn = {
+    name: 'LinkedIn',
+    img: 'assets/linkedin-footer.png',
+    href: 'https://www.linkedin.com/in/aris-karamat/',
   };
+
+  github = {
+    name: 'GitHub',
+    img: 'assets/skills/Github.png',
+    href: 'https://github.com/Arisk977',
+  };
+
+  scrollToHeader() {
+  const element = document.getElementById("topHeader");
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
 
   ngOnInit(): void {
     const footerLine = document.querySelector('.footer-line');
@@ -56,34 +64,4 @@ export class FooterComponent implements OnInit, OnDestroy {
       clearTimeout(this.timeoutId);
     }
   }
-
-
-  isFormValid(): boolean {
-    return (
-      !this.formData.name &&
-      !this.formData.email &&
-      !this.formData.message &&
-      !this.formData.accepted);
-  }
-
-
-  onSubmit(ngForm: NgForm) {
-       if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.formData))
-        .subscribe({
-          next: (response) => {
-
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      console.log(this.formData);
-      
-      ngForm.resetForm();
-    }
-}
 }

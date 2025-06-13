@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Craft } from '../../interfaces/craft.interface';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-mycraft',
   standalone: true,

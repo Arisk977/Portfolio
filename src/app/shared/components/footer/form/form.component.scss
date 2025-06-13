@@ -1,0 +1,153 @@
+@import 'mixins';
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    >label {
+        @include font-style(24px, 500, white);
+        display: flex;
+        flex-direction: column;
+        padding: 16px 24px;
+        gap: 8px;
+        border-bottom: 1px solid #F7C518;
+
+        &:hover {
+            border-bottom: 1px solid #3355FF;
+            border-top: 1px solid #3355FF;
+            color: #F87A55;
+        }
+
+        >input {
+            background-color: transparent !important;
+            border: none;
+            outline: none;
+            @include font-style(18px, 400, white);
+
+            &::placeholder {
+                @include font-style(18px, 400, white);
+            }
+        }
+
+    }
+}
+
+input:is(:-webkit-autofill, :autofill) {
+    background-color: transparent !important;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 40px 0;
+}
+
+.checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    padding: 8px;
+    border: 2px solid #3355FF;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: all 75ms ease;
+}
+
+.checkbox input[type="checkbox"]:hover {
+    border-color: #3355FF;
+    background-color: #3355FF4D;
+    box-shadow: 0 0 2px 4px #3355FF4D;
+}
+
+.checkbox input[type="checkbox"]:checked {
+    background-image: url('./../../../../../assets/check.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.checkbox input[type="checkbox"]:checked:hover {
+    border-color: #3355FF;
+    background-color: #3355FF4D;
+    box-shadow: 0 0 2px 4px #3355FF4D;
+}
+
+.checkbox a {
+    color: #3355FF;
+    text-decoration: none;
+
+    &:hover {
+        color: #F7C518;
+    }
+}
+
+.checkbox-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    >span{
+        margin-top: -25px;
+        @include font-style(14px, 400, #F87A55);
+
+    }
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    align-self: flex-end;
+    border-radius: 20%;
+    border-radius: 100px;
+    box-shadow: 2px 4px 0px white;
+    @include button-transition();
+    @include element-size(40px, 154px);
+    @include font-style(18px, 500, white);
+
+    &:disabled {
+        color: rgba(248, 249, 250, 0.3);
+        border-color: rgba(248, 249, 250, 0.3);
+        box-shadow: 2px 4px 0px rgba(248, 249, 250, 0.3);
+        cursor: default;
+    }
+
+    &:hover:not(:disabled) {
+        cursor: pointer;
+        color: white;
+        background-color: #F87A55;
+        box-shadow: 0px 0px 0px white;
+        transform: translate(2px, 4px);
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #1a1a1a inset !important;
+    -webkit-text-fill-color: white !important;
+    background-color: transparent !important;
+}
+
+
+input:-moz-autofill {
+    background-color: transparent !important;
+}
+
+.missingText::placeholder {
+    color: red !important;
+}
+
+.missingTextLabel {
+    border-bottom: 1px solid #ff3333 !important;
+    border-top: 1px solid #ff3333 !important;
+    color: #F87A55 !important;
+}
