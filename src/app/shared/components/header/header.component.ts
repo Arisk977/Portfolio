@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { Component, OnInit } from '@angular/core';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Router } from '@angular/router';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,23 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
-  constructor(public router: Router) {}
+export class HeaderComponent implements OnInit {
+  isGerman: boolean = false;
 
+  constructor(public router: Router, private langService: LanguageService) {
+  
+   }
+
+  ngOnInit(): void {
+     this.langService.isGerman$.subscribe(value => {
+      this.isGerman = value;
+    });
+  }
+
+  setLanguage(german: boolean): void {
+    this.isGerman = german;
+    localStorage.setItem('isGerman', String(this.isGerman));
+  }
   navigateHome(): void {
     this.router.navigate(['/']);
   }

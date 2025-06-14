@@ -7,10 +7,12 @@
   <a class="projects-animation" href="#projects">Projects <img class="projects-overlay" src="assets/project-line.png" alt=""></a>
   <a class="contact-animation" href="#contact-page">Contact <img class="contact-overlay" src="assets/contact-line.png" alt=""></a>
 
-  <span>EN 
+  <span>
+    <div id="eng-animation" (click)="setLanguage(false)" [ngClass]="{'active': !isGerman}">EN <img src="assets/language-eng.png" alt="eng" id="eng-overlay" [ngClass]="{'d_none': !isGerman}"></div> 
     <div id="parent">
-    <div id="slide"><button></button></div>
-  </div> DE </span>
+    <div id="slide"><button [ngClass]="{'button-active': isGerman}"></button></div>
+  </div> 
+  <div id="deu-animation" (click)="setLanguage(true)" [ngClass]="{'active': isGerman}">DE<img src="assets/language-deu.png" alt="deu" id="deu-overlay" [ngClass]="{'d_none': isGerman}"></div> </span>
 
 </header>
 </div>
