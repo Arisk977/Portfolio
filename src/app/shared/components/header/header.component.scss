@@ -13,8 +13,15 @@ a{
     width: 100%;
     display: flex;
     justify-content: center;
-    position: absolute;
+    position: fixed;  /* geändert von absolute zu fixed */
     top: 0;
+    left: 0;
+    z-index: 10;
+box-shadow: inset 0px 50px 35px -20px rgba(0, 0, 0, 0.45);
+
+
+
+    transition: transform 0.3s ease-in-out;
 }
 
 header {
@@ -37,6 +44,15 @@ header {
         cursor: default;
       }
     }
+}
+
+.header-wrapper.hide {
+    transform: translateY(-100%);
+}
+
+/* Header anzeigen */
+.header-wrapper.show {
+    transform: translateY(0);
 }
 
 span{

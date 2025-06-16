@@ -1,5 +1,5 @@
 
-<div class="header-wrapper">
+<div class="header-wrapper" [class.show]="headerVisible" [class.hide]="!headerVisible">
   <header id="topHeader">
   <h1 (click)="navigateHome()">Ak</h1>
   <a class="circle-animation" href="#about-me" [ngClass]="{ 'black-text': isSingleProjectPage() }">About me <img class="circle-overlay" src="assets/circle.png" alt=""></a>

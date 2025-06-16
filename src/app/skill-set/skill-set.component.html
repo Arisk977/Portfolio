@@ -67,7 +67,7 @@
         <div class="other-skills">
             <div id="image-container" (mouseenter)="onHover()" (mouseleave)="onLeave()" (click)="showOtherSkills()">
                 <div class="pull-text" [class.germanSize]="isGerman" id="pull-text"><img src="assets/skills/arrow.png" alt=""> {{isGerman? 'Ziehen zum Abziehen' : 'Pull to Peel'}}</div>
-                <img class="pull" id="bg-image" src="assets/skills/pull-to-peel.png" alt="">
+                <img class="pull" [class.germanPosition]="isGerman" id="bg-image" src="assets/skills/pull-to-peel.png" alt="">
                 <img src="assets/hover-image.png" alt="hoveredImage" id="hover-image" class="d_none">
                 <div id="click-image" class="d_none">
                     <h4>{{isGerman? 'Ich bin auch interessiert, mich einzuarbeiten in:' : "Also, I'm interested in diving into:"}}</h4>
