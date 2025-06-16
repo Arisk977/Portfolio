@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { LanguageService } from '../../../../services/language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -9,7 +11,11 @@ import { FormsModule, NgForm } from '@angular/forms';
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
-export class FormComponent {
+export class FormComponent implements OnInit, OnDestroy {
+  isGerman = false;
+  constructor(private langService: LanguageService) { }
+
+  private langSub!: Subscription;
 
   formData = {
     name: "",
@@ -29,6 +35,19 @@ export class FormComponent {
       },
     },
   };
+
+
+  ngOnInit(): void {
+    this.langService.isGerman$.subscribe(value => {
+      this.isGerman = value;
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
+  }
 
   isFormValid() {
     return (
@@ -57,4 +76,45 @@ export class FormComponent {
       ngForm.resetForm();
     }
   }
+
+  englishPrivacy(){
+    return`I've read the <a class='privacy' href="#">privacy policy</a> and agree to the processing of my
+                data as outlined.`
+  }
+
+  germanPrivacy(){
+return `Ich habe die <a class='privacy' href='#'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.`
+  }
+
+
+   getNamePlaceholder(name: NgModel): string {
+    if (!name.valid && name.touched) {
+      return this.isGerman
+        ? 'Oops! Es scheint, als ob dein Name fehlt.'
+        : 'Oops! It seems your name is missing';
+    }
+    return this.isGerman ? 'Hier kommt dein Name hin' : 'Your name goes here';
+  }
+  
+  getEmailPlaceholder(email: NgModel): string {
+    if (!email.valid && email.touched) {
+      return this.isGerman
+        ? 'Hoppla! Deine Email wird benötigt.'
+        : 'Oops! Your email is required';
+    }
+    return this.isGerman ? 'deineEmail@email.de' : 'youremail@email.com';
+  }
+
+ getMessagePlaceholder(message: NgModel): string {
+  if (!message.valid && message.touched) {
+    return this.isGerman
+      ? 'Was benötigen Sie für die Entwicklung?'
+      : 'What do you need to develop?';
+  }
+  return this.isGerman
+    ? 'Hallo Lukas, ich bin interessiert an...'
+    : 'Hello Lukas, I am interested in...';
+}
+
+
 }

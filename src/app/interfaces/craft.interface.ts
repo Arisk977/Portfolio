@@ -1,6 +1,7 @@
 export interface Craft {
     h2: string;
-    p: string;
+    deu: string;
+    eng: string;
     img: string;
     button: string;
     routeId: string;

@@ -1,23 +1,26 @@
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    <label for="name" [class.missingTextLabel]="!name.valid && name.touched">What's your name?
+    <label for="name" [class.missingTextLabel]="!name.valid && name.touched">{{ isGerman ? 'Wie ist Ihr Name?' : `What's your name?` }}
 
         <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" #name="ngModel" type="text" id="name"
-            [placeholder]="!name.valid && name.touched ? 'Oops! it seems your name is missing' : 'Your name goes here'"
-            [class.missingText]="!name.valid && name.touched" required>
+            [placeholder]="getNamePlaceholder(name)" 
+            [class.missingText]="!name.valid && name.touched"
+            required>
     </label>
 
-    <label for="email" [class.missingTextLabel]="!email.valid && email.touched"> What's your email?
+    <label for="email" [class.missingTextLabel]="!email.valid && email.touched">
+        {{ isGerman ? 'Wie lautet Ihre Email?' : "What's your email?" }}
         <input [(ngModel)]="formData.email" [ngModelOptions]="{standalone: true}" #email="ngModel" type="text"
             id="email"
-            [placeholder]="!email.valid && email.touched ? 'Hoppla! your email is required' : 'youremail@email.com'"
+            [placeholder]="getEmailPlaceholder(email)"
             [class.missingText]="!email.valid && email.touched" required
             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
     </label>
 
-    <label for="help" [class.missingTextLabel]="!message.valid && message.touched"> How can I help you?
+    <label for="help" [class.missingTextLabel]="!message.valid && message.touched"> 
+        {{ isGerman ? 'Wie kann ich Ihnen helfen?' : 'How can I help you?' }}
         <input [(ngModel)]="formData.message" [ngModelOptions]="{standalone: true}" #message="ngModel" type="text"
             id="help"
-            [placeholder]="!message.valid && message.touched ? 'What do you need to develop?' : 'Hello Lukas, I am interested in...'"
+            [placeholder]="getMessagePlaceholder(message)"
             [class.missingText]="!message.valid && message.touched" required>
     </label>
 
@@ -25,12 +28,12 @@
         <div class="checkbox">
             <input type="checkbox" id="custom-checkbox" [(ngModel)]="formData.accepted"
                 [ngModelOptions]="{standalone: true}" #checkbox="ngModel" required>
-            <label>I've read the <a href="#">privacy policy</a> and agree to the processing of my
-                data as outlined.</label>
+            <label [innerHTML]="isGerman ? germanPrivacy() : englishPrivacy()"></label>
         </div>
         @if(!checkbox.valid && checkbox.touched){
-        <span>Please accept the privacy policy</span>
+        <span>{{ isGerman ? 'Bitte akzeptieren Sie die Datenschutzerklärung' : 'Please accept the privacy policy' }}</span>
         }
     </div>
-    <button type="submit" [disabled]="!isFormValid() || !checkbox.valid || !email.valid || !name.valid || !message.valid">Send</button>
+    <button type="submit"
+        [disabled]="!isFormValid() || !checkbox.valid || !email.valid || !name.valid || !message.valid">{{ isGerman ? 'Senden' : 'Send' }}</button>
 </form>

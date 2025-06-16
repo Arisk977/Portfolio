@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Craft } from '../../interfaces/craft.interface';
 import { Router } from '@angular/router';
+import { LanguageService } from '../../services/language.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -11,9 +13,25 @@ import { Router } from '@angular/router';
   templateUrl: './mycraft.component.html',
   styleUrl: './mycraft.component.scss'
 })
-export class MycraftComponent {
+export class MycraftComponent implements OnInit{
   @Input() craft!:Craft;
-  constructor(private router: Router) {}
+   isGerman = false;
+  constructor(private router: Router, private langService: LanguageService) {}
+
+    private langSub!: Subscription;
+
+    ngOnInit(): void {
+     this.langService.isGerman$.subscribe(value => {
+          this.isGerman = value;
+        });
+  }
+
+   ngOnDestroy(): void {
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
+  }
+  
    onHover(){
     let button = document.getElementById(`button-${this.craft.button}`);
 

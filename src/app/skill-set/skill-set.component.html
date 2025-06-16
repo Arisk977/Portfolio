@@ -5,8 +5,7 @@
             <h1 id="skill-head">Skill set <img src="assets/circle-line.png" alt="circle-line" id="circle-line"></h1>
         </div>
         <div class="text">
-            <p>A short introduction of your skills. Highlight your experience of using different front-end technologies
-                and emphasise your openness to learning and adapting to new technologies. </p>
+            <p [innerHTML]="isGerman ? germanText() : englishText()"> </p>
         </div>
     </section>
 
@@ -67,11 +66,11 @@
         </div>
         <div class="other-skills">
             <div id="image-container" (mouseenter)="onHover()" (mouseleave)="onLeave()" (click)="showOtherSkills()">
-                <div class="pull-text" id="pull-text"><img src="assets/skills/arrow.png" alt=""> Pull to Peel</div>
+                <div class="pull-text" [class.germanSize]="isGerman" id="pull-text"><img src="assets/skills/arrow.png" alt=""> {{isGerman? 'Ziehen zum Abziehen' : 'Pull to Peel'}}</div>
                 <img class="pull" id="bg-image" src="assets/skills/pull-to-peel.png" alt="">
                 <img src="assets/hover-image.png" alt="hoveredImage" id="hover-image" class="d_none">
                 <div id="click-image" class="d_none">
-                    <h4>Also, I'm interested in diving into:</h4>
+                    <h4>{{isGerman? 'Ich bin auch interessiert, mich einzuarbeiten in:' : "Also, I'm interested in diving into:"}}</h4>
                     <div class="skills-container">
                         <div class="react">
                             <img src="assets/react.png" alt="react">

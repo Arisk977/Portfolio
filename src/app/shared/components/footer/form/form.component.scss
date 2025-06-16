@@ -79,14 +79,7 @@ input:is(:-webkit-autofill, :autofill) {
     box-shadow: 0 0 2px 4px #3355FF4D;
 }
 
-.checkbox a {
-    color: #3355FF;
-    text-decoration: none;
 
-    &:hover {
-        color: #F7C518;
-    }
-}
 
 .checkbox-container{
     display: flex;

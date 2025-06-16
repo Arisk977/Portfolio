@@ -14,19 +14,18 @@ export class HeaderComponent implements OnInit {
   isGerman: boolean = false;
 
   constructor(public router: Router, private langService: LanguageService) {
-  
-   }
+
+  }
 
   ngOnInit(): void {
-     this.langService.isGerman$.subscribe(value => {
+    this.langService.isGerman$.subscribe(value => {
       this.isGerman = value;
     });
   }
-
   setLanguage(german: boolean): void {
-    this.isGerman = german;
-    localStorage.setItem('isGerman', String(this.isGerman));
+    this.langService.setLanguage(german);
   }
+
   navigateHome(): void {
     this.router.navigate(['/']);
   }

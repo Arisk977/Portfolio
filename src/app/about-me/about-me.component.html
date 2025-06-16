@@ -1,19 +1,17 @@
 <main id="about-me">
     <div class="paper-wrapper">
-        <div class="yellow"><img src="assets/location-icon.png" alt="map"> Based in Munich</div>
-        <div class="blue"><img src="assets/travel-icon.png" alt="map"> Open to relocate</div>
-        <div class="red"><img src="assets/work-remote.png" alt="map"> Open to work remote</div>
+        <div class="yellow"><img src="assets/location-icon.png" alt="map"> {{ isGerman ? "Ansässig in Bad Camberg" : "Based in Bad Camberg" }}</div>
+        <div class="blue"><img src="assets/travel-icon.png" alt="map">  {{ isGerman ? "Umzugsbereit" : "open to relocate" }}</div>
+        <div class="red"><img src="assets/work-remote.png" alt="map">{{ isGerman ? "Offen für Remote-Arbeit" : "Open to work remote" }}</div>
     </div>
 
     <div class="about-me">
-        <span>WHO'S ARIS?</span>
-        <h1>About me <img src="assets/line.png" alt="line" id="blue-line"></h1>
+        <span>{{ isGerman ? "WER IST ARIS" : "WHO'S ARIS"}}</span>
+        <h1>{{ isGerman ? "Über mich" : "About me"}} <img src="assets/line.png" alt="line" id="blue-line"></h1>
         
-        <p>Hey there, I'm Aris. Write some information about yourself that is IT related. Why are you passionate about
-            coding? What is your source of inspiration for improving your programming skills? Do you learn from each
-            challenge as you search for the most efficient or elegant solution?
-
-            Let's collaborate and build something remarkable together!</p>
-            <button (click)="scrollToContact()">Let's talk</button>
+        
+        <p [innerHTML]="isGerman ? germanPTag() : englishPTag()"></p>
+        
+        <button (click)="scrollToContact()">{{ isGerman ? "Lasst uns reden" : "Let's talk" }}</button>
     </div>
 </main>

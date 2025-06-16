@@ -1,5 +1,5 @@
 <main [style.backgroundImage]="'url(' + feedback.img + ')'">
-    <p>{{feedback.p}}</p>
+    <p>{{isGerman ? feedback.deu : feedback.eng}}</p>
     <div class="bottom">
         <div class="profile">
             <h3>{{feedback.name}}</h3>

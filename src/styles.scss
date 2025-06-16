@@ -56,3 +56,13 @@ body {
   height: 120px;
   margin-left: -60px;
 }
+
+.privacy{
+    color: #3355FF;
+    text-decoration: none;
+
+    &:hover {
+        color: #F7C518;
+    }
+}
+

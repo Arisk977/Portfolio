@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SvgComponent } from './svg/svg.component';
 import { FormComponent } from './form/form.component';
 import { FooterNavComponent } from '../footer-nav/footer-nav.component';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'app-footer',
@@ -14,7 +15,9 @@ import { FooterNavComponent } from '../footer-nav/footer-nav.component';
 export class FooterComponent implements OnInit, OnDestroy {
   private intervalId: any;
   private timeoutId: any;
+  isGerman = false;
 
+  constructor(private langService: LanguageService) { }
   email = {
     name: 'Email',
     img: 'assets/mail-footer.png',
@@ -34,14 +37,20 @@ export class FooterComponent implements OnInit, OnDestroy {
   };
 
   scrollToHeader() {
-  const element = document.getElementById("topHeader");
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById("topHeader");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
-}
-
 
   ngOnInit(): void {
+    this.footerLineAnimation();
+    this.langService.isGerman$.subscribe(value => {
+      this.isGerman = value;
+    });
+  }
+
+  footerLineAnimation() {
     const footerLine = document.querySelector('.footer-line');
     if (footerLine) {
       const showFooterLine = () => {
@@ -63,5 +72,22 @@ export class FooterComponent implements OnInit, OnDestroy {
     if (this.timeoutId) {
       clearTimeout(this.timeoutId);
     }
+  }
+
+  englishText(){
+    return`I'm always open to exciting new opportunities — whether it's joining a motivated team, contributing to a fresh
+            project, or taking on a freelance challenge.
+            With a strong foundation in front-end development and a drive to keep improving, I'm confident in my ability
+            to make a meaningful impact through clean code, creative problem-solving, and collaboration.
+            <br><br>
+            If you're looking for someone who's reliable, adaptable, and genuinely passionate about building
+            user-focused applications, feel free to reach out. I'd love to hear more about your project or team!`
+  }
+
+  germanText(){
+    return `Ich bin stets offen für spannende neue Möglichkeiten - sei es als Teil eines motivierten Teams, in einem frischen Projekt oder im Rahmen einer freiberuflichen Zusammenarbeit.
+Mit einem soliden Fundament in der Frontend-Entwicklung und dem Antrieb, mich kontinuierlich weiterzuentwickeln, bin ich überzeugt davon, durch sauberen Code, kreatives Problemlösen und Teamarbeit einen echten Mehrwert leisten zu können.
+<br><br>
+Wenn Sie auf der Suche nach jemandem sind, der zuverlässig, anpassungsfähig und mit echter Leidenschaft benutzerorientierte Anwendungen entwickelt - schreiben Sie mir gerne. Ich freue mich darauf, mehr über Ihr Projekt oder Team zu erfahren!`
   }
 }

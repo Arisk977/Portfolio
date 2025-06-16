@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Craft } from './../interfaces/craft.interface';
 import { MycraftComponent } from './mycraft/mycraft.component';
 import { Router } from '@angular/router';
+import { LanguageService } from '../services/language.service';
 
 
 @Component({
@@ -12,11 +13,15 @@ import { Router } from '@angular/router';
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   private timeoutId: any;
+   isGerman = false;
+    
+  constructor(private router: Router, private langService: LanguageService) {
+   }
 
-  constructor(private router: Router) { }
   sharkie: Craft = {
     h2: 'Sharkie',
-    p: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poison bottles to fight against the big boss.',
+    deu: 'Spring-, Lauf- und Wurfspiel basierend auf objektorientiertem Ansatz. Hilf Sharkie, Münzen und Giftflaschen zu finden, um gegen den großen Boss zu kämpfen.',
+    eng: 'Jump, run and throw game based on object-oriented approach. Help Sharkie to find coins and poison bottles to fight against the big boss.',
     img: 'assets/sharky.jpg',
     button: '2',
     routeId: 'sharkie'
@@ -24,7 +29,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   daBubble: Craft = {
     h2: 'DABubble',
-    p: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+    deu: 'Diese App ist eine Slack-Klon-App. Sie revolutioniert die Teamkommunikation und Zusammenarbeit durch ihre intuitive Benutzeroberfläche, Echtzeit-Nachrichtenfunktion und eine robuste Kanalorganisation.',
+    eng: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
     img: 'assets/da-bubble.jpg',
     button: '3',
     routeId: 'daBubble'
@@ -32,6 +38,9 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.lineAnimation();
+     this.langService.isGerman$.subscribe(value => {
+          this.isGerman = value;
+        });
   }
 
   ngOnDestroy(): void {
@@ -76,5 +85,16 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   navigateToProject(projectId: string) {
     this.router.navigate(['/project', projectId]);
+  }
+
+  englishText(){
+    return `Through both collaborative and individual work, I've developed real-world applications ranging from a
+                Kanban project management tool and a 2D jump and run game, to a chatting platform which is currently in progress. Each project
+                reflects my focus on user experience, structured code, and effective teamwork.`
+  }
+
+  germanText(){
+    return `Durch gemeinsame Teamarbeit und eigenständige Projekte habe ich praxisnahe Anwendungen entwickelt - von einem Kanban-Tool für Projektmanagement über ein 2D-Jump-and-Run-Spiel bis hin zu einer Chat-Plattform, die sich derzeit in Entwicklung befindet.
+<br>  <br> Jedes dieser Projekte spiegelt meinen Fokus auf optimale Nutzererfahrung, sauberen Code und effiziente Zusammenarbeit wider.`
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-skill-set',
@@ -9,9 +10,15 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class SkillSetComponent implements OnInit, OnDestroy {
   private timeoutId: any;
   clicked: boolean = false;
+   isGerman = false;
+  
+    constructor(private langService: LanguageService) {}
 
   ngOnInit(): void {
     this.lineAnimation();
+     this.langService.isGerman$.subscribe(value => {
+        this.isGerman = value;
+      });
   }
 
   ngOnDestroy(): void {
@@ -79,6 +86,14 @@ export class SkillSetComponent implements OnInit, OnDestroy {
     textRef?.classList.add('d_none');
     bgImageRef?.classList.add('d_none');
     clickImageRef?.classList.remove('d_none');
+  }
+
+  englishText(){
+    return 'I am always eager to learn and adapt to new tools and approaches, as I know how quickly web development evolves. Staying up to date with the latest trends and best practices is essential to me, and I enjoy continuously expanding my skill set to create modern, user-friendly web applications.'
+  }
+
+  germanText(){
+    return 'Ich bin stets motiviert, neue Tools und Ansätze zu erlernen und mich anzupassen, da ich weiß, wie schnell sich die Webentwicklung weiterentwickelt. Auf dem neuesten Stand der Trends und Best Practices zu bleiben, ist für mich essenziell, und ich habe Freude daran, meine Fähigkeiten kontinuierlich zu erweitern, um moderne, benutzerfreundliche Webanwendungen zu erstellen.'
   }
 
 }

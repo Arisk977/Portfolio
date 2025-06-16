@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-hello-world',
@@ -7,19 +9,37 @@ import { Component } from '@angular/core';
   templateUrl: './hello-world.component.html',
   styleUrl: './hello-world.component.scss'
 })
-export class HelloWorldComponent {
-  buttonText = 'Hello World';
+export class HelloWorldComponent implements OnInit, OnDestroy{
   isHovered = false;
   isLeaving = false;
+  isGerman = false;
+  buttonText = 'Hello World';
+  private langSub!: Subscription;
+
+  constructor(private langService: LanguageService) { }
+
+   ngOnInit(): void {
+     this.langService.isGerman$.subscribe(value => {
+          this.isGerman = value;
+          this.buttonText = this.isGerman ? 'Hallo Welt' : 'Hello World';
+        });
+  }
+
+
+   ngOnDestroy(): void {
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
+  }
 
   onHover() {
-    this.buttonText = "I'M ARIS KARAMAT";
+    this.buttonText = this.isGerman ? 'ICH BIN ARIS KARAMAT' : "I'M ARIS KARAMAT";
     this.isHovered = true;
     this.isLeaving = false;
   }
 
   onLeave() {
-    this.buttonText = 'Hello World';
+    this.buttonText = this.isGerman ? 'Hallo Welt' : 'Hello World';
     this.isHovered = false;
     this.isLeaving = true;
 
