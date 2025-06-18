@@ -1,7 +1,8 @@
-<app-header></app-header>
+
 <main>
     <div class="container-wrapper">
-        <div class="back" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">Go Back</div>
+        <app-header></app-header>
+        <div class="back" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman? 'Zurück': 'Go Back'}}</div>
 
         <div class="project-wrapper">
             <div class="project-details">
@@ -11,18 +12,18 @@
                 </div>
 
                 <span class="description">
-                    <h2>Description</h2>
+                    <h2>{{isGerman? 'Beschreibung': 'Description'}}</h2>
                     <p>{{project.description}}</p>
                 </span>
 
                 <span class="implementation">
-                    <h2>Implementation Details</h2>
-                    <p>{{project.implementation}}</p>
+                    <h2>{{isGerman? 'Implementierungsdetails': 'Implementation Details'}}</h2>
+                    <p [innerHTML]="project.implementation"></p>
                 </span>
 
 
                 <span id="duration">
-                    <h3>Duration:</h3>
+                    <h3>{{isGerman? 'Dauer:': 'Duration:'}}</h3>
                     <p>{{project.duration}}</p>
                 </span>
                 <div id="skills-container">
@@ -49,6 +50,6 @@
 
             </div>
         </div>
-        <div class="next" (click)="navigateNextProject()">Next Project <img src="assets/next.png" alt="next-arrow"></div>
+        <div class="next" (click)="navigateNextProject()">{{isGerman? 'Nächstes Projekt': 'Next Project'}}<img src="assets/next.png" alt="next-arrow"></div>
     </div>
 </main>

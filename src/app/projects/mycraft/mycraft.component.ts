@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Craft } from '../../interfaces/craft.interface';
 import { Router } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './mycraft.component.html',
   styleUrl: './mycraft.component.scss'
 })
-export class MycraftComponent implements OnInit{
+export class MycraftComponent implements OnInit, OnDestroy{
   @Input() craft!:Craft;
    isGerman = false;
   constructor(private router: Router, private langService: LanguageService) {}
