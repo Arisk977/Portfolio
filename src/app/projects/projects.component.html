@@ -3,7 +3,7 @@
 
         <div class="headline">
             <div><span>MY CRAFT</span>
-                <h1>Projects <img id="line" src="assets/project-line-2.png" alt=""></h1>
+                <h1>{{isGerman? 'Projekte': 'Projects'}} <img id="line" src="assets/project-line-2.png" alt=""></h1>
             </div>
 
             <p [innerHTML]="isGerman ? germanText() : englishText()"></p>

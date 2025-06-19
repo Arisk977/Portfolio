@@ -9,4 +9,6 @@ export interface Project {
     duration: string;
     arrowWidth: string;
     skills: Skill[];
+    git: string;
+    live: string;
 }

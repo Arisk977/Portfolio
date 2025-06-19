@@ -1,14 +1,16 @@
-
+<app-header></app-header>
 <main>
+    <div class="back" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman? 'Zurück': 'Go Back'}}</div>
     <div class="container-wrapper">
-        <app-header></app-header>
-        <div class="back" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman? 'Zurück': 'Go Back'}}</div>
+
+
 
         <div class="project-wrapper">
             <div class="project-details">
                 <div class="headline">
                     <h1>{{project.h1}}</h1>
-                    <img [ngStyle]="{ 'width': project.arrowWidth }" src="assets/notebook-line.png" id="blue-line" alt="line">
+                    <img [ngStyle]="{ 'width': project.arrowWidth }" src="assets/notebook-line.png" id="blue-line"
+                        alt="line">
                 </div>
 
                 <span class="description">
@@ -44,12 +46,13 @@
                 </div>
 
                 <div class="buttons">
-                    <button>GitHub</button>
-                    <button>Live Test</button>
+                    <button (click)="navigateTo(project.git)">GitHub</button>
+                    <button (click)="navigateTo(project.live)">Live Test</button>
                 </div>
 
             </div>
         </div>
-        <div class="next" (click)="navigateNextProject()">{{isGerman? 'Nächstes Projekt': 'Next Project'}}<img src="assets/next.png" alt="next-arrow"></div>
     </div>
+    <div class="next" (click)="navigateNextProject()">{{isGerman? 'Nächstes Projekt': 'Next Project'}}<img
+            src="assets/next.png" alt="next-arrow"></div>
 </main>

@@ -33,10 +33,13 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'CSS', imagePath: 'assets/skills/css.png' },
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
       { name: 'Firebase', imagePath: 'assets/skills/firebase.png' },
-    ]
+    ],
+    git: 'https://github.com/Arisk977/Join',
+    live: '',
+
   }
 
-    joinDeu: Project = {
+  joinDeu: Project = {
     description: 'Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mithilfe von Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.',
     implementation: `Im Gruppenprojekt „Join“ entwickelten wir mit JavaScript und Firebase ein Registrierungs- und Login-System, eine Summary Section sowie ein responsives Design. Dabei implementierte ich eigenverantwortlich Lösungen unter Berücksichtigung von Clean-Code-Prinzipien. Durch die enge Zusammenarbeit im Team, inklusive Code-Reviews und gemeinsamer Problemlösung, optimierten wir den Entwicklungsprozess. Die Projektkoordination erfolgte strukturiert über GitHub mit regelmäßigen Commits. <br> <br> Dieses Projekt hat meine Fähigkeiten in selbstständiger Entwicklung sowie teamorientierter und flexibler Arbeitsweise nachhaltig gestärkt.`,
     h1: 'Join',
@@ -49,7 +52,9 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'CSS', imagePath: 'assets/skills/css.png' },
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
       { name: 'Firebase', imagePath: 'assets/skills/firebase.png' },
-    ]
+    ],
+    git: 'https://github.com/Arisk977/Join',
+    live: '',
   }
 
   sharkieDeu: Project = {
@@ -64,7 +69,9 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'JavaScript', imagePath: 'assets/skills/js.png' },
       { name: 'CSS', imagePath: 'assets/skills/css.png' },
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
-    ]
+    ],
+    git: 'https://github.com/Arisk977/Sharkie',
+    live: '',
   }
 
   sharkieEng: Project = {
@@ -79,7 +86,9 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'JavaScript', imagePath: 'assets/skills/js.png' },
       { name: 'CSS', imagePath: 'assets/skills/css.png' },
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
-    ]
+    ],
+    git: 'https://github.com/Arisk977/Sharkie',
+    live: '',
   }
 
   daBubble: Project = {
@@ -95,22 +104,24 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
       { name: 'Angular', imagePath: 'assets/skills/angular.png' },
       { name: 'TypeScript', imagePath: 'assets/skills/ts.png' },
-    ]
+    ],
+    git: '',
+    live: '',
   }
 
   constructor(private route: ActivatedRoute, private router: Router, private langService: LanguageService) { }
 
   ngOnInit(): void {
-      this.langService.isGerman$.subscribe(value => {
-    this.isGerman = value;
+    this.langService.isGerman$.subscribe(value => {
+      this.isGerman = value;
 
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
-      this.loadArray(id);
+      this.route.paramMap.subscribe(params => {
+        const id = params.get('id');
+        this.loadArray(id);
+      });
     });
-  });
     this.lineAnimation();
-  
+
   }
 
   ngOnDestroy(): void {
@@ -178,5 +189,9 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
     const nextIndex = (currentIndex + 1) % projectSequence.length;
     const nextProject = projectSequence[nextIndex];
     this.router.navigate(['/project', nextProject]);
+  }
+
+  navigateTo(url: string): void {
+    window.location.href = url;
   }
 }
