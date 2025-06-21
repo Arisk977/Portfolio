@@ -1,26 +1,22 @@
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    <label for="name" [class.missingTextLabel]="!name.valid && name.touched">{{ isGerman ? 'Wie ist Ihr Name?' : `What's your name?` }}
+    <label for="name" [class.missingTextLabel]="!name.valid && name.touched">{{ isGerman ? 'Wie ist Ihr Name?' : `What's
+        your name?` }}
 
         <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" #name="ngModel" type="text" id="name"
-            [placeholder]="getNamePlaceholder(name)" 
-            [class.missingText]="!name.valid && name.touched"
-            required>
+            [placeholder]="getNamePlaceholder(name)" [class.missingText]="!name.valid && name.touched" required>
     </label>
 
     <label for="email" [class.missingTextLabel]="!email.valid && email.touched">
         {{ isGerman ? 'Wie lautet Ihre Email?' : "What's your email?" }}
         <input [(ngModel)]="formData.email" [ngModelOptions]="{standalone: true}" #email="ngModel" type="text"
-            id="email"
-            [placeholder]="getEmailPlaceholder(email)"
-            [class.missingText]="!email.valid && email.touched" required
-            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            id="email" [placeholder]="getEmailPlaceholder(email)" [class.missingText]="!email.valid && email.touched"
+            required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
     </label>
 
-    <label for="help" [class.missingTextLabel]="!message.valid && message.touched"> 
+    <label for="help" [class.missingTextLabel]="!message.valid && message.touched">
         {{ isGerman ? 'Wie kann ich Ihnen helfen?' : 'How can I help you?' }}
         <input [(ngModel)]="formData.message" [ngModelOptions]="{standalone: true}" #message="ngModel" type="text"
-            id="help"
-            [placeholder]="getMessagePlaceholder(message)"
+            id="help" [placeholder]="getMessagePlaceholder(message)"
             [class.missingText]="!message.valid && message.touched" required>
     </label>
 
@@ -31,9 +27,11 @@
             <label [innerHTML]="isGerman ? germanPrivacy() : englishPrivacy()"></label>
         </div>
         @if(!checkbox.valid && checkbox.touched){
-        <span>{{ isGerman ? 'Bitte akzeptieren Sie die Datenschutzerklärung' : 'Please accept the privacy policy' }}</span>
+        <span>{{ isGerman ? 'Bitte akzeptieren Sie die Datenschutzerklärung' : 'Please accept the privacy policy'
+            }}</span>
         }
     </div>
     <button type="submit"
-        [disabled]="!isFormValid() || !checkbox.valid || !email.valid || !name.valid || !message.valid">{{ isGerman ? 'Senden' : 'Send' }}</button>
+        [disabled]="!isFormValid() || !checkbox.valid || !email.valid || !name.valid || !message.valid">{{ isGerman ?
+        'Senden' : 'Send' }}</button>
 </form>

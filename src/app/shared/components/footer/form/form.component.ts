@@ -24,15 +24,14 @@ export class FormComponent implements OnInit, OnDestroy {
     accepted: "",
   };
   http = inject(HttpClient);
-  mailTest = true;
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://aris-karamat.de/Portfolio/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
         'Content-Type': 'text/plain',
-        responseType: 'text',
       },
+      responseType: 'text' as const,
     },
   };
 
@@ -58,11 +57,10 @@ export class FormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.formData))
         .subscribe({
           next: (response) => {
-
             ngForm.resetForm();
           },
           error: (error) => {
@@ -70,10 +68,6 @@ export class FormComponent implements OnInit, OnDestroy {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      console.log(this.formData);
-
-      ngForm.resetForm();
     }
   }
 

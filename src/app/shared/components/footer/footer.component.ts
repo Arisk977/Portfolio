@@ -74,8 +74,8 @@ export class FooterComponent implements OnInit, OnDestroy {
     }
   }
 
-  englishText(){
-    return`I'm always open to exciting new opportunities — whether it's joining a motivated team, contributing to a fresh
+  englishText() {
+    return `I'm always open to exciting new opportunities — whether it's joining a motivated team, contributing to a fresh
             project, or taking on a freelance challenge.
             With a strong foundation in front-end development and a drive to keep improving, I'm confident in my ability
             to make a meaningful impact through clean code, creative problem-solving, and collaboration.
@@ -84,7 +84,7 @@ export class FooterComponent implements OnInit, OnDestroy {
             user-focused applications, feel free to reach out. I'd love to hear more about your project or team!`
   }
 
-  germanText(){
+  germanText() {
     return `Ich bin stets offen für spannende neue Möglichkeiten - sei es als Teil eines motivierten Teams, in einem frischen Projekt oder im Rahmen einer freiberuflichen Zusammenarbeit.
 Mit einem soliden Fundament in der Frontend-Entwicklung und dem Antrieb, mich kontinuierlich weiterzuentwickeln, bin ich überzeugt davon, durch sauberen Code, kreatives Problemlösen und Teamarbeit einen echten Mehrwert leisten zu können.
 <br><br>
