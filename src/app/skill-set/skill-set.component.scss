@@ -245,3 +245,12 @@ main {
 .d_none {
     display: none;
 }
+
+@media(max-width: 1300px){
+    .top {
+    margin-left: -150px;
+}
+    .bottom{
+        gap: 50px;
+    }
+}

@@ -101,3 +101,9 @@ main {
 #blue-line.hide {
     animation: lineMaskReverse 200ms ease-out forwards !important;
 }
+
+@media(max-width: 1300px){
+    .paper-wrapper {
+    padding: 30px;
+}
+}
