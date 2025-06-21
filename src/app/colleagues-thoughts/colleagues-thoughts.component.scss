@@ -63,6 +63,7 @@ app-feedback {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .feedback1 {
@@ -96,4 +97,13 @@ app-feedback {
     &:hover {
         z-index: 3;
     }
+}
+
+@media(max-width: 1300px){
+.feedback3 {
+    margin-left: -180px;
+}
+.top{
+    padding-left: 360px;
+}
 }

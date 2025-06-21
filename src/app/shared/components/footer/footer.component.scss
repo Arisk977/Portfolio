@@ -130,3 +130,9 @@ app-svg {
   padding-top: 20px;
   margin-bottom: -40px;
 }
+
+@media(max-width: 1300px){
+  footer{
+    gap: 80px;
+  }
+}

@@ -87,3 +87,9 @@ main {
         }
     }
 }
+
+@media(max-width:1300px){
+    main{
+        @include element-size(320px, 430px)
+    }
+}
