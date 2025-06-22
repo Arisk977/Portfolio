@@ -136,3 +136,24 @@ app-svg {
     gap: 80px;
   }
 }
+
+@media(max-width: 1200px){
+  nav{
+    width: 200%;
+  }
+.right {
+    width: 400px;
+  }
+
+  .left {
+    width: 460px;
+  }
+
+  app-svg {
+    @include element-size(180px, 180px);
+  }
+  .footer-line {
+    width: 240px;
+    height: 35px;
+  }
+}

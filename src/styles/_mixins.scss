@@ -10,12 +10,12 @@
     width: $width;
 }
 
-@mixin paper(){
-    @include element-size(152px, 560px);
+@mixin paper($height, $width){
+    @include element-size($height, $width);
     @include font-style(24px, 400, white);
     background-size: 100%;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
     display: flex;
     align-items: center;
     justify-content: center;

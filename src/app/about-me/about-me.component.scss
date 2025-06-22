@@ -19,21 +19,21 @@ main {
 }
 
 .yellow {
-    @include paper();
+    @include paper(152px, 560px);
     background-image: url('./../../assets/yellow-paper.png');
     transform: rotate(-4deg);
     z-index: 2;
 }
 
 .blue {
-    @include paper();
+    @include paper(152px, 560px);
     background-image: url('./../../assets/blue-paper.png');
     margin: -50px;
     z-index: 1;
 }
 
 .red {
-    @include paper();
+    @include paper(152px, 560px);
     transform: rotate(4deg);
     background-image: url('./../../assets/red-paper.png');
     z-index: 0;
@@ -105,5 +105,11 @@ main {
 @media(max-width: 1300px){
     .paper-wrapper {
     padding: 30px;
+}
+    .about-me{
+        padding: 20px;
+    }
+.red, .yellow, .blue {
+    @include paper(140px, 450px);
 }
 }

@@ -78,7 +78,6 @@ main {
 .other-skills {
     position: relative;
     display: flex;
-
 }
 
 .skill-container {
@@ -117,7 +116,7 @@ main {
     transform: rotate(8deg);
 }
 
-.germanSize{
+.germanSize {
     font-size: 30px !important;
 }
 
@@ -155,7 +154,7 @@ main {
     z-index: 0;
 }
 
-.germanPosition{
+.germanPosition {
     top: -45px;
 }
 
@@ -190,6 +189,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 5px;
+
     >p {
         @include font-style(16px, 400, white);
     }
@@ -205,6 +205,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 5px;
+
     >p {
         @include font-style(16px, 400, white);
     }
@@ -246,11 +247,55 @@ main {
     display: none;
 }
 
-@media(max-width: 1300px){
+@media(max-width: 1300px) {
     .top {
-    margin-left: -150px;
-}
-    .bottom{
+        margin-left: -150px;
+    }
+
+    .bottom {
         gap: 50px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .top {
+        margin-left: -50px;
+    }
+
+    .bottom {
+        gap: 50px;
+        margin-right: -50px;
+    }
+
+    #click-image,
+    #hover-image,
+    .pull {
+        @include element-size(180px, 180px);
+    }
+
+    .pull-text {
+        font-size: 36px;
+        >img{
+        height: 30px;
+        width: 40px;
+        }
+    }
+
+    #image-container {
+        width: 160px;
+    }
+
+    #hover-image {
+        top: -105px;
+    }
+
+    #click-image {
+        margin-top: -20px;
+        margin-right: -20px;
+
+        >h4 {
+            padding: 20px 16px;
+        }
+
     }
 }

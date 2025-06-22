@@ -19,20 +19,17 @@ app-feedback {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: flex-end;        
     padding-left: 560px;
-
     >p {
         @include font-style(20px, 500, black);
         display: flex;
         gap: 16px;
-
         >img {
             @include element-size(36px, 100px);
             margin-bottom: -15px;
         }
     }
-
     >h1 {
         @include font-style(64px, 700, black);
     }
@@ -63,7 +60,6 @@ app-feedback {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .feedback1 {
@@ -79,6 +75,7 @@ app-feedback {
 
 
 .feedback2 {
+    margin-right: -200px;
     z-index: 1;
     padding-top: 24px;
     padding-bottom: 24px;
@@ -89,7 +86,6 @@ app-feedback {
 }
 
 .feedback3 {
-    margin-left: -130px;
     transform: rotate(4deg);
     z-index: 0;
     padding-bottom: 24px;
@@ -100,10 +96,22 @@ app-feedback {
 }
 
 @media(max-width: 1300px){
-.feedback3 {
-    margin-left: -180px;
+.feedback2 .feedback1 {
+    margin-right: -200px;
 }
 .top{
     padding-left: 360px;
+}
+}
+
+@media(max-width: 1200px){
+.feedback3{
+    margin-right: -100px;
+}
+.top{
+    padding-left: 220px;
+}
+app-feedback {
+    @include element-size(320px, 482px);
 }
 }
