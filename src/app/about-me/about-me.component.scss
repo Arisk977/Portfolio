@@ -79,7 +79,7 @@ main {
     }
 
     >p {
-        max-width: 540px;
+        width: 540px;
     }
 }
 
@@ -112,4 +112,37 @@ main {
 .red, .yellow, .blue {
     @include paper(140px, 450px);
 }
+}
+
+@media(max-width: 1100px){
+    .about-me{
+        gap: 24px;
+        >span{
+            padding-bottom: 12px;
+            font-size: 18px;
+        }
+        >h1{
+            font-size: 48px;
+        }
+        >p{
+            font-size: 16px;
+            width: 360px;
+        }
+    }
+    .red, .yellow, .blue {
+    @include paper(130px, 380px);
+    font-size: 18px;
+}
+
+}
+
+@media(max-width: 850px){
+    .paper-wrapper{
+        padding: 0;
+    }
+    .red, .yellow, .blue {
+    @include paper(120px, 350px);
+    font-size: 16px;
+}
+
 }
