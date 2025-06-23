@@ -275,9 +275,10 @@ main {
 
     .pull-text {
         font-size: 36px;
-        >img{
-        height: 30px;
-        width: 40px;
+
+        >img {
+            height: 30px;
+            width: 40px;
         }
     }
 
@@ -297,5 +298,45 @@ main {
             padding: 20px 16px;
         }
 
+    }
+}
+
+@media(max-width: 1050px) {
+    .skills {
+        gap: 24px;
+        width: 465px;
+    }
+
+    .skill-container> img {
+    height: 62px;
+    width: 62px;}
+
+    .bottom {
+        margin-right: 0;
+        gap: 30px;
+    }
+
+    .top {
+        margin-left: 0;
+        gap: 30px;
+    }
+
+    .headline {
+        >h1 {
+            font-size: 48px;
+        }
+
+        >span {
+            font-size: 18px;
+        }
+    }
+
+    .text {
+        height: 160px;
+        width: 475px;
+
+        >p {
+            font-size: 14px;
+        }
     }
 }
