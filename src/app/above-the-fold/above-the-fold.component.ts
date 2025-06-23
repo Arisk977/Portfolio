@@ -38,4 +38,8 @@ export class AboveTheFoldComponent implements OnInit {
       element.scrollIntoView({ behavior: "smooth" });
     }
   }
+
+    navigateTo(url: string): void {
+    window.location.href = url;
+  }
 }

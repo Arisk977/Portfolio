@@ -21,4 +21,5 @@ export class ImageFrameComponent {
     this.imageText = 'Aris :)';
     this.isHovered = false;
   }
+
 }

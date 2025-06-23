@@ -35,7 +35,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'Firebase', imagePath: 'assets/skills/firebase.png' },
     ],
     git: 'https://github.com/Arisk977/Join',
-    live: '',
+    live: 'https://aris-karamat.de/Join/index.html',
 
   }
 
@@ -54,7 +54,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'Firebase', imagePath: 'assets/skills/firebase.png' },
     ],
     git: 'https://github.com/Arisk977/Join',
-    live: '',
+    live: 'https://aris-karamat.de/Join/index.html',
   }
 
   sharkieDeu: Project = {
@@ -71,7 +71,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
     ],
     git: 'https://github.com/Arisk977/Sharkie',
-    live: '',
+    live: 'https://aris-karamat.de/Sharkie/index.html',
   }
 
   sharkieEng: Project = {
@@ -88,7 +88,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
     ],
     git: 'https://github.com/Arisk977/Sharkie',
-    live: '',
+    live: 'https://aris-karamat.de/Sharkie/index.html',
   }
 
   daBubble: Project = {

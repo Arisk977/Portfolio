@@ -198,7 +198,7 @@ h1 {
 
 #skills-container {
     display: flex;
-    gap: 8px;
+    gap: 16px;
 
     >div {
         display: flex;
@@ -267,6 +267,11 @@ app-header{
    }
    .back{
     left: 60px;
+   }
+   #skills-container{
+     flex-wrap: wrap;
+    width: 300px;
+    gap: 16px;
    }
 }
 
