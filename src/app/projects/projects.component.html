@@ -2,8 +2,8 @@
     <section class="top">
 
         <div class="headline">
-            <div><span>MY CRAFT</span>
-                <h1>{{isGerman? 'Projekte': 'Projects'}} <img id="line" src="assets/project-line-2.png" alt=""></h1>
+            <div><span class="subtitle">MY CRAFT</span>
+                <h1 class="head-title">{{isGerman? 'Projekte': 'Projects'}} <img id="line" src="assets/project-line-2.png" alt=""></h1>
             </div>
 
             <p [innerHTML]="isGerman ? germanText() : englishText()"></p>

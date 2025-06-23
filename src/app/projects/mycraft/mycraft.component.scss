@@ -108,3 +108,30 @@ button {
     height: 300px;
   }
 }
+
+@media(max-width: 950px) {
+  p{
+        font-size: 14px !important;
+    }
+  h1{
+    font-size: 48px !important;
+  }
+  .description {
+  gap: 16px;
+}
+ .project{
+    width: 335px;
+  }
+
+    .img-container img{
+    height: 235px;
+  }
+
+   button{
+    padding: 4px 8px;
+    box-shadow: 1px 2px 0px white;
+    font-size: 14px;
+    right: 20px;
+    bottom: 20px;
+    }
+}
