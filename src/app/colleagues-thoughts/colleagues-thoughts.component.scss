@@ -96,8 +96,8 @@ app-feedback {
 }
 
 @media(max-width: 1300px){
-.feedback2 .feedback1 {
-    margin-right: -200px;
+.feedback2, .feedback1 {
+    margin-right: -180px;
 }
 .top{
     padding-left: 360px;
@@ -112,6 +112,24 @@ app-feedback {
     padding-left: 220px;
 }
 app-feedback {
-    @include element-size(320px, 482px);
+    @include element-size(320px, 402px);
+}
+}
+
+@media(max-width: 960px){
+.feedback3{
+    margin-right: 80px;
+}
+.feedback2, .feedback1 {
+    margin-right: -130px;
+}
+.top{
+    padding-left: 120px;
+}
+app-feedback {
+    @include element-size(250px, 300px);
+}
+h1{
+    font-size: 48px !important;
 }
 }

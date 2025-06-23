@@ -102,3 +102,11 @@ main {
         }
     }
 }
+
+@media(max-width:960px){
+    main{
+        >p{
+            @include font-style(14px, 400, black);
+        }
+    }
+}
