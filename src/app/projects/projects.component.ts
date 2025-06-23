@@ -95,6 +95,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   germanText(){
     return `Durch gemeinsame Teamarbeit und eigenständige Projekte habe ich praxisnahe Anwendungen entwickelt - von einem Kanban-Tool für Projektmanagement über ein 2D-Jump-and-Run-Spiel bis hin zu einer Chat-Plattform, die sich derzeit in Entwicklung befindet.
-<br>  <br> Jedes dieser Projekte spiegelt meinen Fokus auf optimale Nutzererfahrung, sauberen Code und effiziente Zusammenarbeit wider.`
+ Jedes dieser Projekte spiegelt meinen Fokus auf optimale Nutzererfahrung, sauberen Code und effiziente Zusammenarbeit wider.`
   }
 }

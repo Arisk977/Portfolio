@@ -80,3 +80,13 @@ nav {
   animation: rotateBackAndMove 500ms forwards;
   opacity: 0 !important;
 }
+
+@media(max-width: 960px){
+  .icon-container {
+    top: -35px !important;
+      >img {
+        height: 35px !important;
+        width: 35px !important;
+      }
+    }
+}

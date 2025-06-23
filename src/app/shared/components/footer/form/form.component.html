@@ -27,7 +27,7 @@
             <label [innerHTML]="isGerman ? germanPrivacy() : englishPrivacy()"></label>
         </div>
         @if(!checkbox.valid && checkbox.touched){
-        <span>{{ isGerman ? 'Bitte akzeptieren Sie die Datenschutzerklärung' : 'Please accept the privacy policy'
+        <span class="check-invalid">{{ isGerman ? 'Bitte akzeptieren Sie die Datenschutzerklärung' : 'Please accept the privacy policy'
             }}</span>
         }
     </div>

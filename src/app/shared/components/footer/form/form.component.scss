@@ -81,13 +81,14 @@ input:is(:-webkit-autofill, :autofill) {
 
 
 
-.checkbox-container{
+.checkbox-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 0;
-    >span{
+
+    >span {
         margin-top: -25px;
         @include font-style(14px, 400, #F87A55);
 
@@ -143,4 +144,28 @@ input:-moz-autofill {
     border-bottom: 1px solid #ff3333 !important;
     border-top: 1px solid #ff3333 !important;
     color: #F87A55 !important;
+}
+
+.check-invalid{
+    margin-bottom: 20px;
+}
+
+
+@media(max-width: 960px) {
+    form {
+        >label {
+            font-size: 20px !important;
+            >input{
+                font-size: 16px !important;
+                &::placeholder{
+                    font-size: 16px !important;
+                }
+            }
+        }
+    }
+    .checkbox{
+        >label{
+            font-size: 14px !important;
+        }
+    }
 }

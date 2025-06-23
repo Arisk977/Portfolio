@@ -138,15 +138,22 @@ app-svg {
 }
 
 @media(max-width: 1200px){
-  nav{
-    width: 200%;
-  }
 .right {
     width: 400px;
   }
 
   .left {
     width: 460px;
+    >p{
+      font-size: 16px !important;
+    }
+    >span{
+      font-size: 18px !important;
+    }
+  }
+
+  h1{
+    font-size: 48px !important;
   }
 
   app-svg {
@@ -155,5 +162,47 @@ app-svg {
   .footer-line {
     width: 240px;
     height: 35px;
+  }
+}
+
+@media(max-width: 960px){
+  footer{
+    gap: 20px;
+  }
+  .right{
+    width: 350px;
+    padding-top: 115px;
+  }
+  .left{
+    width: 380px;
+    gap: 20px;
+    
+  }
+  .subtitle{
+    margin-bottom: 0;
+  }
+  app-svg {
+    @include element-size(150px, 150px);
+  }
+}
+
+
+@media(max-width: 800px){
+  .right{
+    width: 330px;
+    padding-top: 60px;
+
+  }
+  .left{
+    width: 330px;
+      >p{
+      font-size: 14px !important;
+    }
+    >span{
+      font-size: 16px !important;
+    }
+  }
+  h1{
+    font-size: 36px !important;
   }
 }
