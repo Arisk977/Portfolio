@@ -36,3 +36,10 @@ div {
     filter: contrast(1.2);
     filter: brightness(1.2);
 }
+
+@media(max-width:960px){
+    div >div {
+        width: 135px;
+        height: 135px;
+    }
+}

@@ -40,7 +40,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 48px;
+    gap: 24px;
 
     >span {
         display: flex;
@@ -225,7 +225,6 @@ app-svg {
     @include element-size(120px, 120px);
     background-image: url('./../../assets/yellow-sticker.png');
     background-size: 100% 100%;
-    background-position: cover;
     background-repeat: no-repeat;
     transform: rotate(15deg);
     margin-left: -60px;
@@ -234,4 +233,73 @@ app-svg {
 
 app-header{
     background-color: transparent;
+}
+
+@media(max-width: 1330px){
+    .project-img{
+    height: 300px;
+    width: 400px;
+}
+ .project-details{
+   gap: 16px;
+   width: 400px;
+}
+
+.description >p{
+    width: 300px;
+    font-size: 16px;
+}
+.implementation >p{
+    width: 350px;
+    font-size: 16px;
+}
+#duration >p{
+    font-size: 16px;
+}
+.skill-name{
+    font-size: 16px;
+}
+}
+
+@media(max-width: 980px){
+   .project-details{
+    margin-left: -70px;
+   }
+   .back{
+    left: 60px;
+   }
+}
+
+@media(max-width: 900px){
+   .project-details{
+  width: 335px;
+   }
+   .sticker, app-svg{
+    width: 100px;
+    height: 100px;        
+    margin-left: -80px;
+   }
+   .project-img{
+    height: 240px;
+    width: 340px;
+}
+
+h1{
+    font-size: 48px;
+}
+
+.description >p{
+    width: 250px;
+    font-size: 14px;
+}
+.implementation >p{
+    width: 300px;
+    font-size: 14px;
+}
+#duration >p{
+    font-size: 14px;
+}
+.skill-name{
+    font-size: 14px;
+}
 }
