@@ -102,47 +102,96 @@ main {
     animation: lineMaskReverse 200ms ease-out forwards !important;
 }
 
-@media(max-width: 1300px){
+@media(max-width: 1300px) {
     .paper-wrapper {
-    padding: 30px;
-}
-    .about-me{
+        padding: 30px;
+    }
+
+    .about-me {
         padding: 20px;
     }
-.red, .yellow, .blue {
-    @include paper(140px, 450px);
-}
+
+    .red,
+    .yellow,
+    .blue {
+        @include paper(140px, 450px);
+    }
 }
 
-@media(max-width: 1100px){
-    .about-me{
+@media(max-width: 1100px) {
+    .about-me {
         gap: 24px;
-        >span{
+
+        >span {
             padding-bottom: 12px;
             font-size: 18px;
         }
-        >h1{
+
+        >h1 {
             font-size: 48px;
         }
-        >p{
+
+        >p {
             font-size: 16px;
             width: 360px;
         }
     }
-    .red, .yellow, .blue {
-    @include paper(130px, 380px);
-    font-size: 18px;
-}
+
+    .red,
+    .yellow,
+    .blue {
+        @include paper(130px, 380px);
+        font-size: 18px;
+    }
 
 }
 
-@media(max-width: 850px){
-    .paper-wrapper{
+@media(max-width: 850px) {
+    .paper-wrapper {
         padding: 0;
     }
-    .red, .yellow, .blue {
-    @include paper(120px, 350px);
-    font-size: 16px;
+
+    .red,
+    .yellow,
+    .blue {
+        @include paper(120px, 350px);
+        font-size: 16px;
+    }
+
 }
+
+@media(max-width: 750px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #blue-line{
+        width: 250px;
+    }
+
+    .paper-wrapper {
+        order: 1;
+    }
+
+    .about-me {
+        order: 0;
+    }
+}
+
+@media(max-width: 390px) {
+    .about-me {
+        >p {
+            font-size: 14px;
+            width: 300px;
+        }
+    }
+
+    .red,
+    .yellow,
+    .blue {
+        @include paper(120px, 300px);
+        font-size: 14px;
+    }
 
 }

@@ -72,7 +72,7 @@ germanPTag(){
 <br><br>Coding excites me because it combines logic and creativity. I enjoy turning ideas into functional, user-friendly applications and appreciate seeing quick results.
 <br><br>I'm based in Bad Camberg and prefer remote work, though I'm open to other working models as well.
 <br><br>I continuously develop my skills and stay up to date with technologies and trends. Openness, a willingness to learn, and adaptability are key qualities that define me.
-<br><br>I approach challenges with analytical thinking, creativity, and persistence – always aiming to develop efficient, well-thought-out solutions in collaboration with others.
+<br><br>I approach challenges with analytical thinking, creativity, and persistence - always aiming to develop efficient, well-thought-out solutions in collaboration with others.
     `
   }
 }
