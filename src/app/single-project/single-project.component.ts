@@ -164,7 +164,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       case 'sharkie':
         this.isGerman ? this.project = this.sharkieDeu : this.project = this.sharkieEng;
         break;
-      case 'dabubble':
+      case 'daBubble':
         this.project = this.daBubble;
         break;
       default:

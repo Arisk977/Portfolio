@@ -64,6 +64,11 @@ p {
   @include font-style(18px, 400, black);
 }
 
+.hide-desktop{
+  display: none;
+  visibility: hidden;
+}
+
 button {
         background-color: rgba(0, 0, 0, 0.01);
         border: 1px solid white;
@@ -134,4 +139,77 @@ button {
     right: 20px;
     bottom: 20px;
     }
+}
+
+@media(max-width: 750px){
+  .hide-desktop{
+    display: block !important;
+    visibility: visible !important;  }
+
+    .button-container{
+      display: flex;
+      position: relative;
+    }
+
+    .project{
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 32px;
+    }
+
+  .mobile-button{
+     box-shadow: 2px 4px 0px black;
+     border: 1px solid black;
+     @include font-style(18px, 400, black);
+     position: relative;
+     align-self: flex-end;
+     justify-self: flex-end;
+  }
+
+  .description{
+    >p{
+      font-size: 18px !important;
+    }
+  }
+
+    .img-container {
+    pointer-events: none;
+
+    &::before {
+      opacity: 0 !important;
+      transition: none !important;
+    }
+
+    &:hover::before {
+      opacity: 0 !important;
+    }
+
+    > img {
+      transform: none !important;
+    }
+  }
+
+  .img-container:hover > img {
+    transform: none !important;
+  }
+
+
+}
+
+@media(max-width: 360px){
+    .project{
+        width: 300px;
+    }
+
+    .description{
+      >p {
+        font-size: 14px !important;
+    }
+    }
+
+    .mobile-button{
+        font-size: 16px !important;
+    }
+
 }

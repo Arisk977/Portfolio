@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Craft } from '../../interfaces/craft.interface';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { Subscription } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-mycraft',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './mycraft.component.html',
   styleUrl: './mycraft.component.scss'
 })

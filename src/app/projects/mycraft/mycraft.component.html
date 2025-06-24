@@ -8,4 +8,8 @@
     <h2>{{ craft.h2 }}</h2>
     <p>{{ isGerman ? craft.deu : craft.eng }}</p>
   </div>
+  <div class="button-container">
+    <button class="hide-desktop mobile-button" [routerLink]="['/project', craft.routeId]">{{ isGerman ? 'Projekt Details' : 'Project details'}}</button>
+  </div>
+  
 </div>

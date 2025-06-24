@@ -64,6 +64,11 @@ section {
     gap: 10px;
 }
 
+.hide-desktop {
+    display: none;
+    visibility: hidden;
+}
+
 .img-container {
     display: flex;
     justify-content: center;
@@ -201,10 +206,11 @@ button {
     .sticker {
         height: 120px;
         width: 120px;
+        margin-right: -100px;
     }
 
     .laptop {
-        padding-left: 50px;
+        margin-right: -60px;
 
         .img-container:hover & {
             transform: scale(1.2);
@@ -235,7 +241,7 @@ button {
     }
 
     .head-title {
-        font-size: 36px !important;
+        font-size: 48px !important;
     }
 
     h2 {
@@ -263,9 +269,99 @@ button {
         width: 100px;
     }
 
-    button{
-    padding: 4px 8px;
-    box-shadow: 1px 2px 0px white;
-    font-size: 14px;
+    button {
+        padding: 4px 8px;
+        box-shadow: 1px 2px 0px white;
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 750px) {
+    .top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    #line {
+        width: 195px;
+        height: 20px
+    }
+
+    main {
+        @include element-size(200vh, 100%);
+        padding-top: 50px;
+        gap: 40px;
+    }
+
+    p {
+        font-size: 18px !important;
+    }
+
+    .mobile-button {
+        box-shadow: 2px 4px 0px black;
+        border: 1px solid black;
+        @include font-style(18px, 400, black);
+        position: relative;
+        align-self: flex-end;
+        justify-self: flex-end;
+    }
+
+    .hide-desktop {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .join{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        gap: 32px;
+    }
+
+    .img-container {
+        pointer-events: none;
+
+        &::before {
+            opacity: 0 !important;
+            transition: none !important;
+        }
+
+        &:hover::before {
+            opacity: 0 !important;
+        }
+    }
+
+    .laptop {
+ 
+        
+        .img-container:hover & {
+            transform: none !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }
+}
+
+@media(max-width: 360px){
+    .headline, .join{
+        width: 300px;
+    }
+
+p {
+        font-size: 14px !important;
+    }
+    .mobile-button{
+        font-size: 16px !important;
     }
 }

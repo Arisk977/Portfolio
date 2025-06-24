@@ -21,6 +21,9 @@
                 <p>{{ isGerman ? "Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Nutzern und Kategorien zu - für eine strukturierte und effiziente Projektplanung." : "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."}}
     </p>
             </div>
+            <div class="button-container">
+                <button class="hide-desktop mobile-button" (click)="navigateToProject(`join`)" id="button">{{ isGerman ? 'Projekt Details' : 'Project details' }}</button>
+            </div>
         </div>
     </section>
 
