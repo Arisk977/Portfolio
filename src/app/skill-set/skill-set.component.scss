@@ -307,9 +307,10 @@ main {
         width: 465px;
     }
 
-    .skill-container> img {
-    height: 62px;
-    width: 62px;}
+    .skill-container>img {
+        height: 62px;
+        width: 62px;
+    }
 
     .bottom {
         margin-right: 0;
@@ -338,5 +339,131 @@ main {
         >p {
             font-size: 14px;
         }
+    }
+}
+
+@media(max-width:750px) {
+    main {
+        padding-top: 140px;
+        justify-content: flex-start;
+        gap: 24px;
+    }
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        gap: 20px;
+    }
+
+    .headline {
+        padding-bottom: 0;
+    }
+
+    .text {
+        height: 130px;
+        width: 450px;
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        >.skills {
+            justify-content: flex-start;
+            gap: 33px;
+            width: 400px;
+        }
+
+        >.other-skills {
+            margin-top: -120px;
+        }
+    }
+
+    #hover-image {
+        top: -35px;
+    }
+}
+
+@media(max-width: 500px) {
+    .bottom {
+        >.skills {
+            width: 300px;
+            gap: 20px;
+        }
+
+        >.other-skills {
+            margin-top: -80px;
+        }
+    }
+
+    .headline{
+        padding-right: 12px;
+        >span{
+            font-size: 16px;
+        }
+        >h1{
+            font-size: 40px;
+        }
+    }
+    .text {
+        height: 190px;
+        width: 320px;
+    }
+    #hover-image {
+        top: -25px;
+    }
+    .skill-container {
+        >img {
+            height: 45px;
+            width: 45px;
+        }
+
+        >span {
+            font-size: 14px;
+        }
+    }
+}
+
+@media(max-width: 400px){
+    #image-container {
+        width: 120px;
+        margin-left: -160px;
+    }
+
+    #click-image,
+    #hover-image,
+    .pull {
+        @include element-size(140px, 140px);
+    }
+
+    .pull-text{
+        font-size: 26px;
+        >img{
+            height: 20px;
+            width: 30px;
+        }
+    }
+
+    #click-image {
+        >h4 {
+            font-size: 14px;
+            padding: 10px 8px;
+        }
+    }
+    .react, .vue-js{
+        >img{
+            height: 30px;
+            width: 30px;
+        }
+        >p{
+            font-size: 16px;
+        }
+    }
+    .text{
+        width: 300px;
     }
 }
