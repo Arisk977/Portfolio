@@ -31,7 +31,12 @@
             }}</span>
         }
     </div>
+
+
+    <div class="button-wrapper">
+    <img src="assets/footer-line.png" class="footer-line-mobile hide-desktop" alt="">
     <button type="submit"
         [disabled]="!isFormValid() || !checkbox.valid || !email.valid || !name.valid || !message.valid">{{ isGerman ?
         'Senden' : 'Send' }}</button>
+        </div>
 </form>

@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class FormComponent implements OnInit, OnDestroy {
   isGerman = false;
+  private timeoutId: any;
   constructor(private langService: LanguageService) { }
 
   private langSub!: Subscription;
@@ -37,6 +38,7 @@ export class FormComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
+    this.footerLineAnimation();
     this.langService.isGerman$.subscribe(value => {
       this.isGerman = value;
     });
@@ -45,6 +47,9 @@ export class FormComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.langSub) {
       this.langSub.unsubscribe();
+    }
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
     }
   }
 
@@ -110,5 +115,21 @@ return `Ich habe die <a class='privacy' href='#'>Datenschutzerklärung</a> geles
     : 'Hello Lukas, I am interested in...';
 }
 
+  footerLineAnimation() {
+    const footerLine = document.querySelector('.footer-line-mobile');
+    if (footerLine) {
+      const showFooterLine = () => {
+        footerLine.classList.remove('hide');
+        footerLine.classList.add('show');
 
+        this.timeoutId = setTimeout(() => {
+          footerLine.classList.remove('show');
+          footerLine.classList.add('hide');
+
+          this.timeoutId = setTimeout(showFooterLine, 400);
+        }, 3000);
+      };
+      showFooterLine();
+    }
+  }
 }

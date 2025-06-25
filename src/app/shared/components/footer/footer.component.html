@@ -1,17 +1,17 @@
 <footer id="contact-page">
+    <app-svg class="hide-desktop mobile-svg"></app-svg>
     <section class="left">
         <span class="subtitle">{{ isGerman ? 'KONTAKTIEREN MICH' : 'CONTACT ME' }}</span>
         <h1 [innerHTML]="isGerman ? 'Bereit für eine Zusammenarbeit?' : 'Ready to work together?'"></h1>
         <p [innerHTML]="isGerman ? germanText() : englishText()">
         </p>
-        <img src="assets/footer-line.png" class="footer-line" alt="">
-        <span class="contact">
+        <img src="assets/footer-line.png" class="footer-line d_none_mobile" alt="">
+        <span class="contact d_none_mobile">
             <h2 (click)="scrollToHeader()">AK</h2>
             <h3>© Aris Karamat 2025</h3>
-
             <nav>
-                <h3 class="contact-animation"> {{ isGerman ? 'Datenschutzerklärung' : 'Legal Notice' }} <img class="contact-overlay" src="assets/contact-line.png"
-                        alt=""></h3>
+                <h3 class="contact-animation"> {{ isGerman ? 'Datenschutzerklärung' : 'Legal Notice' }} <img
+                        class="contact-overlay" src="assets/contact-line.png" alt=""></h3>
                 <app-footer-nav [contact]="github"></app-footer-nav>
                 <app-footer-nav [contact]="linkedIn"></app-footer-nav>
                 <app-footer-nav [contact]="email"></app-footer-nav>
@@ -19,7 +19,27 @@
         </span>
     </section>
     <section class="right">
-        <app-svg></app-svg>
+        <app-svg class="d_none_mobile"></app-svg>
         <app-form></app-form>
     </section>
+
+    <section class="navbar hide-desktop">
+        <span class="mobile-contact">
+            <div class="initials">
+                <h2 (click)="scrollToHeader()">AK</h2>
+                <div class="credits">
+                    <h3>© Aris Karamat 2025</h3>
+                    <h3 class="contact-animation"> {{ isGerman ? 'Datenschutzerklärung' : 'Legal Notice' }} <img
+                            class="contact-overlay" src="assets/contact-line.png" alt=""></h3>
+                </div>
+            </div>
+
+            <nav class="contact-links">
+                <app-footer-nav [contact]="github"></app-footer-nav>
+                <app-footer-nav [contact]="linkedIn"></app-footer-nav>
+                <app-footer-nav [contact]="email"></app-footer-nav>
+            </nav>
+        </span>
+    </section>
+
 </footer>
