@@ -226,6 +226,12 @@ footer {
   flex-direction: column;
   gap: 0px;
 }
+
+app-svg{
+  height: 120px;
+  width: 120px;
+}
+
 .d_none_mobile{
   display: none;
   visibility: hidden;
@@ -249,7 +255,7 @@ footer {
 }
 
 .navbar{
-  margin-top: -20px;
+  margin-top: -10px;
   order: 2;
   width: 100%;
   >.mobile-contact{
@@ -288,5 +294,39 @@ footer {
 
 .mobile-svg{
  margin-right: 20px;
+}
+}
+
+
+@media(max-width: 550px){
+  .left{
+    width: 290px;
+  >h1{
+    font-size: 32px !important;
+  }
+  >p{
+    font-size: 16px !important;
+  }
+}
+
+.right{
+  width: 290px;
+}
+}
+
+@media(max-width: 400px){
+.mobile-svg{
+ margin-right: 5px;
+}
+
+app-svg{
+  height: 100px;
+  width: 100px;
+}
+
+.initials{
+  >h2{
+    padding-left: 0 !important;
+  }
 }
 }
