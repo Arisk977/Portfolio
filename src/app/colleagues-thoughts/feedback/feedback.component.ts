@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { Feedback } from '../../interfaces/feedback.interface';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
@@ -14,6 +14,7 @@ export class FeedbackComponent {
   @Input() feedback!: Feedback;
   isGerman = false;
   private langSub!: Subscription;
+  isMobile = false;
 
   constructor(private langService: LanguageService) { }
 
@@ -21,6 +22,7 @@ export class FeedbackComponent {
     this.langService.isGerman$.subscribe(value => {
       this.isGerman = value;
     });
+    this.updateDeviceType();
   }
 
 
@@ -29,4 +31,19 @@ export class FeedbackComponent {
       this.langSub.unsubscribe();
     }
   }
+
+  @HostListener('window:resize', [])
+  onResize() {
+    this.updateDeviceType();
+  }
+
+  updateDeviceType() {
+    this.isMobile = window.innerWidth <= 750;
+  }
+get backgroundImage(): string {
+  const imgPath = this.isMobile ? this.feedback.mobile_img : this.feedback.img;
+  return `url('${imgPath}')`;
 }
+
+}
+

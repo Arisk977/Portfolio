@@ -5,7 +5,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    @include element-size(320px, 512px);
+    @include element-size(100%, 100%);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative; // wichtig für ::before
@@ -88,15 +88,10 @@ main {
     }
 }
 
-@media(max-width:1300px){
-    main{
-        @include element-size(320px, 430px)
-    }
-}
+
 
 @media(max-width:1200px){
     main{
-        @include element-size(320px, 380px);
         >p{
             @include font-style(16px, 400, black);
         }
@@ -107,6 +102,37 @@ main {
     main{
         >p{
             @include font-style(14px, 400, black);
+            padding: 30px;
         }
     }
+}
+
+@media(max-width: 750px){
+     main{
+         >p{
+            @include font-style(18px, 400, black);
+            padding: 24px;
+        }
+        &::before{
+            background-image: url('./../../../assets/mobile-feedback-hover.png');
+        }
+    }
+
+    .profile{
+      >h3 {
+        @include font-style(18px, 700, black);
+    }
+
+    >p {
+        @include font-style(16px, 500, black);
+    }
+    }
+}
+
+@media(max-width: 360px){
+       main{
+         >p{
+            @include font-style(16px, 400, black);
+            padding: 24px;
+        }}
 }

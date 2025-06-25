@@ -4,4 +4,5 @@ export interface Feedback {
     deu: string;
     eng: string;
     img: string;
+    mobile_img: string;
 }

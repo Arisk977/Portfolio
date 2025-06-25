@@ -127,9 +127,67 @@ app-feedback {
     padding-left: 120px;
 }
 app-feedback {
-    @include element-size(250px, 300px);
+    @include element-size(320px, 320px);
+}
+.feedback-content{
+    padding-left: 85px;
 }
 h1{
     font-size: 48px !important;
+}
+}
+
+@media(max-width: 750px){
+
+    main{
+        margin-top: 100px;
+        @include element-size(160vh, 100%);
+    }
+    .feedback-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        padding-left: 0;
+    }
+
+    .feedback3, .feedback2, .feedback1 {
+    margin-right: 0px;
+    
+}
+.feedback2{
+    margin-bottom: -30px;
+    margin-top: -60px;
+    @include element-size(390px, 311px);
+}
+
+app-feedback {
+    @include element-size(320px, 311px);
+}
+
+.top{
+    padding-right: 100px;
+    align-self: center;
+}
+.top h1{
+    width: 300px;
+text-align: right;
+}
+}
+
+
+@media(max-width: 360px){
+
+    .top{
+    padding-right: 20px;
+    align-self: flex-end;
+}
+.feedback2{
+    @include element-size(390px, 285px);
+}
+
+app-feedback {
+    @include element-size(320px, 285px);
 }
 }

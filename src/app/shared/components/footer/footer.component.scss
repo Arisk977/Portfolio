@@ -206,3 +206,10 @@ app-svg {
     font-size: 36px !important;
   }
 }
+
+@media(max-width: 750px){
+footer {
+  background-size: 200% 100vh;;
+}
+
+}
