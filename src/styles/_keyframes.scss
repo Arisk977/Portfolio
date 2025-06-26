@@ -337,3 +337,34 @@
     transform: translateX(0%) rotate(0deg);
   }
 }
+
+
+@keyframes slideDown {
+  from {
+    top: -80vh;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    top: 0;
+  }
+  to {
+    top: -80vh;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20%, 80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}

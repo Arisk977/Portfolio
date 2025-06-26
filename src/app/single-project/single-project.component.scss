@@ -308,3 +308,44 @@ h1{
     font-size: 14px;
 }
 }
+
+@media(max-width: 750px){
+.d_none_mobile{
+    display: none;
+    visibility: hidden;
+}
+
+main{
+      @include element-size(200vh, 100%);
+}
+.project-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-wrapper{
+    order: 0;
+}
+.back{
+    position: relative;
+}
+.next{
+    position: relative;
+}
+
+.mobile-buttons{
+    width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+}

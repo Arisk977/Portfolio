@@ -1,0 +1,48 @@
+<main class="menu">
+    <section class="top-lane">
+        <div>
+            <h1 (click)="navigateHome()">Ak</h1>
+        </div>
+        <div id="close-button" (click)="handleCloseClick()">
+            <img src="assets/close-menu.png" id="close-menu" alt="cross">
+            <img src="assets/click-close.png" class="d_none" id="close-overlay" alt="">
+        </div>
+    </section>
+
+    <section class="links">
+        <a class="circle-animation" href="#about-me">About
+            me <img class="circle-overlay" src="assets/circle.png" alt=""></a>
+        <a class="skills-animation" href="#skill-set">Skills <img class="skills-overlay" src="assets/skills-line.png"
+                alt=""></a>
+        <a class="projects-animation" href="#projects">Projects <img class="projects-overlay"
+                src="assets/project-line.png" alt=""></a>
+        <a class="contact-animation" href="#contact-page">Contact <img class="contact-overlay"
+                src="assets/contact-line.png" alt=""></a>
+
+        <span>
+            <div id="eng-animation" (click)="setLanguage(false)" [ngClass]="{'active': !isGerman}">EN <img
+                    src="assets/language-eng.png" alt="eng" id="eng-overlay" [ngClass]="{'d_none': !isGerman}"></div>
+            <div id="parent">
+                <div id="slide"><button [ngClass]="{'button-active': isGerman}"></button></div>
+            </div>
+            <div id="deu-animation" (click)="setLanguage(true)" [ngClass]="{'active': isGerman}">DE<img
+                    src="assets/language-deu.png" alt="deu" id="deu-overlay" [ngClass]="{'d_none': isGerman}"></div>
+        </span>
+
+    </section>
+
+    <section class="social-media">
+        <div class="icon-wrapper" (mouseenter)="onHover($event)" (mouseleave)="onLeave($event)"
+            (click)="navigateTo('https://www.linkedin.com/in/aris-karamat/')">
+            <img src="assets/linkedin.png" alt="LinkedIn">
+        </div>
+        <div class="icon-wrapper" (mouseenter)="onHover($event)" (mouseleave)="onLeave($event)"
+            (click)="navigateTo('https://github.com/Arisk977')">
+            <img src="assets/github.png" alt="GitHub">
+        </div>
+        <div class="icon-wrapper" (mouseenter)="onHover($event)" (mouseleave)="onLeave($event)"
+            (click)="navigateTo('mailto:karamataris@gmail.com')">
+            <img src="assets/mail.png" alt="Mail">
+        </div>
+    </section>
+</main>

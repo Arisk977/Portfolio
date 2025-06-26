@@ -1,53 +1,56 @@
 <main>
 
-    <div class="headline">
-        <div class="frontend">
-            <app-hello-world></app-hello-world>
-            <h1>
-                <span id="first">F</span>
-                <span>r</span>
-                <span>o</span>
-                <span>n</span>
-                <span>t</span>
-                <span>e</span>
-                <span>n</span>
-                <span>d</span>
-            </h1>
-        </div>
+  <div class="headline">
+    <div class="frontend">
+      <app-hello-world></app-hello-world>
+      <h1>
+        <span id="first">F</span>
+        <span>r</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>e</span>
+        <span>n</span>
+        <span>d</span>
+      </h1>
+    </div>
 
-        <div class="dev">
-            <app-image-frame></app-image-frame>
-            <h1>
-                <span>D</span>
-                <span>E</span>
-                <span>V</span>
-                <span>E</span>
-                <span>L</span>
-                <span>O</span>
-                <span>P</span>
-                <span>E</span>
-                <span>R</span>
-            </h1>
+    <div class="dev">
+      <app-image-frame></app-image-frame>
+      <h1>
+        <span>D</span>
+        <span>E</span>
+        <span>V</span>
+        <span>E</span>
+        <span>L</span>
+        <span>O</span>
+        <span>P</span>
+        <span>E</span>
+        <span>R</span>
+      </h1>
 
-            <button (click)="scrollToContact()">{{isGerman? "Kontakt aufnehmen": "Get in Touch"}}</button>
-
-        </div>
+      <button (click)="scrollToContact()">{{isGerman? "Kontakt aufnehmen": "Get in Touch"}}</button>
 
     </div>
 
+  </div>
 
-    <div class="bottom">
-        <div class="social-media d_none_mobile" >
-  <div class="icon-wrapper" (mouseenter)="onHover($event)" (mouseleave)="onLeave($event)" (click)="navigateTo('https://www.linkedin.com/in/aris-karamat/')">
-    <img src="assets/linkedin.png" alt="LinkedIn">
-  </div>
-  <div class="icon-wrapper" (mouseenter)="onHover($event)" (mouseleave)="onLeave($event)" (click)="navigateTo('https://github.com/Arisk977')">
-    <img src="assets/github.png" alt="GitHub">
-  </div>
-  <div class="icon-wrapper" (mouseenter)="onHover($event)" (mouseleave)="onLeave($event)" (click)="navigateTo('mailto:karamataris@gmail.com')">
-    <img src="assets/mail.png" alt="Mail">
-  </div>
-</div>
 
+  <div class="bottom">
+    <div class="social-media d_none_mobile">
+      <div class="icon-wrapper" (mouseenter)="onHover($event)" (mouseleave)="onLeave($event)"
+        (click)="navigateTo('https://www.linkedin.com/in/aris-karamat/')">
+        <img src="assets/linkedin.png" alt="LinkedIn">
+      </div>
+      <div class="icon-wrapper" (mouseenter)="onHover($event)" (mouseleave)="onLeave($event)"
+        (click)="navigateTo('https://github.com/Arisk977')">
+        <img src="assets/github.png" alt="GitHub">
+      </div>
+      <div class="icon-wrapper" (mouseenter)="onHover($event)" (mouseleave)="onLeave($event)"
+        (click)="navigateTo('mailto:karamataris@gmail.com')">
+        <img src="assets/mail.png" alt="Mail">
+      </div>
     </div>
+
+  </div>
 </main>

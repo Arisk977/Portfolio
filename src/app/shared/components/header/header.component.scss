@@ -3,92 +3,92 @@
 
 
 
-a{
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
 }
 
 .header-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: fixed;  /* geändert von absolute zu fixed */
-    top: 0;
-    left: 0;
-    z-index: 10;
-box-shadow: inset 0px 50px 35px -20px rgba(0, 0, 0, 0.45);
-
-
-
-    transition: transform 0.3s ease-in-out;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  /* geändert von absolute zu fixed */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: inset 0px 50px 35px -20px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease-in-out;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 32px;
-    height: 80px;
-    background-color: transparent;
-    font-family: 'Bricolage Grotesque';
-    font-weight: 700;
-    width: 90%;
-    >h1{
-      font-family: 'Protest Revolution';
-      color: #3355FF;
-      font-size: 64px;
-      letter-spacing: -10px;
-      &:hover{
-        color: #F7C518;
-        cursor: default;
-      }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  height: 80px;
+  background-color: transparent;
+  font-family: 'Bricolage Grotesque';
+  font-weight: 700;
+  width: 90%;
+
+  >h1 {
+    font-family: 'Protest Revolution';
+    color: #3355FF;
+    font-size: 64px;
+    letter-spacing: -10px;
+
+    &:hover {
+      color: #F7C518;
+      cursor: default;
     }
+  }
 }
 
 .header-wrapper.hide {
-    transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 .header-wrapper.show {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
-span{
-    color: white;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 600;
-    gap: 4px;
+span {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  gap: 4px;
 }
 
-#slide{
-    width: 38px;
-    height: 8px;
-    border-radius: 5px;
-    border:1px solid white;
-    background-color: #F87A55;
-    position: relative;
+#slide {
+  width: 38px;
+  height: 8px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #F87A55;
+  position: relative;
 }
 
-div{
-    display: flex;
-    align-items: center;
+div {
+  display: flex;
+  align-items: center;
 }
 
-button{
-    background-color: blue;
-    border: 1px solid white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 0;
-    transition: all 120ms ease-in-out;
+button {
+  background-color: blue;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  transition: all 120ms ease-in-out;
 }
 
-.button-active{  
+.button-active {
   transform: translateX(20px);
 }
 
@@ -110,7 +110,7 @@ button{
   mask-image: linear-gradient(to bottom, black 0%, transparent 0%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  
+
   transition: opacity 180ms ease-in-out;
 }
 
@@ -123,7 +123,9 @@ button{
 }
 
 
-.skills-animation, .projects-animation, .contact-animation{
+.skills-animation,
+.projects-animation,
+.contact-animation {
   position: relative;
   display: inline-block;
 }
@@ -132,56 +134,61 @@ button{
   @include header-animation-position(-5px, -15px, 150%, 180%);
 }
 
-.skills-overlay{
+.skills-overlay {
   @include header-animation-position(-10px, -35px, 250%, 200%);
 }
 
-.projects-overlay{
+.projects-overlay {
   @include header-animation-position(-10px, -25px, 160%, 200%);
 }
 
-.skills-animation:hover .skills-overlay{
+.skills-animation:hover .skills-overlay {
   animation: lineMask 180ms ease-in forwards;
 }
 
-.skills-animation .skills-overlay{
+.skills-animation .skills-overlay {
   animation: lineMaskReverse 180ms ease-in-out forwards;
 }
 
-.projects-animation:hover .projects-overlay{
+.projects-animation:hover .projects-overlay {
   animation: lineMask 180ms ease-in forwards;
 }
 
-.projects-animation .projects-overlay{
+.projects-animation .projects-overlay {
   animation: lineMaskReverse 180ms ease-in-out forwards;
 }
 
-.contact-animation:hover .contact-overlay{
+.contact-animation:hover .contact-overlay {
   animation: lineMask 180ms ease-in forwards;
 }
 
-.contact-animation .contact-overlay{
+.contact-animation .contact-overlay {
   animation: lineMaskReverse 180ms ease-in-out forwards;
 }
 
 
-#eng-animation, #deu-animation{
+#eng-animation,
+#deu-animation {
   position: relative;
   display: inline-block;
-  &:hover{
+
+  &:hover {
     cursor: pointer;
   }
 }
 
-#eng-overlay, #deu-overlay {
+#eng-overlay,
+#deu-overlay {
   @include header-animation-position(-8px, -4px, 130%, 180%);
 }
 
-#eng-animation:hover #eng-overlay, #deu-animation:hover #deu-overlay{
+#eng-animation:hover #eng-overlay,
+#deu-animation:hover #deu-overlay {
   animation: lineMask 180ms ease-in forwards;
 }
 
-#eng-animation #eng-overlay, #deu-animation #deu-overlay{
+#eng-animation #eng-overlay,
+#deu-animation #deu-overlay {
   animation: lineMaskReverse 180ms ease-in-out forwards;
 }
 
@@ -189,12 +196,99 @@ button{
   color: black !important;
 }
 
-.active{
+.active {
   color: #F87A55 !important;
-  &:hover{
+
+  &:hover {
     cursor: default !important;
   }
 }
-.d_none{
+
+.d_none {
   display: none !important;
+}
+
+.hide-desktop {
+  display: none;
+  visibility: hidden;
+}
+
+app-menu {
+  width: 100%;
+  height: 80vh;
+  position: absolute;
+  top: -80vh;
+}
+
+app-menu.open {
+  animation: slideDown 0.5s ease forwards;
+}
+
+app-menu.close {
+  animation: slideUp 0.5s ease forwards;
+}
+
+
+
+@media(max-width: 750px) {
+  #topHeader{
+    >h1{
+      font-size: 48px !important;
+    }
+  }
+  .d_none_mobile {
+    display: none;
+    visibility: hidden;
+  }
+
+  .hide-desktop {
+    display: initial;
+    visibility: visible;
+
+    >img {
+      height: 16px;
+      width: 24px;
+    }
+  }
+
+.mobile-menu {
+
+  #menu-button:hover {
+    cursor: pointer;
+    filter: invert(27%) sepia(98%) saturate(7476%) hue-rotate(204deg) brightness(98%) contrast(100%);
+  }
+}
+#open-overlay{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+.blue-filter{
+  filter: invert(27%) sepia(98%) saturate(7476%) hue-rotate(204deg) brightness(98%) contrast(100%);
+}
+}
+
+@media(max-width: 600px){
+#open-overlay{
+  right: 25px;
+}
+}
+@media(max-width: 450px){
+#open-overlay{
+  right: 20px;
+}
+}
+@media(max-width: 400px){
+#open-overlay{
+  right: 17px;
+}
+}
+
+@media(max-width: 350px){
+#open-overlay{
+  right: 14px;
+}
 }

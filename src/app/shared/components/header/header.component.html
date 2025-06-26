@@ -1,18 +1,36 @@
-
 <div class="header-wrapper" [class.show]="headerVisible" [class.hide]="!headerVisible">
   <header id="topHeader">
-  <h1 (click)="navigateHome()">Ak</h1>
-  <a class="circle-animation" href="#about-me" [ngClass]="{ 'black-text': isSingleProjectPage() }">About me <img class="circle-overlay" src="assets/circle.png" alt=""></a>
-  <a class="skills-animation" href="#skill-set" [ngClass]="{ 'black-text': isSingleProjectPage() }">Skills <img class="skills-overlay" src="assets/skills-line.png" alt=""></a>
-  <a class="projects-animation" href="#projects">Projects <img class="projects-overlay" src="assets/project-line.png" alt=""></a>
-  <a class="contact-animation" href="#contact-page">Contact <img class="contact-overlay" src="assets/contact-line.png" alt=""></a>
+    <h1 (click)="navigateHome()">Ak</h1>
+    <a class="circle-animation d_none_mobile" href="#about-me" [ngClass]="{ 'black-text': isSingleProjectPage() }">About
+      me <img class="circle-overlay" src="assets/circle.png" alt=""></a>
+    <a class="skills-animation  d_none_mobile" href="#skill-set"
+      [ngClass]="{ 'black-text': isSingleProjectPage() }">Skills <img class="skills-overlay"
+        src="assets/skills-line.png" alt=""></a>
+    <a class="projects-animation  d_none_mobile" href="#projects">Projects <img class="projects-overlay"
+        src="assets/project-line.png" alt=""></a>
+    <a class="contact-animation  d_none_mobile" href="#contact-page">Contact <img class="contact-overlay"
+        src="assets/contact-line.png" alt=""></a>
 
-  <span>
-    <div id="eng-animation" (click)="setLanguage(false)" [ngClass]="{'active': !isGerman}">EN <img src="assets/language-eng.png" alt="eng" id="eng-overlay" [ngClass]="{'d_none': !isGerman}"></div> 
-    <div id="parent">
-    <div id="slide"><button [ngClass]="{'button-active': isGerman}"></button></div>
-  </div> 
-  <div id="deu-animation" (click)="setLanguage(true)" [ngClass]="{'active': isGerman}">DE<img src="assets/language-deu.png" alt="deu" id="deu-overlay" [ngClass]="{'d_none': isGerman}"></div> </span>
+    <span class=" d_none_mobile">
+      <div id="eng-animation" (click)="setLanguage(false)" [ngClass]="{'active': !isGerman}">EN <img
+          src="assets/language-eng.png" alt="eng" id="eng-overlay" [ngClass]="{'d_none': !isGerman}"></div>
+      <div id="parent">
+        <div id="slide"><button [ngClass]="{'button-active': isGerman}"></button></div>
+      </div>
+      <div id="deu-animation" (click)="setLanguage(true)" [ngClass]="{'active': isGerman}">DE<img
+          src="assets/language-deu.png" alt="deu" id="deu-overlay" [ngClass]="{'d_none': isGerman}"></div>
+    </span>
 
-</header>
+    <div class="hide-desktop mobile-menu" (click)="toggleMenu()">
+      <img src="assets/menu.png" id="menu-button" alt="">
+      <img src="assets/click-open.png" class="d_none" id="open-overlay" alt="">
+    </div>
+
+    
+
+  </header>
+
+  <app-menu *ngIf="isMenuVisible"
+  [ngClass]="isMenuOpen ? 'open' : 'close'"
+  (closeMenu)="closeMenu()"></app-menu>
 </div>

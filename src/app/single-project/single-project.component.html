@@ -1,9 +1,7 @@
 <app-header></app-header>
 <main>
-    <div class="back" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman? 'Zurück': 'Go Back'}}</div>
+    <div class="back d_none_mobile" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman? 'Zurück': 'Go Back'}}</div>
     <div class="container-wrapper">
-
-
 
         <div class="project-wrapper">
             <div class="project-details">
@@ -53,6 +51,11 @@
             </div>
         </div>
     </div>
-    <div class="next" (click)="navigateNextProject()">{{isGerman? 'Nächstes Projekt': 'Next Project'}}<img
+
+    <div class="mobile-buttons">
+        <div class="back" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman? 'Zurück': 'Go Back'}}</div>
+        <div class="next" (click)="navigateNextProject()">{{isGerman? 'Nächstes Projekt': 'Next Project'}}<img
             src="assets/next.png" alt="next-arrow"></div>
+    </div>
+    
 </main>
