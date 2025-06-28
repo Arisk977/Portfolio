@@ -174,7 +174,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
   }
 
   navigateBack() {
-    const projectSequence = ['join', 'sharkie', 'dabubble'];
+    const projectSequence = ['join', 'sharkie', 'daBubble'];
     const current = this.project.h1.toLowerCase();
     const currentIndex = projectSequence.indexOf(current);
     const nextIndex = (currentIndex - 1 + projectSequence.length) % projectSequence.length;
@@ -183,7 +183,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
   }
 
   navigateNextProject() {
-    const projectSequence = ['join', 'sharkie', 'dabubble'];
+    const projectSequence = ['join', 'sharkie', 'daBubble'];
     const current = this.project.h1.toLowerCase();
     const currentIndex = projectSequence.indexOf(current);
     const nextIndex = (currentIndex + 1) % projectSequence.length;

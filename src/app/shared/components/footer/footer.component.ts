@@ -4,6 +4,7 @@ import { SvgComponent } from './svg/svg.component';
 import { FormComponent } from './form/form.component';
 import { FooterNavComponent } from '../footer-nav/footer-nav.component';
 import { LanguageService } from '../../../services/language.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -17,7 +18,7 @@ export class FooterComponent implements OnInit, OnDestroy {
   private timeoutId: any;
   isGerman = false;
 
-  constructor(private langService: LanguageService) { }
+  constructor(private langService: LanguageService, private router: Router) { }
   email = {
     name: 'Email',
     img: 'assets/mail-footer.png',
@@ -90,4 +91,12 @@ Mit einem soliden Fundament in der Frontend-Entwicklung und dem Antrieb, mich ko
 <br><br>
 Wenn Sie auf der Suche nach jemandem sind, der zuverlässig, anpassungsfähig und mit echter Leidenschaft benutzerorientierte Anwendungen entwickelt - schreiben Sie mir gerne. Ich freue mich darauf, mehr über Ihr Projekt oder Team zu erfahren!`
   }
+
+ goToPrivacyPolicy() {
+  this.router.navigate(['/privacy-policy']).then(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+
 }

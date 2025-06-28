@@ -362,7 +362,7 @@ main {
     }
 
     .text {
-        height: 130px;
+        height: 170px;
         width: 450px;
     }
 
@@ -410,7 +410,7 @@ main {
         }
     }
     .text {
-        height: 190px;
+        height: 280px;
         width: 320px;
     }
     #hover-image {
@@ -434,6 +434,10 @@ main {
         margin-left: -160px;
     }
 
+    .germanPosition{
+        top: -5px;
+    }
+
     #click-image,
     #hover-image,
     .pull {
@@ -441,7 +445,7 @@ main {
     }
 
     .pull-text{
-        font-size: 26px;
+        font-size: 26px !important;
         >img{
             height: 20px;
             width: 30px;

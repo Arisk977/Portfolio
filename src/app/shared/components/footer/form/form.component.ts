@@ -4,6 +4,7 @@ import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { LanguageService } from '../../../../services/language.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -14,7 +15,7 @@ import { Subscription } from 'rxjs';
 export class FormComponent implements OnInit, OnDestroy {
   isGerman = false;
   private timeoutId: any;
-  constructor(private langService: LanguageService) { }
+  constructor(private langService: LanguageService,  private router: Router) { }
 
   private langSub!: Subscription;
 
@@ -77,12 +78,12 @@ export class FormComponent implements OnInit, OnDestroy {
   }
 
   englishPrivacy(){
-    return`I've read the <a class='privacy' href="#">privacy policy</a> and agree to the processing of my
+    return`I've read the <a class='privacy' href="#privacy-policy" (click)="goToPrivacyPolicy()">privacy policy</a> and agree to the processing of my
                 data as outlined.`
   }
 
   germanPrivacy(){
-return `Ich habe die <a class='privacy' href='#'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.`
+return `Ich habe die <a class='privacy' href='#privacy-policy' (click)="goToPrivacyPolicy()">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.`
   }
 
 
@@ -132,4 +133,8 @@ return `Ich habe die <a class='privacy' href='#'>Datenschutzerklärung</a> geles
       showFooterLine();
     }
   }
+
+  goToPrivacyPolicy() {
+  this.router.navigate(['/legal-notice']);
+}
 }

@@ -1,10 +1,10 @@
 <div class="header-wrapper" [class.show]="headerVisible" [class.hide]="!headerVisible">
   <header id="topHeader">
     <h1 (click)="navigateHome()">Ak</h1>
-    <a class="circle-animation d_none_mobile" href="#about-me" [ngClass]="{ 'black-text': isSingleProjectPage() }">About
+    <a class="circle-animation d_none_mobile" href="#about-me" [ngClass]="{ 'black-text': isSingleProjectPage() || isLegalNoticePage() }">About
       me <img class="circle-overlay" src="assets/circle.png" alt=""></a>
     <a class="skills-animation  d_none_mobile" href="#skill-set"
-      [ngClass]="{ 'black-text': isSingleProjectPage() }">Skills <img class="skills-overlay"
+      [ngClass]="{ 'black-text': isSingleProjectPage() || isLegalNoticePage() }">Skills <img class="skills-overlay"
         src="assets/skills-line.png" alt=""></a>
     <a class="projects-animation  d_none_mobile" href="#projects">Projects <img class="projects-overlay"
         src="assets/project-line.png" alt=""></a>

@@ -87,6 +87,10 @@ export class HeaderComponent implements OnInit {
     return this.router.url.includes('/project');
   }
 
+  isLegalNoticePage(): boolean {
+    return this.router.url.includes('/legal-notice');
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
