@@ -135,6 +135,6 @@ return `Ich habe die <a class='privacy' href='#privacy-policy' (click)="goToPriv
   }
 
   goToPrivacyPolicy() {
-  this.router.navigate(['/legal-notice']);
+  this.router.navigate(['/privacy-policy']);
 }
 }

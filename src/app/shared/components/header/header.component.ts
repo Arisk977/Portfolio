@@ -88,7 +88,7 @@ export class HeaderComponent implements OnInit {
   }
 
   isLegalNoticePage(): boolean {
-    return this.router.url.includes('/legal-notice');
+    return this.router.url.includes('/privacy-policy');
   }
 
   @HostListener('window:scroll', [])

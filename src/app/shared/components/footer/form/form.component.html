@@ -24,7 +24,16 @@
         <div class="checkbox">
             <input type="checkbox" id="custom-checkbox" [(ngModel)]="formData.accepted"
                 [ngModelOptions]="{standalone: true}" #checkbox="ngModel" required>
-            <label [innerHTML]="isGerman ? germanPrivacy() : englishPrivacy()"></label>
+            <label *ngIf="isGerman; else english">
+                Ich habe die <a class="privacy" (click)="goToPrivacyPolicy()">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.
+            </label>
+
+        <ng-template #english>
+              <label>
+                 I've read the <a class="privacy" (click)="goToPrivacyPolicy()">privacy policy</a> and agree to the processing of my data as outlined.
+             </label>
+        </ng-template>
+
         </div>
         @if(!checkbox.valid && checkbox.touched){
         <span class="check-invalid">{{ isGerman ? 'Bitte akzeptieren Sie die Datenschutzerklärung' : 'Please accept the privacy policy'

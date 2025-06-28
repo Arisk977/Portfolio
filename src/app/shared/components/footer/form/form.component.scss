@@ -61,6 +61,10 @@ input:is(:-webkit-autofill, :autofill) {
     transition: all 75ms ease;
 }
 
+.privacy:hover{
+ cursor: pointer;
+}
+
 .checkbox input[type="checkbox"]:hover {
     border-color: #3355FF;
     background-color: #3355FF4D;
@@ -156,28 +160,14 @@ input:-moz-autofill {
   visibility: hidden;
 }
 
-.footer-line-mobile {
-    width: 153px;
-    height: 24px;
-    display: block;
-    position: relative;
-    pointer-events: none;
 
-    -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
-    mask-image: linear-gradient(to right, black 0%, transparent 0%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+@media(min-width: 750px){
+    .button-wrapper{
+        align-self: flex-end;
+    }
 }
 
-// Einblenden
-.footer-line-mobile.show {
-    animation: lineMask 200ms ease-in forwards !important;
-}
 
-// Ausblenden
-.footer-line-mobile.hide {
-    animation: lineMaskReverse 200ms ease-out forwards !important;
-}
 
 
 @media(max-width: 960px) {
@@ -209,6 +199,29 @@ input:-moz-autofill {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.footer-line-mobile {
+    width: 153px;
+    height: 24px;
+    display: block;
+    position: relative;
+    pointer-events: none;
+
+    -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    mask-image: linear-gradient(to right, black 0%, transparent 0%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+// Einblenden
+.footer-line-mobile.show {
+    animation: lineMask 200ms ease-in forwards !important;
+}
+
+// Ausblenden
+.footer-line-mobile.hide {
+    animation: lineMaskReverse 200ms ease-out forwards !important;
 }
 
   form {
