@@ -1,61 +1,66 @@
 <app-header></app-header>
 <main>
-    <div class="back d_none_mobile" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman? 'Zurück': 'Go Back'}}</div>
-    <div class="container-wrapper">
+    <div class="content-wrapper">
+        <div class="back d_none_mobile" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman?
+            'Zurück': 'Go Back'}}</div>
+        <div class="container-wrapper">
 
-        <div class="project-wrapper">
-            <div class="project-details">
-                <div class="headline">
-                    <h1>{{project.h1}}</h1>
-                    <img [ngStyle]="{ 'width': project.arrowWidth }" src="assets/notebook-line.png" id="blue-line"
-                        alt="line">
-                </div>
-
-                <span class="description">
-                    <h2>{{isGerman? 'Beschreibung': 'Description'}}</h2>
-                    <p>{{project.description}}</p>
-                </span>
-
-                <span class="implementation">
-                    <h2>{{isGerman? 'Implementierungsdetails': 'Implementation Details'}}</h2>
-                    <p [innerHTML]="project.implementation"></p>
-                </span>
-
-
-                <span id="duration">
-                    <h3>{{isGerman? 'Dauer:': 'Duration:'}}</h3>
-                    <p>{{project.duration}}</p>
-                </span>
-                <div id="skills-container">
-                    <div *ngFor="let skill of project.skills">
-                        <img [src]="skill.imagePath" [alt]="skill.name" class="skill-image">
-                        <span class="skill-name">{{ skill.name }}</span>
+            <div class="project-wrapper">
+                <div class="project-details">
+                    <div class="headline">
+                        <h1>{{project.h1}}</h1>
+                        <img [ngStyle]="{ 'width': project.arrowWidth }" src="assets/notebook-line.png" id="blue-line"
+                            alt="line">
                     </div>
-                </div>
 
+                    <span class="description">
+                        <h2>{{isGerman? 'Beschreibung': 'Description'}}</h2>
+                        <p>{{project.description}}</p>
+                    </span>
+
+                    <span class="implementation">
+                        <h2>{{isGerman? 'Implementierungsdetails': 'Implementation Details'}}</h2>
+                        <p [innerHTML]="project.implementation"></p>
+                    </span>
+
+
+                    <span id="duration">
+                        <h3>{{isGerman? 'Dauer:': 'Duration:'}}</h3>
+                        <p>{{project.duration}}</p>
+                    </span>
+                    <div id="skills-container">
+                        <div *ngFor="let skill of project.skills">
+                            <img [src]="skill.imagePath" [alt]="skill.name" class="skill-image">
+                            <span class="skill-name">{{ skill.name }}</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="project-showcase">
+                    <div id="images">
+                        <img [src]="project.imagePath" alt="project" class="project-img" />
+
+                        <img *ngIf="project.h1 === 'Join'" src="assets/sticker.png" alt="" class="sticker">
+                        <app-svg class="notebook-sticker"
+                            *ngIf="project.h1 === 'Sharkie' || project.h1 === 'DABubble'"></app-svg>
+                    </div>
+
+                    <div class="buttons">
+                        <button (click)="navigateTo(project.git)">GitHub</button>
+                        <button (click)="navigateTo(project.live)">Live Test</button>
+                    </div>
+
+                </div>
             </div>
-            <div class="project-showcase">
-                <div id="images">
-                    <img [src]="project.imagePath" alt="project" class="project-img" />
+        </div>
 
-                    <img *ngIf="project.h1 === 'Join'" src="assets/sticker.png" alt="" class="sticker">
-                    <app-svg class="notebook-sticker"
-                        *ngIf="project.h1 === 'Sharkie' || project.h1 === 'DABubble'"></app-svg>
-                </div>
-
-                <div class="buttons">
-                    <button (click)="navigateTo(project.git)">GitHub</button>
-                    <button (click)="navigateTo(project.live)">Live Test</button>
-                </div>
-
-            </div>
+        <div class="mobile-buttons">
+            <div class="back hide-desktop" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman? 'Zurück':
+                'Go Back'}}</div>
+            <div class="next" (click)="navigateNextProject()">{{isGerman? 'Nächstes Projekt': 'Next Project'}}<img
+                    src="assets/next.png" alt="next-arrow"></div>
         </div>
     </div>
 
-    <div class="mobile-buttons">
-        <div class="back" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman? 'Zurück': 'Go Back'}}</div>
-        <div class="next" (click)="navigateNextProject()">{{isGerman? 'Nächstes Projekt': 'Next Project'}}<img
-            src="assets/next.png" alt="next-arrow"></div>
-    </div>
-    
+
 </main>

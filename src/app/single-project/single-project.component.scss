@@ -10,20 +10,31 @@ main {
     background-color: #0E1013;
     color: black;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    color: black;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .container-wrapper {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 148px;
+    position: relative;
     gap: 20px;
     width: calc(100% - 240px);
-    max-width: 1920px;
 }
 
 p {
@@ -90,6 +101,11 @@ p {
     gap: 32px;
 }
 
+.mobile-buttons{
+    align-self: flex-end;
+    padding-right: 100px;
+}
+
 button {
     background-color: rgba(0, 0, 0, 0.01);
     border: 1px solid white;
@@ -113,10 +129,6 @@ button {
     color: white;
     @include font-style(18px, 700, white);
     display: flex;
-    // align-self: flex-end;
-    position: absolute;
-    bottom: 100px;
-    right: 100px;
     align-items: center;
     gap: 8px;
 
@@ -134,11 +146,9 @@ button {
     @include font-style(18px, 700, black);
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 100px;
-    left: 130px;
+    align-self: flex-start;
     gap: 8px;
-    margin-left: -40px;
+    padding-left: 100px;
 
     >img {
         @include element-size(24px, 24px);
@@ -235,6 +245,11 @@ app-header {
     background-color: transparent;
 }
 
+.hide-desktop{
+    display: none;
+    visibility: hidden;
+}
+
 @media(max-width: 1330px) {
     .project-img {
         height: 300px;
@@ -266,25 +281,6 @@ app-header {
 }
 
 @media(max-width: 980px) {
-    .project-details {
-        margin-left: -70px;
-    }
-
-    .back {
-        left: 60px;
-    }
-
-    #skills-container {
-        flex-wrap: wrap;
-        width: 300px;
-        gap: 16px;
-    }
-}
-
-@media(max-width: 900px) {
-    .project-details {
-        width: 335px;
-    }
 
     .sticker,
     app-svg {
@@ -297,6 +293,34 @@ app-header {
         height: 240px;
         width: 340px;
     }
+
+
+    #skills-container {
+        flex-wrap: wrap;
+        width: 300px;
+        gap: 16px;
+    }
+    .project-details {
+        gap: 8px;
+    }
+}
+
+@media(max-width: 900px) {
+    .project-details {
+        width: 335px;
+    }
+
+   .container-wrapper{
+        width: calc(100% - 140px);
+   }
+
+   .back{
+    padding-left: 50px;
+   }
+
+   .mobile-buttons{
+    padding-right: 50px;
+   }
 
     h1 {
         font-size: 48px;
@@ -321,14 +345,26 @@ app-header {
     }
 }
 
+@media(max-width: 800px){
+     .container-wrapper{
+        width: calc(100% - 90px);
+   }
+}
+
 @media(max-width: 750px) {
+    .hide-desktop{
+    display: block;
+    visibility: visible;
+}
     .d_none_mobile {
         display: none;
         visibility: hidden;
     }
 
     main {
-        @include element-size(160vh, 100%);
+        min-height: 100vh;
+        @include element-size(auto, 100%);
+        padding: 80px 20px;
         gap: 64px;
         background-image: url('./../../assets/project-view-bg.png');
     }
@@ -365,11 +401,20 @@ app-header {
         right: auto;
     }
 
+    .content-wrapper{
+        gap: 48px;
+    }
+
     .mobile-buttons {
-        width: 80%;
+        width: 100%;        
         display: flex;
         justify-content: space-between;
         align-items: center;
+        >.back{
+            display: flex;
+            align-items: center;
+
+        }
     }
 
     .project-details {
@@ -400,13 +445,12 @@ app-header {
 }
 
 @media(max-width: 360px) {
-    .mobile-buttons {
-        width: 70%;
+    main{
+        padding: 80px 5px;
     }
-
     .next {
         margin-right: -20px;
-        width: 145px;
+        width: 120px;
     }
 
     .project-img {

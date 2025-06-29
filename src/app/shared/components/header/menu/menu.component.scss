@@ -2,8 +2,7 @@
 @import 'keyframes';
 
 main {
-    width: 100%;
-    height: 100%;
+    @include element-size(100%, 100%);
     background-image: url('./../../../../../assets/menu-bg.png');
     background-size: 100% 100%;
     display: flex;
@@ -36,18 +35,24 @@ h1{
 }
 
 #close-button{
+    position: relative;
+    display: inline-block;
    >#close-menu:hover {
     cursor: pointer;
     filter: invert(27%) sepia(98%) saturate(7476%) hue-rotate(204deg) brightness(98%) contrast(100%);
   }
 }
 
-#close-overlay{
-  position: absolute;
-  top: 75px;
-  right: 18px;
-  height: 32px !important;
-  width: 32px !important;
+.close-wrapper {
+  position: relative;
+
+  #close-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 32px;
+    width: 32px;
+  }
 }
 
 .blue-filter{
@@ -264,3 +269,9 @@ h1{
     animation: lineMaskReverse 180ms ease-in-out forwards;
 }
 
+@media(max-height: 760px){
+    main{
+        gap: 36px;
+        padding-top: 80px;
+    }
+}

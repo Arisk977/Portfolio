@@ -2,17 +2,18 @@
 @import 'keyframes';
 
 main {
-    @include element-size(100vh, 100%);
+    @include element-size(auto, 100%);
     background-image: url('./../../assets/skills-bg.png');
     background-position: center;
-    background-size: 100% 100vh;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 150px;
     gap: 48px;
 }
 

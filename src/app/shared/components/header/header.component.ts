@@ -73,6 +73,10 @@ export class HeaderComponent implements OnInit {
 
   closeMenu(): void {
     this.isMenuOpen = false;
+    setTimeout(() => {
+      this.isMenuVisible = false;
+    }, 300)
+    
   }
 
   setLanguage(german: boolean): void {
@@ -100,5 +104,6 @@ export class HeaderComponent implements OnInit {
       this.headerVisible = true;
     }
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  }
+  };
+
 }

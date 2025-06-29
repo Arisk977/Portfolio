@@ -2,14 +2,16 @@
 @import 'keyframes';
 
 footer {
-    @include element-size(100vh, 100%);
+    @include element-size(auto, 100%);
     background-image: url('./../../../../assets/footer-bg.png');
-    background-size: 100% 100vh;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
     gap: 160px;
 }
 
@@ -224,10 +226,9 @@ app-svg {
 
 @media(max-width: 750px){
 footer {
-  @include element-size(180vh, 100%);
-  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
+  padding-top: 100px;
   gap: 0px;
 }
 

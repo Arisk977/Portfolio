@@ -2,7 +2,7 @@
 @import 'keyframes';
 
 main {
-    @include element-size(100vh, 100%);
+    @include element-size(auto, 100%);
     background-color: white;
     color: black;
     display: flex;
@@ -10,7 +10,8 @@ main {
     align-items: center;
     justify-content: center;
     gap: 88px;
-    padding-top: 144px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .headline {

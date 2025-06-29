@@ -2,8 +2,10 @@
 @import 'keyframes';
 
 main {
-    @include element-size(100vh, 100%);
+    @include element-size(auto, 100%);
     @include font-style(20px, 400, black);
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: center;

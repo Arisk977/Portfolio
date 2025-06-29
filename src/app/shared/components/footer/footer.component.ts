@@ -38,7 +38,7 @@ export class FooterComponent implements OnInit, OnDestroy {
   };
 
   scrollToHeader() {
-    const element = document.getElementById("topHeader");
+    const element = document.getElementById("head");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
