@@ -1,5 +1,6 @@
-<div class="content-wrapper">
+
 <main id="privacy-policy">
+  <div class="content-wrapper">
   <app-header></app-header>
   <section id="privacy-policy" *ngIf="isGerman; else englishContent">
     <div class="left">
@@ -7,7 +8,7 @@
      
 
       <h2 class="german-h2">1. Einleitung</h2>
-      <p>
+      <p class="einleitung">
         Ich freue mich über Ihr Interesse an meiner Portfolio-Website. Der Schutz Ihrer persönlichen Daten ist mir
         wichtig.
         Diese Datenschutzerklärung informiert Sie darüber, welche Daten beim Besuch dieser Website erhoben und wie diese
@@ -55,8 +56,8 @@
         Diese Website verwendet keine Cookies zur Nutzerverfolgung oder Analyse.
       </p>
 
-      <h2 class="german-h2">6. Externe Links und Inhalte Dritter</h2>
-      <p>
+      <h2 class="german-h2 mobile-white">6. Externe Links und Inhalte Dritter</h2>
+      <p class="mobile-white">
         Mein Portfolio kann Links zu externen Webseiten enthalten (z. B. zu Projekten auf GitHub oder anderen
         Plattformen).
         Für deren Inhalte sind ausschließlich die jeweiligen Betreiber verantwortlich. Beim Anklicken solcher Links
@@ -64,11 +65,11 @@
         deren Datenschutzbestimmungen.
       </p>
 
-      <h2 class="german-h2">7. Ihre Rechte</h2>
-      <p>
+      <h2 class="german-h2 mobile-white">7. Ihre Rechte</h2>
+      <p class="mobile-white">
         Sie haben das Recht auf:
       </p>
-      <ul>
+      <ul class="mobile-white">
         <li>Auskunft über die von mir <br> gespeicherten personenbezogenen Daten</li>
         <li>Berichtigung unrichtiger Daten</li>
         <li>Löschung Ihrer Daten, sofern dem keine <br> gesetzlichen Aufbewahrungspflichten entgegenstehen</li>
@@ -76,12 +77,12 @@
         <li>Widerspruch gegen die Verarbeitung</li>
         <li>Datenübertragbarkeit</li>
       </ul>
-      <p>
+      <p class="mobile-white">
         Zur Ausübung Ihrer Rechte wenden Sie sich bitte an die oben genannte Kontaktadresse.
       </p>
 
-      <h2 class="german-h2">8. Änderungen dieser Datenschutzerklärung</h2>
-      <p>
+      <h2 class="german-h2 mobile-white">8. Änderungen dieser Datenschutzerklärung</h2>
+      <p class="mobile-white">
         Ich behalte mir vor, diese Datenschutzerklärung bei Bedarf anzupassen, insbesondere bei Änderungen der
         rechtlichen
         Vorgaben oder der Website-Funktionalität.
@@ -146,7 +147,7 @@
         This website does not use cookies for user tracking or analytics.
       </p>
 
-      <h2>6. External Links and Third-Party Content</h2>
+      <h2 class="content6">6. External Links and Third-Party Content</h2>
       <p class="content6">
         My portfolio may contain links to external websites (e.g. to projects on GitHub or other platforms).
         I am not responsible for the content of these external sites. When clicking such links, the privacy policies of
@@ -178,5 +179,5 @@
     </div>
    </section>
   </ng-template>
-</main>
 </div>
+</main>

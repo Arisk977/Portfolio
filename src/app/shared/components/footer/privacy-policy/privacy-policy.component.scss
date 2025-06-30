@@ -2,26 +2,27 @@
 @import 'keyframes';
 
 main {
-    @include element-size(auto, 100%);
+    @include element-size(100vh, 100%);
     background-image: url('./../../../../../assets/notebook-paper.png');
     background-position: center;
     background-size: 100% 100%;
-    min-height: 100vh;
     background-repeat: no-repeat;
     background-color: #0E1013;
     color: black;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; 
-    gap: 48px; 
-    padding: 70px 70px;
+    justify-content: center;
 }
 
 .content-wrapper {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 70px 70px;
+    max-width: 1920px;
+    overflow-y: auto; // Falls nötig
+    box-sizing: border-box;
 }
 
 
@@ -30,7 +31,7 @@ section {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1920px;
+    gap: 100px;
 
     >div {
         display: flex;
@@ -49,7 +50,7 @@ ul {
     width: 100%;
 
     >p {
-        width: 80%;
+        width: 100%;
     }
 }
 
@@ -59,7 +60,7 @@ ul {
 
 
     >p {
-        width: 80%;
+        width: 100%;
     }
 }
 
@@ -81,88 +82,102 @@ a {
     }
 }
 
-@media (min-width: 750px){
-    @media(max-width: 1600px){
-        .german{
+@media (min-width: 750px) {
+    @media(max-width: 1600px) {
+        .german {
             font-size: 48px;
         }
-    }
 
-      @media(max-width: 1300px){
-        .german{
-            font-size: 40px;
+        .content-wrapper {
+            padding: 70px 40px;
         }
     }
 
-    @media(max-width: 1200px) {
+    @media(max-width: 1300px) {
+        .german {
+            font-size: 40px;
+        }
+
         h2 {
             width: 400px;
         }
+
         main {
             overflow: hidden;
         }
-            section{
-        gap: 28px;
-        >div{
-            gap: 8px;
+
+        section {
+            gap: 28px;
+
+            >div {
+                gap: 8px;
+            }
+        }
+
+        .right {
+            padding-left: 70px;
         }
     }
-    }
 
-    @media(max-width: 1100px) {
-        .german{
+    @media(max-width: 1150px) {
+        .german {
             font-size: 32px;
         }
+
         h1 {
-            font-size: 48px;
-        }
-
-        h2 {
-            font-size: 20px;
-        }
-
-        li {
-            width: 300px;
-        }
-    }
-
-    @media(max-width: 1100px) {
-        p {
-            font-size: 14px;
-        }
-
-        li {
-            font-size: 14px;
+            font-size: 32px;
         }
 
         h2 {
             font-size: 18px;
             width: 300px;
         }
-        h1 {
-            font-size: 32px;
+
+        li {
+            font-size: 14px;
+            width: 300px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+
+    @media(max-width: 950px) {
+        .german {
+            font-size: 24px;
+        }
+
+        .german-h2 {
+            font-size: 16px;
+        }
+
+        .right {
+            padding-left: 40px;
         }
 
     }
-    @media(max-width: 950px){
-    .german{
-        font-size: 24px;
-    } 
-    .german-h2{
-        font-size: 16px;
+
+    @media(max-width: 950px) {
+        .right {
+            padding-left: 20px;
+        }
     }
 
-    }
-   
 }
 
 
 @media(max-width: 750px) {
-    .german{
-font-size: 48px;
+    .mobile-white{
+        color: white;
+        filter: drop-shadow(1px 1px 4px black);
+    }
+    .german {
+        font-size: 48px;
     }
 
-    .text-white{
+    .text-white {
         color: white;
         filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.615))
     }
@@ -178,13 +193,12 @@ font-size: 48px;
         align-items: center;
         justify-content: center;
         gap: 16px;
-      
+
     }
 
     main {
-        @include element-size(180vh, 100%);
+        @include element-size(auto, 100%);
         background-image: url('./../../../../../assets/project-view-bg.png');
-        padding: 80px 70px;
     }
 
     .right {
@@ -197,7 +211,7 @@ font-size: 48px;
         font-size: 48px;
     }
 
-    .german{
+    .german {
         font-size: 32px;
     }
 
@@ -216,19 +230,22 @@ font-size: 48px;
     }
 }
 
-@media(max-width: 515px){
-    .content6{
+@media(max-width: 515px) {
+    .content6 {
         color: white;
         filter: drop-shadow(1px 1px 10px black)
+    }
+    .content-wrapper{
+        padding: 80px 20px;
     }
 }
 
 @media(max-width: 450px) {
-     h1 {
+    h1 {
         font-size: 32px;
     }
 
-    .german{
+    .german {
         font-size: 24px;
     }
 
@@ -237,7 +254,7 @@ font-size: 48px;
         width: 300px;
     }
 
-      p {
+    p {
         font-size: 14px;
     }
 
@@ -245,13 +262,10 @@ font-size: 48px;
         font-size: 14px;
         width: 250px;
     }
-    main {
-        padding: 80px 30px;
-    }
 }
 
-@media(max-width: 350px) {
-main{
-        padding: 80px 15px;
+@media(max-width: 370px) {
+    ul{
+        margin-left: -30px;
     }
 }

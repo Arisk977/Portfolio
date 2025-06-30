@@ -104,16 +104,15 @@ Mit einem soliden Fundament in der Frontend-Entwicklung und dem Antrieb, mich ko
 Wenn Sie auf der Suche nach jemandem sind, der zuverlässig, anpassungsfähig und mit echter Leidenschaft benutzerorientierte Anwendungen entwickelt - schreiben Sie mir gerne. Ich freue mich darauf, mehr über Ihr Projekt oder Team zu erfahren!`
   }
 
-  goToPrivacyPolicy() {
-    this.router.navigate(['/privacy-policy']).then(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-    goToLegalNotice() {
-    this.router.navigate(['/legal-notice']).then(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    navigateTo(id:string, path:string) {
+  this.router.navigate([path]).then(() => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100); // Wartezeit, damit DOM fertig ist
+  });
   }
 
 

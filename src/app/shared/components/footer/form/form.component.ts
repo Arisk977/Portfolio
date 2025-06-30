@@ -139,6 +139,10 @@ return `Ich habe die <a class='privacy' href='#privacy-policy' (click)="goToPriv
   }
 
   goToPrivacyPolicy() {
-  this.router.navigate(['/privacy-policy']);
+    this.router.navigate(['/privacy-policy']).then(() => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 300);
+})
 }
 }

@@ -1,6 +1,9 @@
 <section id="legal-notice">
+    <div class="content-wrapper">
+
+    
     <app-header></app-header>
-    <div class="container">
+    <div class="container" *ngIf="isGerman; else englishContent">
         <div class="left">
             <h1>Impressum</h1>
             <h2>Angaben gemäß § 5 TMG</h2>
@@ -53,11 +56,62 @@
                 Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links
                 umgehend entfernen.
             </p>
-
-         
-
         </div>
 
 
+    </div>
+    <ng-template #englishContent>
+        <div class="left">
+  <h1>Legal Notice</h1>
+  <h2>Information pursuant to § 5 TMG</h2>
+  <p>
+    <strong>Aris Karamat</strong><br />
+    Schulstraße 8a<br />
+    65520 Bad Camberg<br />
+    Germany
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Email: <a href="mailto:karamataris@gmail.com">karamataris&#64;gmail.com</a>
+  </p>
+
+  <h2>Copyright</h2>
+  <p class="copyright">
+    The content and works created by the site operator on these pages are subject to German copyright law. Reproduction, editing, distribution, and any kind of use outside the limits of copyright law require the written consent of the respective author or creator.
+    Downloads and copies of this site are permitted for private, non-commercial use only.
+    Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected.
+    In particular, third-party content is marked as such.
+    Should you nevertheless become aware of a copyright infringement, please notify me accordingly.
+    Upon becoming aware of any such legal violations, I will remove the affected content immediately.
+  </p>
+</div>
+
+<div class="right">
+  <h2>Disclaimer</h2>
+  <h3>Liability for Content</h3>
+  <p>
+    As a service provider, I am responsible for my own content on these pages under general laws in accordance with § 7 (1) TMG.
+    However, under §§ 8 to 10 TMG, I am not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.
+    <br /><br />
+    Obligations to remove or block the use of information under general laws remain unaffected.
+    However, liability in this regard is only possible from the moment of knowledge of a specific legal violation.
+    As soon as I become aware of such violations, I will remove the content immediately.
+  </p>
+
+  <h3>Liability for Links</h3>
+  <p>
+    My website contains links to external third-party websites over whose content I have no control.
+    Therefore, I cannot assume any liability for this external content.
+    The respective provider or operator of the linked pages is always responsible for the content.
+    <br /><br />
+    The linked pages were checked for possible legal violations at the time of linking.
+    No illegal content was recognizable at the time of linking.
+    However, permanent content control of the linked pages is not reasonable without concrete evidence of a legal violation.
+    If I become aware of any infringements, I will remove such links immediately.
+  </p>
+</div>
+
+    </ng-template>
     </div>
 </section>
