@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { LanguageService } from '../../../services/language.service';
 import { MenuComponent } from './menu/menu.component';
+import { filter, take } from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  imports: [MatSlideToggleModule, CommonModule, MenuComponent],
+  imports: [MatSlideToggleModule, CommonModule, MenuComponent, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -85,6 +86,24 @@ export class HeaderComponent implements OnInit {
   navigateHome(): void {
     this.router.navigate(['/']);
   }
+
+   goToPrivacyPolicy() {
+  this.router.navigate(['/privacy-policy']).then(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+navigateTo(id: string) {
+  this.router.navigate(['/']).then(() => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  });
+}
+
 
   isSingleProjectPage(): boolean {
     return this.router.url.includes('/project');

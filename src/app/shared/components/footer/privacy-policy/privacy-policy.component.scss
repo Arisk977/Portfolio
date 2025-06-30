@@ -2,26 +2,35 @@
 @import 'keyframes';
 
 main {
-    @include element-size(100vh, 100%);
+    @include element-size(auto, 100%);
     background-image: url('./../../../../../assets/notebook-paper.png');
     background-position: center;
     background-size: 100% 100%;
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-color: #0E1013;
     color: black;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 48px; 
+    padding: 70px 70px;
 }
+
+.content-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 
 section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 48px;
-    padding: 70px 60px;
     width: 100%;
+    max-width: 1920px;
 
     >div {
         display: flex;
@@ -153,6 +162,11 @@ a {
 font-size: 48px;
     }
 
+    .text-white{
+        color: white;
+        filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.615))
+    }
+
     .d_none_mobile {
         display: none;
         visibility: hidden;
@@ -164,13 +178,13 @@ font-size: 48px;
         align-items: center;
         justify-content: center;
         gap: 16px;
-        padding: 80px 70px;
+      
     }
 
     main {
         @include element-size(180vh, 100%);
         background-image: url('./../../../../../assets/project-view-bg.png');
-        background-color: white;
+        padding: 80px 70px;
     }
 
     .right {
@@ -202,6 +216,13 @@ font-size: 48px;
     }
 }
 
+@media(max-width: 515px){
+    .content6{
+        color: white;
+        filter: drop-shadow(1px 1px 10px black)
+    }
+}
+
 @media(max-width: 450px) {
      h1 {
         font-size: 32px;
@@ -224,13 +245,13 @@ font-size: 48px;
         font-size: 14px;
         width: 250px;
     }
-    section {
+    main {
         padding: 80px 30px;
     }
 }
 
 @media(max-width: 350px) {
-section {
+main{
         padding: 80px 15px;
     }
 }

@@ -47,7 +47,6 @@ animateMenuClose(): void {
   }
 }
 
-
   setLanguage(german: boolean): void {
     this.langService.setLanguage(german);
   }
@@ -77,5 +76,16 @@ animateMenuClose(): void {
     navigateTo(url: string): void {
     window.location.href = url;
   }
+
+  navigateToComponent(id: string) {
+  this.router.navigate(['/']).then(() => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  });
+}
 }
 

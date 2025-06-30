@@ -23,6 +23,10 @@ footer {
     gap: 16px;
 }
 
+#logo:hover{
+  cursor: pointer;
+}
+
 h1 {
     @include font-style(64px, 700, white);
 

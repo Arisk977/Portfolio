@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LanguageService } from '../services/language.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about-me',
@@ -11,7 +12,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   private timeoutId: any;
   isGerman = false;
 
-  constructor(private langService: LanguageService) {
+  constructor(private langService: LanguageService, private router: Router) {
     this.langService.isGerman$.subscribe(value => {
       this.isGerman = value;
     });
