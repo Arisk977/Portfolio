@@ -1,6 +1,9 @@
 <div class="header-wrapper" [class.show]="headerVisible || isMenuOpen" [class.hide]="!headerVisible">
   <header id="topHeader">
-    <h1 id="logo" (click)="navigateHome()">Ak</h1>
+    <div id="logo" (click)="navigateTo('head')">
+      <h1 >Ak</h1>
+    </div>
+    
     <a class="circle-animation d_none_mobile" (click)="navigateTo('about-me')" [ngClass]="{ 'black-text': isSingleProjectPage() || isLegalNoticePage() }">About
       me <img class="circle-overlay" src="assets/circle.png" alt=""></a>
     <a class="skills-animation  d_none_mobile" (click)="navigateTo('skill-set')"

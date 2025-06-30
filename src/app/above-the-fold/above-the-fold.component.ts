@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { ImageFrameComponent } from './image-frame/image-frame.component';
 import { LanguageService } from '../services/language.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-above-the-fold',
@@ -12,7 +13,7 @@ import { LanguageService } from '../services/language.service';
 })
 export class AboveTheFoldComponent implements OnInit {
   isGerman = false;
-  constructor(private langService: LanguageService) { }
+  constructor(private langService: LanguageService, private router: Router) { }
 
   ngOnInit(): void {
     this.langService.isGerman$.subscribe(value => {
@@ -39,7 +40,7 @@ export class AboveTheFoldComponent implements OnInit {
     }
   }
 
-    navigateTo(url: string): void {
-    window.location.href = url;
+  navigateTo(url: string): void {
+    window.open(url, '_blank');
   }
 }

@@ -19,7 +19,7 @@ h1{
       letter-spacing: -10px;
       &:hover{
         color: #F7C518;
-        cursor: default;
+        cursor: pointer;
       }
     }
 
@@ -37,9 +37,13 @@ h1{
 #close-button{
     position: relative;
     display: inline-block;
+    &:hover{
+        cursor: pointer;    
+        filter: invert(27%) sepia(98%) saturate(7476%) hue-rotate(204deg) brightness(98%) contrast(100%);
+    }
    >#close-menu:hover {
     cursor: pointer;
-    filter: invert(27%) sepia(98%) saturate(7476%) hue-rotate(204deg) brightness(98%) contrast(100%);
+
   }
 }
 

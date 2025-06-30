@@ -20,7 +20,7 @@
     </section>
     <section class="right">
         <app-svg class="d_none_mobile"></app-svg>
-        <app-form></app-form>
+        <app-form (sendComplete)="onSendComplete()"></app-form>
     </section>
 
     <section class="navbar hide-desktop">
@@ -42,4 +42,11 @@
         </span>
     </section>
 
+    <div id="mail-sent" class="send-complete-overlay hidden" [class.email-sent]="emailWasSent">
+        <div>
+            <img src="assets/mail-footer.png" alt="">
+        <h5>Your email has been sent!</h5>
+    </div>
+        
+    </div>
 </footer>

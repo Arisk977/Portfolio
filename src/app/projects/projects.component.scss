@@ -299,7 +299,7 @@ button {
     }
 
     main {
-        @include element-size(200vh, 100%);
+        @include element-size(auto, 100%);
         gap: 40px;
     }
 

@@ -5,7 +5,7 @@ main {
     @include element-size(100vh, 100%);
     background-image: url('./../../assets/bg_hero.png');
     background-position: center;
-    background-size: 100% 100vh;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     color: white;
     display: flex;
@@ -166,6 +166,20 @@ app-image-frame{
     transform: rotate(8deg);
 }
 
+@media(max-height:650px){
+    main{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+@media(max-height:550px){
+    main{
+        padding-top: 140px;
+        padding-bottom: 80px;
+    }
+}
+
 @media(max-width:960px){
     h1 >span{
         font-size: 100px;
@@ -174,7 +188,7 @@ app-image-frame{
 
 @media(max-width:750px){
     main{
-        background-size: 200% 100vh;
+        background-size: 200% 100%;
     }
     .d_none_mobile{
         display: none;

@@ -17,6 +17,8 @@ export class FooterComponent implements OnInit, OnDestroy {
   private intervalId: any;
   private timeoutId: any;
   isGerman = false;
+  emailWasSent = false;
+
 
   constructor(private langService: LanguageService, private router: Router) { }
   email = {
@@ -36,6 +38,16 @@ export class FooterComponent implements OnInit, OnDestroy {
     img: 'assets/skills/Github.png',
     href: 'https://github.com/Arisk977',
   };
+
+  onSendComplete() {
+    this.emailWasSent = true;
+    let overlayRef= document.getElementById('mail-sent');
+    overlayRef?.classList.remove('hidden');
+    setTimeout(() => {
+      this.emailWasSent = false;
+    }, 2000);
+  }
+
 
   scrollToHeader() {
     const element = document.getElementById("head");
@@ -92,11 +104,11 @@ Mit einem soliden Fundament in der Frontend-Entwicklung und dem Antrieb, mich ko
 Wenn Sie auf der Suche nach jemandem sind, der zuverlässig, anpassungsfähig und mit echter Leidenschaft benutzerorientierte Anwendungen entwickelt - schreiben Sie mir gerne. Ich freue mich darauf, mehr über Ihr Projekt oder Team zu erfahren!`
   }
 
- goToPrivacyPolicy() {
-  this.router.navigate(['/privacy-policy']).then(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
+  goToPrivacyPolicy() {
+    this.router.navigate(['/privacy-policy']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
 
 }

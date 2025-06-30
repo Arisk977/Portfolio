@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { LanguageService } from '../../../../services/language.service';
 import { Subscription } from 'rxjs';
@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class FormComponent implements OnInit, OnDestroy {
   isGerman = false;
   private timeoutId: any;
+  @Output() sendComplete = new EventEmitter<void>();
   constructor(private langService: LanguageService,  private router: Router) { }
 
   private langSub!: Subscription;
@@ -72,7 +73,10 @@ export class FormComponent implements OnInit, OnDestroy {
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => {
+            console.info('send post complete');
+            this.sendComplete.emit();
+          },
         });
     }
   }

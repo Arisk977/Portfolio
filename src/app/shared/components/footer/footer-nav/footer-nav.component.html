@@ -5,7 +5,7 @@
          [ngClass]="{'rotateAnimation': isHovered, 'rotateAnimationBack': isLeaving}">
       <img [src]="contact.img" alt="Icon" />
     </div>
-    <a (mouseenter)="onHover()" (mouseleave)="onLeave()" [href]="contact.href">
+    <a (mouseenter)="onHover()" (mouseleave)="onLeave()" (click)="navigateTo(contact.href)">
       <span>{{contact.name}}</span>
     </a>
   </div>

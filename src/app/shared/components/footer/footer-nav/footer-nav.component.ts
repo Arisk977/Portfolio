@@ -26,4 +26,8 @@ export class FooterNavComponent {
       this.isLeaving = false;
     }, 500);
   }
+
+      navigateTo(url: string): void {
+      window.open(url, '_blank');
+  }
 }

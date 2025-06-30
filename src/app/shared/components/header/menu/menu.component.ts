@@ -51,9 +51,6 @@ animateMenuClose(): void {
     this.langService.setLanguage(german);
   }
 
-  navigateHome(): void {
-    this.router.navigate(['/']);
-  }
     onHover(event: MouseEvent) {
     const target = (event.currentTarget as HTMLElement);
     target.classList.remove('unhovered');
@@ -74,10 +71,12 @@ animateMenuClose(): void {
   }
 
     navigateTo(url: string): void {
-    window.location.href = url;
+      window.open(url, '_blank');
   }
 
   navigateToComponent(id: string) {
+    console.log('hei');
+    
   this.router.navigate(['/']).then(() => {
     setTimeout(() => {
       const element = document.getElementById(id);

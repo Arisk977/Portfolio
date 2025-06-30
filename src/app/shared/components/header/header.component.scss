@@ -43,7 +43,7 @@ header {
   font-weight: 700;
   width: 90%;
 
-  >h1 {
+  >#logo h1{
     font-family: 'Protest Revolution';
     color: #3355FF;
     font-size: 64px;
@@ -51,7 +51,7 @@ header {
 
     &:hover {
       color: #F7C518;
-      cursor: default;
+      cursor: pointer;
     }
   }
 }
@@ -239,7 +239,7 @@ app-menu.close {
 }
 
 @media(max-width: 750px) {
-  #topHeader {
+  #logo {
     >h1 {
       font-size: 48px !important;
     }
