@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss'
 })
-export class LegalNoticeComponent implements OnInit, OnDestroy {
+export class PrivacyPolicyComponent implements OnInit, OnDestroy {
   isGerman = false;
   constructor(private langService: LanguageService) { }
 

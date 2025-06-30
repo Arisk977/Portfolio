@@ -10,7 +10,7 @@
             <h2 (click)="scrollToHeader()">AK</h2>
             <h3>© Aris Karamat 2025</h3>
             <nav>
-                <h3 class="contact-animation" (click)="goToPrivacyPolicy()"> {{ isGerman ? 'Datenschutzerklärung' : 'Legal Notice' }} <img
+                <h3 class="contact-animation" (click)="goToLegalNotice()"> {{ isGerman ? 'Impressum' : 'Legal Notice' }} <img
                         class="contact-overlay" src="assets/contact-line.png" alt=""></h3>
                 <app-footer-nav [contact]="github"></app-footer-nav>
                 <app-footer-nav [contact]="linkedIn"></app-footer-nav>
@@ -29,7 +29,7 @@
                 <h2 id="logo" (click)="scrollToHeader()">AK</h2>
                 <div class="credits">
                     <h3>© Aris Karamat 2025</h3>
-                    <h3 class="contact-animation" (click)="goToPrivacyPolicy()"> {{ isGerman ? 'Impressum' : 'Legal Notice' }} <img
+                    <h3 class="contact-animation" (click)="goToLegalNotice()"> {{ isGerman ? 'Impressum' : 'Legal Notice' }} <img
                             class="contact-overlay" src="assets/contact-line.png" alt=""></h3>
                 </div>
             </div>

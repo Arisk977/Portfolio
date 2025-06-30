@@ -110,5 +110,11 @@ Wenn Sie auf der Suche nach jemandem sind, der zuverlässig, anpassungsfähig un
     });
   }
 
+    goToLegalNotice() {
+    this.router.navigate(['/legal-notice']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
 
 }

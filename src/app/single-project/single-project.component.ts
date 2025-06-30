@@ -194,7 +194,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
   }
 
   navigateTo(url: string): void {
-    window.location.href = url;
+    window.open(url, '_blank');
   }
 
   @HostListener('window:scroll', [])

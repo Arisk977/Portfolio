@@ -1,0 +1,141 @@
+@import 'mixins';
+@import 'keyframes';
+
+#legal-notice {
+  padding: 0px 20px;
+  color: black;
+  background-color: black;
+   @include element-size(100vh, 100%);
+    background-image: url('./../../../../../assets/notebook-paper.png');
+    background-position: center;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+  }
+
+  .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    width: 600px;
+  }
+
+  .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    width: 600px;
+    color: white;
+    filter: drop-shadow(1px 1px 4px black);
+    h2{
+        color: white;
+    }
+    h3{
+        color: white;
+    }
+  }
+
+  h1 {
+    font-size: 40px;
+    color: black;
+    padding-top: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+    color: black;
+  }
+
+  h3 {
+    font-size: 20px;
+    color: black;
+  }
+
+  p {
+    margin: 8px 0;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: #3355FF;
+    }
+  }
+
+
+@media(max-width: 1000px){
+
+    h1{
+        font-size: 32px;
+    }
+    p{
+        font-size: 14px;
+    }
+
+    h2{
+        font-size: 22px;
+    }
+    h3{
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 900px){
+    .container{
+        gap:40px;
+    }
+      p {
+    margin: 0 0;
+}
+}
+
+@media(max-width: 750px){
+    #legal-notice{
+           @include element-size(auto, 100%);
+           padding: 80px 0;
+           background-image: url('./../../../../../assets/project-view-bg.png');
+    }
+
+    .left{
+    width: 90%;
+
+    }
+
+    .right{
+        width: 90%;
+    }
+
+    h1{
+        font-size: 32px;
+    }
+
+    h2{
+        font-size: 22px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
