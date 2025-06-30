@@ -103,13 +103,13 @@ section {
     height: 90%;
     animation: laptopAnimation 5s ease-in-out infinite;
     position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
     transition: transform 250ms ease-in-out, animation 0ms;
 
     .img-container:hover & {
         animation: none;
         transform: scale(1.2);
-        padding-top: 20px;
-        padding-bottom: 20px;
     }
 }
 

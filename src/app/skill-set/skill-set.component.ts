@@ -58,8 +58,8 @@ export class SkillSetComponent implements OnInit, OnDestroy {
       let bgImageRef = document.getElementById('bg-image');
 
       hoverImageRef?.classList.remove('d_none');
-      textRef?.classList.add('d_none');
-      bgImageRef?.classList.add('d_none');
+      textRef?.classList.add('hidden');
+      bgImageRef?.classList.add('hidden');
     }
   }
 
@@ -70,8 +70,8 @@ export class SkillSetComponent implements OnInit, OnDestroy {
       let bgImageRef = document.getElementById('bg-image');
 
       hoverImageRef?.classList.add('d_none');
-      textRef?.classList.remove('d_none');
-      bgImageRef?.classList.remove('d_none');
+      textRef?.classList.remove('hidden');
+      bgImageRef?.classList.remove('hidden');
     }
   }
 
@@ -85,6 +85,8 @@ export class SkillSetComponent implements OnInit, OnDestroy {
     hoverImageRef?.classList.add('d_none');
     textRef?.classList.add('d_none');
     bgImageRef?.classList.add('d_none');
+    textRef?.classList.remove('hidden');
+    bgImageRef?.classList.remove('hidden');
     clickImageRef?.classList.remove('d_none');
   }
 

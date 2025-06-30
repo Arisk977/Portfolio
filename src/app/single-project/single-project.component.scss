@@ -45,6 +45,7 @@ p {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    min-height: 600px;
 }
 
 .project-details {
@@ -308,6 +309,10 @@ app-header {
 @media(max-width: 900px) {
     .project-details {
         width: 335px;
+    }
+
+    .project-wrapper{
+         min-height: 480px;
     }
 
    .container-wrapper{

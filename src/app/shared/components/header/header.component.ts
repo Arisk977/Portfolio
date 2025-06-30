@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Router } from '@angular/router';
 import { LanguageService } from '../../../services/language.service';
@@ -13,10 +13,9 @@ import { MenuComponent } from './menu/menu.component';
 })
 export class HeaderComponent implements OnInit {
   isGerman: boolean = false;
-  lastScrollTop = 0;
-  headerVisible = true;
   isMenuOpen = false;
   isMenuVisible = false;
+  @Input() headerVisible: boolean = true;
 
   constructor(public router: Router, private langService: LanguageService) { }
 
@@ -94,16 +93,4 @@ export class HeaderComponent implements OnInit {
   isLegalNoticePage(): boolean {
     return this.router.url.includes('/privacy-policy');
   }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    if (currentScroll > this.lastScrollTop && currentScroll > 100) {
-      this.headerVisible = false;
-    } else {
-      this.headerVisible = true;
-    }
-    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  };
-
 }

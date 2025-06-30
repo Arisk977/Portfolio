@@ -21,6 +21,9 @@ div {
         border-radius: 100px;
         padding: 12px 24px;
         @include font-style(18px, 500, white);
+        white-space: nowrap;
+
+
 
         &::before {
             content: "";

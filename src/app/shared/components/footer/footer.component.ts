@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SvgComponent } from './svg/svg.component';
 import { FormComponent } from './form/form.component';
-import { FooterNavComponent } from '../footer-nav/footer-nav.component';
+import { FooterNavComponent } from './footer-nav/footer-nav.component';
 import { LanguageService } from '../../../services/language.service';
 import { Router } from '@angular/router';
 

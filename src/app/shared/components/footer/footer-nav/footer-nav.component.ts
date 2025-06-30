@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Contact } from '../../../interfaces/contact.interface';
+import { Contact } from '../../../../interfaces/contact.interface';
 
 @Component({
   selector: 'app-footer-nav',

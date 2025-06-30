@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from '../interfaces/project.interface';
 import { SvgComponent } from '../shared/components/footer/svg/svg.component';
@@ -17,6 +17,8 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
   @Input() project!: Project;
   private timeoutId: any;
   isGerman = false;
+  headerVisible = true;
+  lastScrollTop = 0;
 
   private langSub!: Subscription;
 
@@ -193,5 +195,17 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
 
   navigateTo(url: string): void {
     window.location.href = url;
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    console.log('scroll detected in MainComponent');
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > this.lastScrollTop && currentScroll > 100) {
+      this.headerVisible = false;
+    } else {
+      this.headerVisible = true;
+    }
+    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 }
