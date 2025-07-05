@@ -93,9 +93,9 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
     live: 'https://aris-karamat.de/Sharkie/index.html',
   }
 
-    bestellApp: Project = {
-    description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
-    implementation: 'in progress',
+    bestellAppEng: Project = {
+    description: 'This is a self-developed food ordering app. Users can browse and add various dishes to a shopping cart. The cart automatically calculates and displays the total number of items selected. However, placing or completing an actual order is not possible - the app is intended purely as a demonstration of the ordering and cart functionality.',
+    implementation: `The app is a front-end project built with HTML, CSS, and JavaScript. Users can add dishes to a cart, which updates in real time to show item counts. The cart state is managed using JavaScript and saved in the browser's local storage to preserve data between sessions. There is no backend or order processing - the focus is on demonstrating interactive cart functionality.`,
     h1: 'Bestell-App',
     imagePath: 'assets/bestell-app.jpg',
     stickerPath: '<app-svg class="notebook-sticker"></app-svg>',
@@ -106,7 +106,24 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
       { name: 'JavaScript', imagePath: 'assets/skills/js.png' },
     ],
-    git: '',
+    git: 'https://github.com/Arisk977/Bestellapp',
+    live: 'https://aris-karamat.de/Bestellapp/index.html',
+  }
+
+      bestellAppDeu: Project = {
+    description: 'Diese Webseite ist eine selbst entwickelte Bestell-App für Speisen. Nutzer können verschiedene Gerichte auswählen und in einen Warenkorb legen. Der Warenkorb zählt automatisch die Anzahl der hinzugefügten Produkte und zeigt diese übersichtlich an. Eine tatsächliche Bestellung oder Bezahlung ist jedoch nicht möglich - die App dient lediglich zur Demonstration der Bestell- und Warenkorbfunktionalität.',
+    implementation: 'Die App ist ein Frontend-Projekt, entwickelt mit HTML, CSS und JavaScript. Nutzer können Gerichte in einen Warenkorb legen, der sich in Echtzeit aktualisiert und die Artikelanzahl anzeigt. Der Zustand des Warenkorbs wird mit JavaScript verwaltet und im Local Storage des Browsers gespeichert, sodass die Daten zwischen den Sitzungen erhalten bleiben. Es gibt kein Backend und keine Bestellabwicklung - der Fokus liegt auf der Demonstration der interaktiven Warenkorbfunktion.',
+    h1: 'Bestell-App',
+    imagePath: 'assets/bestell-app.jpg',
+    stickerPath: '<app-svg class="notebook-sticker"></app-svg>',
+    duration: '1 week',
+    arrowWidth: '308px',
+    skills: [
+      { name: 'CSS', imagePath: 'assets/skills/css.png' },
+      { name: 'HTML', imagePath: 'assets/skills/html.png' },
+      { name: 'JavaScript', imagePath: 'assets/skills/js.png' },
+    ],
+    git: 'https://github.com/Arisk977/Bestellapp',
     live: 'https://aris-karamat.de/Bestellapp/index.html',
   }
 
@@ -184,7 +201,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
         this.isGerman ? this.project = this.sharkieDeu : this.project = this.sharkieEng;
         break;
       case 'bestellApp':
-        this.project = this.bestellApp;
+        this.isGerman ? this.project = this.bestellAppDeu : this.project = this.bestellAppEng;
         break;
       default:
         this.isGerman ? this.project = this.joinDeu : this.project = this.joinEng;

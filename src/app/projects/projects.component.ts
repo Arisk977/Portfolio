@@ -29,8 +29,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
    bestellApp: Craft = {
     h2: 'Bestell-App',
-    deu: 'Diese App ist eine Slack-Klon-App. Sie revolutioniert die Teamkommunikation und Zusammenarbeit durch ihre intuitive Benutzeroberfläche, Echtzeit-Nachrichtenfunktion und eine robuste Kanalorganisation.',
-    eng: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+    deu: 'Diese eigenentwickelte Bestell-App ermöglicht die digitale Auswahl von Speisen mit einem automatischen, übersichtlichen Warenkorb. Nutzer können Gerichte einfach hinzufügen und die Anzahl der Produkte wird in Echtzeit aktualisiert. Die App dient als Demo moderner Warenkorbsysteme für die Gastronomie.',
+    eng: 'This self-developed ordering app enables digital selection of dishes with an automatic, clear shopping cart. Users can easily add meals, and the product quantities update in real time. The app serves as a demo of modern shopping cart systems for the gastronomy sector.',
     img: 'assets/bestell-app.jpg',
     button: '3',
     routeId: 'bestellApp'
