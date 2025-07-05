@@ -104,7 +104,6 @@ navigateTo(id: string) {
   });
 }
 
-
   isSingleProjectPage(): boolean {
     return this.router.url.includes('/project');
   }

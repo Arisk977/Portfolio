@@ -67,6 +67,7 @@ animateMenuClose(): void {
     const element = document.getElementById("contact-page");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      this.handleCloseClick();
     }
   }
 
@@ -74,15 +75,14 @@ animateMenuClose(): void {
       window.open(url, '_blank');
   }
 
-  navigateToComponent(id: string) {
-    console.log('hei');
-    
+  navigateToComponent(id: string) {    
   this.router.navigate(['/']).then(() => {
     setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+      this.handleCloseClick();
     }, 100);
   });
 }

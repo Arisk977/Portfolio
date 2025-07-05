@@ -1,4 +1,4 @@
-<div class="header-wrapper" [class.show]="headerVisible || isMenuOpen" [class.hide]="!headerVisible">
+<div class="header-wrapper" [class.show]="headerVisible || isMenuOpen" [class.hide]="!headerVisible" [ngClass]="{ 'background-transparent': isSingleProjectPage() || isLegalNoticePage() }">
   <header id="topHeader">
     <div id="logo" (click)="navigateTo('head')">
       <h1 >Ak</h1>

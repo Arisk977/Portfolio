@@ -93,6 +93,23 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
     live: 'https://aris-karamat.de/Sharkie/index.html',
   }
 
+    bestellApp: Project = {
+    description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+    implementation: 'in progress',
+    h1: 'Bestell-App',
+    imagePath: 'assets/bestell-app.jpg',
+    stickerPath: '<app-svg class="notebook-sticker"></app-svg>',
+    duration: '1 week',
+    arrowWidth: '308px',
+    skills: [
+      { name: 'CSS', imagePath: 'assets/skills/css.png' },
+      { name: 'HTML', imagePath: 'assets/skills/html.png' },
+      { name: 'JavaScript', imagePath: 'assets/skills/js.png' },
+    ],
+    git: '',
+    live: 'https://aris-karamat.de/Bestellapp/index.html',
+  }
+
   daBubble: Project = {
     description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
     implementation: 'in progress',
@@ -166,8 +183,8 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       case 'sharkie':
         this.isGerman ? this.project = this.sharkieDeu : this.project = this.sharkieEng;
         break;
-      case 'daBubble':
-        this.project = this.daBubble;
+      case 'bestellApp':
+        this.project = this.bestellApp;
         break;
       default:
         this.isGerman ? this.project = this.joinDeu : this.project = this.joinEng;
@@ -176,7 +193,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
   }
 
   navigateBack() {
-    const projectSequence = ['join', 'sharkie', 'daBubble'];
+    const projectSequence = ['join', 'sharkie', 'bestellApp'];
     const current = this.project.h1.toLowerCase();
     const currentIndex = projectSequence.indexOf(current);
     const nextIndex = (currentIndex - 1 + projectSequence.length) % projectSequence.length;
@@ -185,7 +202,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
   }
 
   navigateNextProject() {
-    const projectSequence = ['join', 'sharkie', 'daBubble'];
+    const projectSequence = ['join', 'sharkie', 'bestellApp'];
     const current = this.project.h1.toLowerCase();
     const currentIndex = projectSequence.indexOf(current);
     const nextIndex = (currentIndex + 1) % projectSequence.length;

@@ -7,11 +7,20 @@ footer {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   color: white;
-  display: flex;
+ display: flex;
+ flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 80px;
   padding-top: 50px;
   padding-bottom: 50px;
+  
+}
+
+.content{
+ display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 160px;
 }
 
@@ -48,7 +57,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 200%;
+  width: 90%;
+  max-width: 1920px;
 
   >h3 {
     @include font-style(18px, 700, white);
@@ -188,6 +198,7 @@ app-svg {
   opacity: 1;
 }
 
+
 @media(max-width: 1300px) {
   footer {
     gap: 80px;
@@ -225,7 +236,7 @@ app-svg {
   }
 }
 
-@media(max-width: 960px) {
+@media(max-width: 1250px) {
   footer {
     gap: 20px;
   }
@@ -248,6 +259,15 @@ app-svg {
   app-svg {
     @include element-size(150px, 150px);
   }
+  h1{
+    font-size: 48px;
+  }
+}
+
+@media(max-width: 930px){
+.content{
+  gap: 40px;
+}
 }
 
 
@@ -281,10 +301,14 @@ app-svg {
 
 @media(max-width: 750px) {
   footer {
-    display: flex;
-    flex-direction: column;
     padding-top: 100px;
-    gap: 0px;
+  }
+
+  .content{
+      gap: 0px;
+      display: flex;
+      flex-direction: column;
+  
   }
 
   .credits {
@@ -325,8 +349,6 @@ app-svg {
   }
 
   .navbar {
-    margin-top: -10px;
-    order: 2;
     width: 100%;
 
     >.mobile-contact {

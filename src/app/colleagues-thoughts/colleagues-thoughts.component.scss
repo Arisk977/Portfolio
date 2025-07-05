@@ -173,6 +173,12 @@ text-align: right;
 }
 }
 
+@media(max-width: 450px){
+    .top p img{
+        height: 32px !important;
+        width: 75px !important;
+    }
+}
 
 @media(max-width: 360px){
 

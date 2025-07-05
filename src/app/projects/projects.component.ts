@@ -27,12 +27,21 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     routeId: 'sharkie'
   };
 
+   bestellApp: Craft = {
+    h2: 'Bestell-App',
+    deu: 'Diese App ist eine Slack-Klon-App. Sie revolutioniert die Teamkommunikation und Zusammenarbeit durch ihre intuitive Benutzeroberfläche, Echtzeit-Nachrichtenfunktion und eine robuste Kanalorganisation.',
+    eng: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+    img: 'assets/bestell-app.jpg',
+    button: '3',
+    routeId: 'bestellApp'
+  };
+
   daBubble: Craft = {
     h2: 'DABubble',
     deu: 'Diese App ist eine Slack-Klon-App. Sie revolutioniert die Teamkommunikation und Zusammenarbeit durch ihre intuitive Benutzeroberfläche, Echtzeit-Nachrichtenfunktion und eine robuste Kanalorganisation.',
     eng: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
     img: 'assets/da-bubble.jpg',
-    button: '3',
+    button: '4',
     routeId: 'daBubble'
   };
 

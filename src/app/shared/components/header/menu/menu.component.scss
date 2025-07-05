@@ -12,16 +12,17 @@ main {
     gap: 64px;
 }
 
-h1{
-      font-family: 'Protest Revolution';
-      color: #3355FF;
-      font-size: 48px;
-      letter-spacing: -10px;
-      &:hover{
+h1 {
+    font-family: 'Protest Revolution';
+    color: #3355FF;
+    font-size: 48px;
+    letter-spacing: -10px;
+
+    &:hover {
         color: #F7C518;
         cursor: pointer;
-      }
     }
+}
 
 .top-lane {
     width: 100%;
@@ -29,40 +30,49 @@ h1{
     justify-content: space-between;
     align-items: center;
     margin-top: -150px;
-    >div{
+
+    >div {
         padding: 24px;
     }
 }
 
-#close-button{
+#close-button {
     position: relative;
     display: inline-block;
-    &:hover{
-        cursor: pointer;    
-        filter: invert(27%) sepia(98%) saturate(7476%) hue-rotate(204deg) brightness(98%) contrast(100%);
+    isolation: isolate;
+
+    &:hover {
+        cursor: pointer !important;
     }
-   >#close-menu:hover {
-    cursor: pointer;
-  }
 }
 
 .close-wrapper {
-  position: relative;
+    position: relative;
+    isolation: isolate;
+}
 
-  #close-overlay {
+#close-menu:hover {
+    cursor: pointer;
+    filter: invert(27%) sepia(98%) saturate(7476%) hue-rotate(204deg) brightness(98%) contrast(100%);
+}
+
+#close-overlay {
     position: absolute;
     top: 0;
     right: 0;
     height: 32px;
     width: 32px;
-  }
+    pointer-events: none;
+    mix-blend-mode: normal;
+    filter: none !important;
+
 }
 
-.blue-filter{
-  filter: invert(27%) sepia(98%) saturate(7476%) hue-rotate(204deg) brightness(98%) contrast(100%);
+.blue-filter {
+    filter: invert(27%) sepia(98%) saturate(7476%) hue-rotate(204deg) brightness(98%) contrast(100%);
 }
 
-.d_none{
+.d_none {
     display: none;
 }
 
@@ -77,7 +87,8 @@ h1{
     >a {
         text-decoration: none;
         @include font-style(18px, 700, white);
-        &:hover{
+
+        &:hover {
             cursor: pointer;
         }
     }
@@ -113,15 +124,16 @@ h1{
     }
 }
 
-.button-active{  
-  transform: translateX(20px);
+.button-active {
+    transform: translateX(20px);
 }
 
-.active{
-  color: #F87A55 !important;
-  &:hover{
-    cursor: default !important;
-  }
+.active {
+    color: #F87A55 !important;
+
+    &:hover {
+        cursor: default !important;
+    }
 }
 
 .social-media {
@@ -143,40 +155,41 @@ h1{
     justify-content: center;
 
     >img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
-    &:hover{
-        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
-  }
 
     &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: #3355FF;
-      border-radius: 50%;
-      z-index: 0;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: #3355FF;
+        border-radius: 50%;
+        z-index: 0;
 
-      -webkit-mask-image: radial-gradient(circle, black 0%, transparent 0%);
-      mask-image: radial-gradient(circle, black 0%, transparent 0%);
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-position: center;
-      mask-position: center;
+        -webkit-mask-image: radial-gradient(circle, black 0%, transparent 0%);
+        mask-image: radial-gradient(circle, black 0%, transparent 0%);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
     }
 
     &.hovered::before {
-      animation: radialMask 125ms ease-out forwards;
+        animation: radialMask 125ms ease-out forwards;
     }
 
     &.unhovered::before {
-      animation: radialMaskReverse 125ms ease-in forwards;
+        animation: radialMaskReverse 125ms ease-in forwards;
     }
-  }
+}
 
 
 .circle-animation {
@@ -280,8 +293,8 @@ h1{
 
 
 
-@media(max-height: 760px){
-    main{
+@media(max-height: 760px) {
+    main {
         gap: 36px;
         padding-top: 80px;
     }
