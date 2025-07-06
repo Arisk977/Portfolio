@@ -109,6 +109,10 @@ navigateTo(id: string) {
   }
 
   isLegalNoticePage(): boolean {
+    return this.router.url.includes('/legal-notice');
+  }
+
+   isPrivacyPolicyPage(): boolean {
     return this.router.url.includes('/privacy-policy');
   }
 }

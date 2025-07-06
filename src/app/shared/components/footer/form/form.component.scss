@@ -4,7 +4,9 @@
 form {
     display: flex;
     flex-direction: column;
+    >.input-wrapper{
 
+   
     >label {
         @include font-style(24px, 500, white);
         display: flex;
@@ -30,7 +32,8 @@ form {
             }
         }
 
-    }
+    } 
+}
 }
 
 input:is(:-webkit-autofill, :autofill) {
@@ -160,6 +163,40 @@ input:-moz-autofill {
   visibility: hidden;
 }
 
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.error-message {
+  position: absolute;
+  top: 50%;
+  left: -200px;
+  width: 180px;
+  transform: translateY(-30%);
+  background-color: #F87A55;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  @include font-style(16px, 400, white);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 10px; // etwas Abstand von oben
+    right: -9px; // nach außen rechts zeigen
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #F87A55; // gleiche Farbe wie Hintergrund
+  }
+}
+
+
 
 @media(min-width: 750px){
     .button-wrapper{
@@ -194,6 +231,35 @@ input:-moz-autofill {
   display: initial;
   visibility: visible;
 }
+
+.error-message {
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  width: 180px;
+  transform: translateY(-10%);
+  background-color: #F87A55;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  @include font-style(16px, 400, white);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -20px; // oberhalb der Box
+    left: 15px; // etwas nach rechts versetzt
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #F87A55; // Farbe zeigt nach oben
+  }
+}
+
 
 .button-wrapper{
     display: flex;

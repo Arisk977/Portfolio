@@ -1,51 +1,81 @@
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    <label for="name" [class.missingTextLabel]="!name.valid && name.touched">{{ isGerman ? 'Wie ist Ihr Name?' : `What's
-        your name?` }}
+    <div class="input-wrapper">
+        <label for="name" [class.missingTextLabel]="!name.valid && name.touched">{{ isGerman ? 'Wie ist Ihr Name?' :
+            `What's
+            your name?` }}
 
-        <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" #name="ngModel" type="text" id="name"
-            [placeholder]="getNamePlaceholder(name)" [class.missingText]="!name.valid && name.touched" required>
-    </label>
+            <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" #name="ngModel" type="text"
+                id="name" [placeholder]="getNamePlaceholder(name)" [class.missingText]="!name.valid && name.touched"
+                minlength="3" required>
+        </label>
 
-    <label for="email" [class.missingTextLabel]="!email.valid && email.touched">
-        {{ isGerman ? 'Wie lautet Ihre Email?' : "What's your email?" }}
-        <input [(ngModel)]="formData.email" [ngModelOptions]="{standalone: true}" #email="ngModel" type="text"
-            id="email" [placeholder]="getEmailPlaceholder(email)" [class.missingText]="!email.valid && email.touched"
-            required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-    </label>
+        <div class="error-message" *ngIf="!name.valid && name.touched">
+            {{ isGerman ? 'Beispiel: Max Mustermann' : 'Example: Max Mustermann' }}
+        </div>
+    </div>
 
-    <label for="help" [class.missingTextLabel]="!message.valid && message.touched">
-        {{ isGerman ? 'Wie kann ich Ihnen helfen?' : 'How can I help you?' }}
-        <input [(ngModel)]="formData.message" [ngModelOptions]="{standalone: true}" #message="ngModel" type="text"
-            id="help" [placeholder]="getMessagePlaceholder(message)"
-            [class.missingText]="!message.valid && message.touched" required>
-    </label>
+
+
+    <div class="input-wrapper">
+
+        <label for="email" [class.missingTextLabel]="!email.valid && email.touched">
+            {{ isGerman ? 'Wie lautet Ihre Email?' : "What's your email?" }}
+            <input [(ngModel)]="formData.email" [ngModelOptions]="{standalone: true}" #email="ngModel" type="text"
+                id="email" [placeholder]="getEmailPlaceholder(email)"
+                [class.missingText]="!email.valid && email.touched" required
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+        </label>
+
+        <div class="error-message" *ngIf="!email.valid && email.touched">
+            {{ isGerman ? 'Beispiel: max-mustermann@gmail.com' : 'Example: max-mustermann@gmail.com' }}
+        </div>
+    </div>
+
+
+
+    <div class="input-wrapper">
+        <label for="help" [class.missingTextLabel]="!message.valid && message.touched">
+            {{ isGerman ? 'Wie kann ich Ihnen helfen?' : 'How can I help you?' }}
+            <input [(ngModel)]="formData.message" [ngModelOptions]="{standalone: true}" #message="ngModel" type="text"
+                id="help" [placeholder]="getMessagePlaceholder(message)"
+                [class.missingText]="!message.valid && message.touched" minlength="5" required>
+        </label>
+
+            <div class="error-message" *ngIf="!message.valid && message.touched">
+            {{ isGerman ? 'Bitte schreiben Sie Ihr Anliegen.' : 'Please describe your request.' }}
+        </div>
+    </div>
 
     <div class="checkbox-container">
         <div class="checkbox">
             <input type="checkbox" id="custom-checkbox" [(ngModel)]="formData.accepted"
                 [ngModelOptions]="{standalone: true}" #checkbox="ngModel" required>
             <label *ngIf="isGerman; else english">
-                Ich habe die <a class="privacy" (click)="goToPrivacyPolicy()">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.
+                Ich habe die <a class="privacy" (click)="goToPrivacyPolicy()">Datenschutzerklärung</a> gelesen und
+                stimme der Verarbeitung meiner Daten wie darin beschrieben zu.
             </label>
 
-        <ng-template #english>
-              <label>
-                 I've read the <a class="privacy" (click)="goToPrivacyPolicy()">privacy policy</a> and agree to the processing of my data as outlined.
-             </label>
-        </ng-template>
+            <ng-template #english>
+                <label>
+                    I've read the <a class="privacy" (click)="goToPrivacyPolicy()">privacy policy</a> and agree to the
+                    processing of my data as outlined.
+                </label>
+            </ng-template>
 
         </div>
         @if(!checkbox.valid && checkbox.touched){
-        <span class="check-invalid">{{ isGerman ? 'Bitte akzeptieren Sie die Datenschutzerklärung' : 'Please accept the privacy policy'
+        <span class="check-invalid">{{ isGerman ? 'Bitte akzeptieren Sie die Datenschutzerklärung' : 'Please accept the
+            privacy policy'
             }}</span>
         }
     </div>
 
 
     <div class="button-wrapper">
-    <img src="assets/footer-line.png" class="footer-line-mobile hide-desktop" alt="">
-    <button type="submit"
-        [disabled]="!isFormValid() || !checkbox.valid || !email.valid || !name.valid || !message.valid">{{ isGerman ?
-        'Senden' : 'Send' }}</button>
-        </div>
+        <img src="assets/footer-line.png" class="footer-line-mobile hide-desktop" alt="">
+        <button type="submit"
+            [disabled]="!isFormValid() || !checkbox.valid || !email.valid || !name.valid || !message.valid">{{ isGerman
+            ?
+            'Senden' : 'Send' }}</button>
+    </div>
 </form>

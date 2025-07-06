@@ -4,10 +4,10 @@
       <h1 >Ak</h1>
     </div>
     
-    <a class="circle-animation d_none_mobile" (click)="navigateTo('about-me')" [ngClass]="{ 'black-text': isSingleProjectPage() || isLegalNoticePage() }">About
+    <a class="circle-animation d_none_mobile" (click)="navigateTo('about-me')" [ngClass]="{ 'black-text': isSingleProjectPage() || isPrivacyPolicyPage() || isLegalNoticePage() }">About
       me <img class="circle-overlay" src="assets/circle.png" alt=""></a>
     <a class="skills-animation  d_none_mobile" (click)="navigateTo('skill-set')"
-      [ngClass]="{ 'black-text': isSingleProjectPage() || isLegalNoticePage() }">Skills <img class="skills-overlay"
+      [ngClass]="{ 'black-text': isSingleProjectPage() || isLegalNoticePage() || isPrivacyPolicyPage() }">Skills <img class="skills-overlay"
         src="assets/skills-line.png" alt=""></a>
     <a class="projects-animation  d_none_mobile" (click)="navigateTo('projects')">Projects <img class="projects-overlay"
         src="assets/project-line.png" alt=""></a>
