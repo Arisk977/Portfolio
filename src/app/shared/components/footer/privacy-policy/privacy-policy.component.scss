@@ -169,10 +169,11 @@ a {
 
 
 @media(max-width: 750px) {
-    .mobile-white{
+    .mobile-white {
         color: white;
         filter: drop-shadow(1px 1px 4px black);
     }
+
     .german {
         font-size: 48px;
     }
@@ -235,7 +236,8 @@ a {
         color: white;
         filter: drop-shadow(1px 1px 10px black)
     }
-    .content-wrapper{
+
+    .content-wrapper {
         padding: 80px 20px;
     }
 }
@@ -265,7 +267,11 @@ a {
 }
 
 @media(max-width: 370px) {
-    ul{
+    ul {
         margin-left: -30px;
+    }
+
+    .content-wrapper {
+        padding: 80px 5px;
     }
 }
