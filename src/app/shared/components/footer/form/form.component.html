@@ -4,7 +4,7 @@
             `What's
             your name?` }}
 
-            <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" #name="ngModel" type="text"
+            <input [(ngModel)]="formData.name" name="name"  #name="ngModel" type="text"
                 id="name" [placeholder]="getNamePlaceholder(name)" [class.missingText]="!name.valid && name.touched"
                 minlength="3" required>
         </label>
@@ -20,7 +20,7 @@
 
         <label for="email" [class.missingTextLabel]="!email.valid && email.touched">
             {{ isGerman ? 'Wie lautet Ihre Email?' : "What's your email?" }}
-            <input [(ngModel)]="formData.email" [ngModelOptions]="{standalone: true}" #email="ngModel" type="text"
+            <input [(ngModel)]="formData.email" name="email" #email="ngModel" type="text"
                 id="email" [placeholder]="getEmailPlaceholder(email)"
                 [class.missingText]="!email.valid && email.touched" required
                 pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
@@ -36,20 +36,20 @@
     <div class="input-wrapper">
         <label for="help" [class.missingTextLabel]="!message.valid && message.touched">
             {{ isGerman ? 'Wie kann ich Ihnen helfen?' : 'How can I help you?' }}
-            <input [(ngModel)]="formData.message" [ngModelOptions]="{standalone: true}" #message="ngModel" type="text"
+            <input [(ngModel)]="formData.message" name="message"  #message="ngModel" type="text"
                 id="help" [placeholder]="getMessagePlaceholder(message)"
                 [class.missingText]="!message.valid && message.touched" minlength="5" required>
         </label>
 
-            <div class="error-message" *ngIf="!message.valid && message.touched">
+        <div class="error-message" *ngIf="!message.valid && message.touched">
             {{ isGerman ? 'Bitte schreiben Sie Ihr Anliegen.' : 'Please describe your request.' }}
         </div>
     </div>
 
     <div class="checkbox-container">
         <div class="checkbox">
-            <input type="checkbox" id="custom-checkbox" [(ngModel)]="formData.accepted"
-                [ngModelOptions]="{standalone: true}" #checkbox="ngModel" required>
+            <input type="checkbox" id="custom-checkbox" [(ngModel)]="formData.accepted" name="accepted"
+                 #checkbox="ngModel" required>
             <label *ngIf="isGerman; else english">
                 Ich habe die <a class="privacy" (click)="goToPrivacyPolicy()">Datenschutzerklärung</a> gelesen und
                 stimme der Verarbeitung meiner Daten wie darin beschrieben zu.
@@ -64,9 +64,8 @@
 
         </div>
         @if(!checkbox.valid && checkbox.touched){
-        <span class="check-invalid">{{ isGerman ? 'Bitte akzeptieren Sie die Datenschutzerklärung' : 'Please accept the
-            privacy policy'
-            }}</span>
+        <span class="check-invalid">{{ isGerman ? `Bitte akzeptieren Sie die Datenschutzerklärung` : `Please accept the
+            privacy policy`}}</span>
         }
     </div>
 

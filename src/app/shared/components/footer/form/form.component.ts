@@ -16,7 +16,7 @@ export class FormComponent implements OnInit, OnDestroy {
   isGerman = false;
   private timeoutId: any;
   @Output() sendComplete = new EventEmitter<void>();
-  constructor(private langService: LanguageService,  private router: Router) { }
+  constructor(private langService: LanguageService, private router: Router) { }
 
   private langSub!: Subscription;
 
@@ -69,6 +69,12 @@ export class FormComponent implements OnInit, OnDestroy {
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+            this.formData = {
+              name: '',
+              email: '',
+              message: '',
+              accepted: '',
+            };
           },
           error: (error) => {
             console.error(error);
@@ -81,17 +87,17 @@ export class FormComponent implements OnInit, OnDestroy {
     }
   }
 
-  englishPrivacy(){
-    return`I've read the <a class='privacy' href="#privacy-policy" (click)="goToPrivacyPolicy()">privacy policy</a> and agree to the processing of my
+  englishPrivacy() {
+    return `I've read the <a class='privacy' href="#privacy-policy" (click)="goToPrivacyPolicy()">privacy policy</a> and agree to the processing of my
                 data as outlined.`
   }
 
-  germanPrivacy(){
-return `Ich habe die <a class='privacy' href='#privacy-policy' (click)="goToPrivacyPolicy()">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.`
+  germanPrivacy() {
+    return `Ich habe die <a class='privacy' href='#privacy-policy' (click)="goToPrivacyPolicy()">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie darin beschrieben zu.`
   }
 
 
-   getNamePlaceholder(name: NgModel): string {
+  getNamePlaceholder(name: NgModel): string {
     if (!name.valid && name.touched) {
       return this.isGerman
         ? 'Oops! Es scheint, als ob dein Name fehlt.'
@@ -99,7 +105,7 @@ return `Ich habe die <a class='privacy' href='#privacy-policy' (click)="goToPriv
     }
     return this.isGerman ? 'Hier kommt dein Name hin' : 'Your name goes here';
   }
-  
+
   getEmailPlaceholder(email: NgModel): string {
     if (!email.valid && email.touched) {
       return this.isGerman
@@ -109,16 +115,16 @@ return `Ich habe die <a class='privacy' href='#privacy-policy' (click)="goToPriv
     return this.isGerman ? 'deineEmail@email.de' : 'youremail@email.com';
   }
 
- getMessagePlaceholder(message: NgModel): string {
-  if (!message.valid && message.touched) {
+  getMessagePlaceholder(message: NgModel): string {
+    if (!message.valid && message.touched) {
+      return this.isGerman
+        ? 'Was benötigen Sie für die Entwicklung?'
+        : 'What do you need to develop?';
+    }
     return this.isGerman
-      ? 'Was benötigen Sie für die Entwicklung?'
-      : 'What do you need to develop?';
+      ? 'Hallo Lukas, ich bin interessiert an...'
+      : 'Hello Lukas, I am interested in...';
   }
-  return this.isGerman
-    ? 'Hallo Lukas, ich bin interessiert an...'
-    : 'Hello Lukas, I am interested in...';
-}
 
   footerLineAnimation() {
     const footerLine = document.querySelector('.footer-line-mobile');
@@ -140,9 +146,9 @@ return `Ich habe die <a class='privacy' href='#privacy-policy' (click)="goToPriv
 
   goToPrivacyPolicy() {
     this.router.navigate(['/privacy-policy']).then(() => {
-  setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 300);
-})
-}
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 300);
+    })
+  }
 }
