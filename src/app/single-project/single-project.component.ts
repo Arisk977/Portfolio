@@ -6,10 +6,11 @@ import { SvgComponent } from '../shared/components/footer/svg/svg.component';
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { LanguageService } from '../services/language.service';
 import { Subscription } from 'rxjs';
+import { FooterNavComponent } from '../shared/components/footer/footer-nav/footer-nav.component';
 
 @Component({
   selector: 'app-single-project',
-  imports: [CommonModule, SvgComponent, HeaderComponent],
+  imports: [CommonModule, SvgComponent, HeaderComponent, FooterNavComponent],
   templateUrl: './single-project.component.html',
   styleUrl: './single-project.component.scss',
 })
@@ -19,6 +20,24 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
   isGerman = false;
   headerVisible = true;
   lastScrollTop = 0;
+
+    email = {
+    name: 'Email',
+    img: 'assets/mail-footer.png',
+    href: 'mailto:karamataris@gmail.com',
+  };
+
+  linkedIn = {
+    name: 'LinkedIn',
+    img: 'assets/linkedin-footer.png',
+    href: 'https://www.linkedin.com/in/aris-karamat/',
+  };
+
+  github = {
+    name: 'GitHub',
+    img: 'assets/skills/Github.png',
+    href: 'https://github.com/Arisk977',
+  };
 
   private langSub!: Subscription;
 
@@ -227,8 +246,19 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
     this.router.navigate(['/project', nextProject]);
   }
 
-  navigateTo(url: string): void {
+  navigateToURL(url: string): void {
     window.open(url, '_blank');
+  }
+
+  navigateTo(id:string, path:string) {
+  this.router.navigate([path]).then(() => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  });
   }
 
   @HostListener('window:scroll', [])

@@ -234,10 +234,12 @@ app-image-frame {
     }
 
     .frontend {
+        min-width: 300px;
+        padding-right: 60px;
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
-        padding-right: 80px;
+    
         gap: 0;
         z-index: 2;
 
@@ -274,8 +276,8 @@ app-image-frame {
     }
 
     .frontend h1 span {
-        min-width: 45px;
-        margin: -4px;
+        min-width: 48px;
+        margin: -6px;
     }
 
     .dev h1 span {
@@ -290,8 +292,8 @@ app-image-frame {
     }
 
     .frontend h1 span {
-        min-width: 33px;
-        margin: -4px;
+        min-width: 36px;
+        margin: -5px;
     }
 
     .dev h1 span {
@@ -300,7 +302,8 @@ app-image-frame {
     }
 
     .frontend {
-        padding-right: 60px;
+        padding-right: 0px;
+        padding-left: 40px;
     }
 
     .dev {
