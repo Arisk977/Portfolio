@@ -21,9 +21,9 @@
     <nav class="footer-nav d_none_mobile">
         <h3 class="contact-animation" (click)="navigateTo('legal-notice', '/legal-notice')"> {{ isGerman ? 'Impressum' :
             'Legal Notice' }} <img class="contact-overlay" src="assets/contact-line.png" alt=""></h3>
-        <app-footer-nav [contact]="github"></app-footer-nav>
-        <app-footer-nav [contact]="linkedIn"></app-footer-nav>
-        <app-footer-nav [contact]="email"></app-footer-nav>
+        <app-footer-buttons [contact]="github"></app-footer-buttons>
+        <app-footer-buttons [contact]="linkedIn"></app-footer-buttons>
+        <app-footer-buttons [contact]="email"></app-footer-buttons>
     </nav>
 
     <section class="navbar hide-desktop">
@@ -39,9 +39,9 @@
             </div>
 
             <nav class="contact-links">
-                <app-footer-nav [contact]="github"></app-footer-nav>
-                <app-footer-nav [contact]="linkedIn"></app-footer-nav>
-                <app-footer-nav [contact]="email"></app-footer-nav>
+                <app-footer-buttons [contact]="github"></app-footer-buttons>
+                <app-footer-buttons [contact]="linkedIn"></app-footer-buttons>
+                <app-footer-buttons [contact]="email"></app-footer-buttons>
             </nav>
         </span>
     </section>

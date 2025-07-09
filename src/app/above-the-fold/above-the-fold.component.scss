@@ -184,7 +184,25 @@ app-image-frame {
     transform: rotate(8deg);
 }
 
-@media(max-height:650px) {
+@media(max-height:830px) {
+    .content-wrapper {
+        padding-top: 50px;
+    }
+    .bottom{
+        margin-top: -50px;
+    }
+}
+
+@media(max-height:740px) {
+    .content-wrapper {
+        padding-top: 80px;
+    }
+    .bottom{
+        margin-top: -100px;
+    }
+    .dev{
+        gap: 10px;
+    }
     main {
         padding-top: 80px;
         padding-bottom: 80px;
@@ -193,8 +211,8 @@ app-image-frame {
 
 @media(max-height:550px) {
     main {
-        padding-top: 140px;
-        padding-bottom: 80px;
+        padding-top: 85px;
+        padding-bottom: 150px;
     }
 }
 
@@ -239,7 +257,7 @@ app-image-frame {
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
-    
+
         gap: 0;
         z-index: 2;
 

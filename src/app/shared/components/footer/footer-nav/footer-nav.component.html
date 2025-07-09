@@ -1,12 +1,24 @@
-<nav>
+<section class="navbar">
+    <span class="mobile-contact">
+        <div class="initials">
+            <h2 id="logo" (click)="navigateTo('head', '/')">AK</h2>
+            <div class="credits">
+                <h3>© Aris Karamat 2025</h3>
+                <h3 class="contact-animation hide-desktop" (click)="navigateTo('legal-notice', '/legal-notice')"> {{
+                    isGerman ?
+                    'Impressum' : 'Legal Notice' }} <img class="contact-overlay" src="assets/contact-line.png" alt="">
+                </h3>
 
-  <div class="container">
-    <div class="icon-container"
-         [ngClass]="{'rotateAnimation': isHovered, 'rotateAnimationBack': isLeaving}">
-      <img [src]="contact.img" alt="Icon" />
-    </div>
-    <a (mouseenter)="onHover()" (mouseleave)="onLeave()" (click)="navigateTo(contact.href)">
-      <span>{{contact.name}}</span>
-    </a>
-  </div>
-</nav>
+            </div>
+        </div>
+
+        <nav class="contact-links">
+            <h3 class="contact-animation d_none_mobile" (click)="navigateTo('legal-notice', '/legal-notice')"> {{
+                isGerman ?
+                'Impressum' : 'Legal Notice' }} <img class="contact-overlay" src="assets/contact-line.png" alt=""></h3>
+            <app-footer-buttons [contact]="github"></app-footer-buttons>
+            <app-footer-buttons [contact]="linkedIn"></app-footer-buttons>
+            <app-footer-buttons [contact]="email"></app-footer-buttons>
+        </nav>
+    </span>
+</section>

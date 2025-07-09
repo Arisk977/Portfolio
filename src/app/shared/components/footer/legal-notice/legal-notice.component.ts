@@ -3,8 +3,9 @@ import { LanguageService } from '../../../../services/language.service';
 import { Subscription } from 'rxjs';
 import { HeaderComponent } from '../../header/header.component';
 import { CommonModule } from '@angular/common';
-import { FooterNavComponent } from '../footer-nav/footer-nav.component';
 import { Router } from '@angular/router';
+import { FooterNavComponent } from '../footer-nav/footer-nav.component';
+
 
 @Component({
   selector: 'app-legal-notice',

@@ -21,24 +21,6 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
   headerVisible = true;
   lastScrollTop = 0;
 
-    email = {
-    name: 'Email',
-    img: 'assets/mail-footer.png',
-    href: 'mailto:karamataris@gmail.com',
-  };
-
-  linkedIn = {
-    name: 'LinkedIn',
-    img: 'assets/linkedin-footer.png',
-    href: 'https://www.linkedin.com/in/aris-karamat/',
-  };
-
-  github = {
-    name: 'GitHub',
-    img: 'assets/skills/Github.png',
-    href: 'https://github.com/Arisk977',
-  };
-
   private langSub!: Subscription;
 
   joinEng: Project = {
@@ -56,7 +38,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'Firebase', imagePath: 'assets/skills/firebase.png' },
     ],
     git: 'https://github.com/Arisk977/Join',
-    live: 'https://aris-karamat.de/Join/index.html',
+    live: 'https://join.aris-karamat.de/',
 
   }
 
@@ -75,7 +57,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'Firebase', imagePath: 'assets/skills/firebase.png' },
     ],
     git: 'https://github.com/Arisk977/Join',
-    live: 'https://aris-karamat.de/Join/index.html',
+    live: 'https://join.aris-karamat.de/',
   }
 
   sharkieDeu: Project = {
@@ -92,7 +74,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
     ],
     git: 'https://github.com/Arisk977/Sharkie',
-    live: 'https://aris-karamat.de/Sharkie/index.html',
+    live: 'https://sharkie.aris-karamat.de/',
   }
 
   sharkieEng: Project = {
@@ -109,7 +91,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'HTML', imagePath: 'assets/skills/html.png' },
     ],
     git: 'https://github.com/Arisk977/Sharkie',
-    live: 'https://aris-karamat.de/Sharkie/index.html',
+    live: 'https://sharkie.aris-karamat.de/',
   }
 
     bestellAppEng: Project = {
@@ -126,7 +108,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'JavaScript', imagePath: 'assets/skills/js.png' },
     ],
     git: 'https://github.com/Arisk977/Bestellapp',
-    live: 'https://aris-karamat.de/Bestellapp/index.html',
+    live: 'https://bestell-app.aris-karamat.de/',
   }
 
       bestellAppDeu: Project = {
@@ -143,7 +125,7 @@ export class SingleProjectComponent implements OnInit, OnDestroy {
       { name: 'JavaScript', imagePath: 'assets/skills/js.png' },
     ],
     git: 'https://github.com/Arisk977/Bestellapp',
-    live: 'https://aris-karamat.de/Bestellapp/index.html',
+    live: 'https://bestell-app.aris-karamat.de/',
   }
 
   daBubble: Project = {

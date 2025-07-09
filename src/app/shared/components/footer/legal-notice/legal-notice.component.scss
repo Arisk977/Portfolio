@@ -3,7 +3,7 @@
 
 #legal-notice {
   color: black;
-  background-color: black;
+  background-color: #0E1013;
   @include element-size(100vh, 100%);
   background-image: url('./../../../../../assets/notebook-paper.png');
   background-position: center;
@@ -12,6 +12,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+footer{
+  width: 100%;
+  max-width: 1920px;
+  background-color: #0E1013;
 }
 
 .content-wrapper {

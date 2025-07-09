@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SvgComponent } from './svg/svg.component';
 import { FormComponent } from './form/form.component';
-import { FooterNavComponent } from './footer-nav/footer-nav.component';
+import { FooterButtonsComponent } from './footer-nav/footer-buttons/footer-buttons.component';
 import { LanguageService } from '../../../services/language.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, SvgComponent, FormComponent, FooterNavComponent],
+  imports: [CommonModule, SvgComponent, FormComponent, FooterButtonsComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })

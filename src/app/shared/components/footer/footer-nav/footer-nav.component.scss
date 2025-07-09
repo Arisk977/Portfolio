@@ -2,106 +2,91 @@
 @import 'keyframes';
 
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
-
-  >.container {
+.mobile-contact {
+    width: 90%;
+    padding: 20px 0px;
     display: flex;
     flex-direction: column;
+    gap: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.initials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.credits{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+h3 {
+    @include font-style(18px, 700, white);
+}
+
+h2 {
+    font-family: 'Protest Revolution';
+    color: #3355FF;
+    font-size: 64px;
+    letter-spacing: -10px;
+
+    &:hover {
+        color: #F7C518;
+        cursor: pointer;
+    }
+}
+
+.contact-animation {
     position: relative;
+    display: inline-block;
+}
 
-    >.icon-container {
-      position: absolute;
-      top: -40px; // etwas oberhalb des Buttons platzieren
-      transition: transform 0.5s ease, opacity 0.3s ease;
-      opacity: 0;
-      z-index: 1;
+.contact-animation:hover {
+    cursor: pointer;
+}
 
-      >img {
-        @include element-size(40px, 40px);
-      }
+.contact-overlay {
+    @include header-animation-position(-5px, -15px, 130%, 180%);
+}
+
+.contact-animation:hover .contact-overlay {
+    animation: lineMask 180ms ease-in forwards;
+}
+
+.contact-animation .contact-overlay {
+    animation: lineMaskReverse 180ms ease-in-out forwards;
+}
+
+.hide-desktop {
+    display: none;
+    visibility: hidden;
+}
+
+@media(max-width: 750px) {
+    .d_none_mobile {
+        display: none;
+        visibility: hidden;
     }
 
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      position: relative;
-      overflow: hidden;
-      border: none;
-      border-radius: 100px;
-      padding: 12px 24px;
-      background-color: transparent;
-      color: white;
-      font-weight: 500;
-      cursor: pointer;
-
-      span {
-        position: relative;
-        z-index: 2;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-color: #3355FF;
-        z-index: 0;
-
-        -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
-        mask-image: linear-gradient(to right, black 0%, transparent 0%);
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        mask-position: center;
-        animation: radialMaskReverse 200ms ease-in-out forwards;
-      }
-
-      &:hover::before {
-        animation: radialMask 200ms ease-in-out forwards;
-      }
-    }
-  }
-}
-
-
-.rotateAnimation {
-  opacity: 1 !important;
-  animation: rotateAndMove 500ms forwards;
-}
-
-.rotateAnimationBack {
-  animation: rotateBackAndMove 500ms forwards;
-  opacity: 0 !important;
-}
-
-@media(max-width: 960px){
-  .icon-container {
-    top: -35px !important;
-      >img {
-        height: 35px !important;
-        width: 35px !important;
-      }
+    .hide-desktop {
+        display: block;
+        visibility: visible;
     }
 }
-
-@media(max-width: 550px){
-  a{
-    padding: 8px 16px !important;
-  }
-
-    .icon-container {
-    top: -30px !important;
-      >img {
-        height: 30px !important;
-        width: 30px !important;
-      }
-    }
-}
-

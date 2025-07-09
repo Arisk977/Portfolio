@@ -1,0 +1,107 @@
+@import 'mixins';
+@import 'keyframes';
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+
+  >.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    >.icon-container {
+      position: absolute;
+      top: -40px; // etwas oberhalb des Buttons platzieren
+      transition: transform 0.5s ease, opacity 0.3s ease;
+      opacity: 0;
+      z-index: 1;
+
+      >img {
+        @include element-size(40px, 40px);
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      border-radius: 100px;
+      padding: 12px 24px;
+      background-color: transparent;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+
+      span {
+        position: relative;
+        z-index: 2;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: #3355FF;
+        z-index: 0;
+
+        -webkit-mask-image: linear-gradient(to right, black 0%, transparent 0%);
+        mask-image: linear-gradient(to right, black 0%, transparent 0%);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        animation: radialMaskReverse 200ms ease-in-out forwards;
+      }
+
+      &:hover::before {
+        animation: radialMask 200ms ease-in-out forwards;
+      }
+    }
+  }
+}
+
+
+.rotateAnimation {
+  opacity: 1 !important;
+  animation: rotateAndMove 500ms forwards;
+}
+
+.rotateAnimationBack {
+  animation: rotateBackAndMove 500ms forwards;
+  opacity: 0 !important;
+}
+
+@media(max-width: 960px){
+  .icon-container {
+    top: -35px !important;
+      >img {
+        height: 35px !important;
+        width: 35px !important;
+      }
+    }
+}
+
+@media(max-width: 550px){
+  a{
+    padding: 8px 16px !important;
+  }
+
+    .icon-container {
+    top: -30px !important;
+      >img {
+        height: 30px !important;
+        width: 30px !important;
+      }
+    }
+}
+

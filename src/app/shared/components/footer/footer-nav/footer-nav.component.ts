@@ -1,33 +1,82 @@
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FooterButtonsComponent } from './footer-buttons/footer-buttons.component';
+import { LanguageService } from '../../../../services/language.service';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { Contact } from '../../../../interfaces/contact.interface';
 
 @Component({
   selector: 'app-footer-nav',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, FooterButtonsComponent],
   templateUrl: './footer-nav.component.html',
   styleUrl: './footer-nav.component.scss'
 })
 export class FooterNavComponent {
-  @Input() contact!: Contact;
-  isHovered = false;
-  isLeaving = false;
+  private intervalId: any;
+  private timeoutId: any;
+  isGerman = false;
 
-  onHover() {
-    this.isHovered = true;
-    this.isLeaving = false;
+  email = {
+    name: 'Email',
+    img: 'assets/mail-footer.png',
+    href: 'mailto:karamataris@gmail.com',
+  };
+
+  linkedIn = {
+    name: 'LinkedIn',
+    img: 'assets/linkedin-footer.png',
+    href: 'https://www.linkedin.com/in/aris-karamat/',
+  };
+
+  github = {
+    name: 'GitHub',
+    img: 'assets/skills/Github.png',
+    href: 'https://github.com/Arisk977',
+  };
+
+  constructor(private langService: LanguageService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.footerLineAnimation();
+    this.langService.isGerman$.subscribe(value => {
+      this.isGerman = value;
+    });
   }
 
-  onLeave() {
-    this.isHovered = false;
-    this.isLeaving = true;
+  footerLineAnimation() {
+    const footerLine = document.querySelector('.footer-line');
+    if (footerLine) {
+      const showFooterLine = () => {
+        footerLine.classList.remove('hide');
+        footerLine.classList.add('show');
 
-    setTimeout(() => {
-      this.isLeaving = false;
-    }, 500);
+        this.timeoutId = setTimeout(() => {
+          footerLine.classList.remove('show');
+          footerLine.classList.add('hide');
+
+          this.timeoutId = setTimeout(showFooterLine, 400);
+        }, 3000);
+      };
+      showFooterLine();
+    }
   }
 
-      navigateTo(url: string): void {
-      window.open(url, '_blank');
+  ngOnDestroy(): void {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+  }
+
+
+
+  navigateTo(id: string, path: string) {
+    this.router.navigate([path]).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    });
   }
 }

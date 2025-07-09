@@ -108,25 +108,9 @@
 
     </ng-template>
   </div>
-  <nav class="footer-nav">
-       <div class="navbar-wrapper">
-           <div class="initials">
-               <h2 id="logo" (click)="navigateTo('head', '/')">AK</h2>
-           </div>
-           <div class="navbar">
-               <div class="credits">
-                   <h3>© Aris Karamat 2025</h3>
-                   <h3 class="contact-animation" (click)="navigateTo('legal-notice', '/legal-notice')"> {{ isGerman ?
-                       'Impressum' : 'Legal Notice' }} <img class="contact-overlay" src="assets/contact-line.png"
-                           alt=""></h3>
-               </div>
-               <div class="contact-links">
-                   <app-footer-nav [contact]="github"></app-footer-nav>
-                   <app-footer-nav [contact]="linkedIn"></app-footer-nav>
-                   <app-footer-nav [contact]="email"></app-footer-nav>
-               </div>
+
+  <footer>
+    <app-footer-nav></app-footer-nav>
+  </footer>
   
-           </div>
-       </div>
-   </nav>
 </section>
