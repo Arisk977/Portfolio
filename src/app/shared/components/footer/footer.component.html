@@ -7,45 +7,17 @@
             <p [innerHTML]="isGerman ? germanText() : englishText()">
             </p>
             <img src="assets/footer-line.png" class="footer-line d_none_mobile" alt="">
-            <span class="contact d_none_mobile">
-                <h2 (click)="scrollToHeader()">AK</h2>
-                <h3>© Aris Karamat 2025</h3>
-
-            </span>
+           
         </section>
         <section class="right">
             <app-svg class="d_none_mobile"></app-svg>
             <app-form (sendComplete)="onSendComplete()"></app-form>
         </section>
     </div>
-    <nav class="footer-nav d_none_mobile">
-        <h3 class="contact-animation" (click)="navigateTo('legal-notice', '/legal-notice')"> {{ isGerman ? 'Impressum' :
-            'Legal Notice' }} <img class="contact-overlay" src="assets/contact-line.png" alt=""></h3>
-        <app-footer-buttons [contact]="github"></app-footer-buttons>
-        <app-footer-buttons [contact]="linkedIn"></app-footer-buttons>
-        <app-footer-buttons [contact]="email"></app-footer-buttons>
-    </nav>
 
-    <section class="navbar hide-desktop">
-        <span class="mobile-contact">
-            <div class="initials">
-                <h2 id="logo" (click)="scrollToHeader()">AK</h2>
-                <div class="credits">
-                    <h3>© Aris Karamat 2025</h3>
-                    <h3 class="contact-animation" (click)="navigateTo('legal-notice', '/legal-notice')"> {{ isGerman ?
-                        'Impressum' : 'Legal Notice' }} <img class="contact-overlay" src="assets/contact-line.png"
-                            alt=""></h3>
-                </div>
-            </div>
-
-            <nav class="contact-links">
-                <app-footer-buttons [contact]="github"></app-footer-buttons>
-                <app-footer-buttons [contact]="linkedIn"></app-footer-buttons>
-                <app-footer-buttons [contact]="email"></app-footer-buttons>
-            </nav>
-        </span>
+    <section>
+        <app-footer-nav></app-footer-nav>
     </section>
-
     <div id="mail-sent" class="send-complete-overlay hidden" [class.email-sent]="emailWasSent">
         <div>
             <img src="assets/mail-footer.png" alt="">

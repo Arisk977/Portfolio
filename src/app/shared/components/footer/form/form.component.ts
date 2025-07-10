@@ -28,7 +28,7 @@ export class FormComponent implements OnInit, OnDestroy {
   };
   http = inject(HttpClient);
   post = {
-    endPoint: 'https://aris-karamat.de/Portfolio/sendMail.php',
+    endPoint: 'https://aris-karamat.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {

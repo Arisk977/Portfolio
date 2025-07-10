@@ -2,7 +2,7 @@
 @import 'keyframes';
 
 main {
-    @include element-size(auto, 100%);
+    @include element-size(100vh, 100%);
     background-image: url('./../../assets/notebook-paper.png');
     background-position: center;
     background-size: 100% 100%;
@@ -24,6 +24,7 @@ footer{
 
 .content-wrapper {
     width: 100%;
+    flex-grow: 1;
     max-width: 1920px;
     margin: 0 auto;
     color: black;

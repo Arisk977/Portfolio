@@ -14,7 +14,7 @@ section {
     padding: 20px 0px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 12px;
 }
 
 nav {
@@ -25,14 +25,16 @@ nav {
 
 .initials {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+    align-items: flex-start;
 }
 
 .credits{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     justify-content: flex-end;
     align-items: flex-end;
 }
@@ -88,5 +90,15 @@ h2 {
     .hide-desktop {
         display: block;
         visibility: visible;
+    }
+
+    .initials{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-contact{
+        gap: 30px;
     }
 }
