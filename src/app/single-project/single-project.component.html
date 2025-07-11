@@ -1,5 +1,8 @@
-<app-header [headerVisible]="headerVisible"></app-header>
+
 <main>
+    <header>
+        <app-header [headerVisible]="headerVisible"></app-header>
+    </header>
     <div class="content-wrapper">
         <div class="back d_none_mobile" (click)="navigateBack()"><img src="assets/back.png" alt="back-arrow">{{isGerman?
             'Zurück': 'Go Back'}}</div>
@@ -61,9 +64,10 @@
             <div class="next" (click)="navigateNextProject()">{{isGerman? 'Nächstes Projekt': 'Next Project'}}<img
                     src="assets/next.png" alt="next-arrow"></div>
         </div>
+        
     </div>
-
-      <footer>
+<footer>
     <app-footer-nav></app-footer-nav>
   </footer>
+    
 </main>
