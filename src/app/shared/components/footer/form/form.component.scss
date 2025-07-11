@@ -98,7 +98,7 @@ input:is(:-webkit-autofill, :autofill) {
 
     >span {
         margin-top: -25px;
-        @include font-style(14px, 400, #F87A55);
+        @include font-style(16px, 400, #F87A55);
 
     }
 }
@@ -221,7 +221,7 @@ input:-moz-autofill {
     }
     .checkbox{
         >label{
-            font-size: 14px !important;
+            font-size: 16px !important;
         }
     }
 }
@@ -324,7 +324,7 @@ input:-moz-autofill {
     }
       .checkbox{
         >label{
-            font-size: 14px !important;
+            font-size: 16px !important;
         }
     }
 

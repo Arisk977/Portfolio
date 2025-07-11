@@ -9,6 +9,7 @@ main {
     background-repeat: no-repeat;
     background-color: #0E1013;
     color: black;
+    min-height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -18,7 +19,6 @@ main {
 
 footer{
   width: 100%;
-  max-width: 1920px;
   background-color: #0E1013;
 }
 
@@ -26,6 +26,9 @@ footer{
 .content-wrapper {
     flex-grow: 1;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 70px 70px;
     max-width: 1920px;
     overflow-y: auto; // Falls nötig
@@ -221,12 +224,12 @@ nav {
         }
 
         li {
-            font-size: 14px;
+            font-size: 16px;
             width: 300px;
         }
 
         p {
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 
@@ -416,11 +419,11 @@ nav {
     }
 
     p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     li {
-        font-size: 14px;
+        font-size: 16px;
         width: 250px;
     }
 }

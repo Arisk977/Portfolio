@@ -129,7 +129,7 @@ app-feedback {
     padding-left: 120px;
 }
 app-feedback {
-    @include element-size(320px, 320px);
+    @include element-size(350px, 320px);
 }
 .feedback-content{
     padding-left: 85px;

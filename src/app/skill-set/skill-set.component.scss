@@ -69,9 +69,9 @@ main {
 
 .skills {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
-    gap: 48px;
+    gap: 40px;
     width: 640px;
     flex-wrap: wrap;
 }
@@ -87,6 +87,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 4px;
+    width: 96px;
 
     >span {
         text-align: center;
@@ -94,7 +95,7 @@ main {
     }
 
     >img {
-        @include element-size(72px, 72px);
+        width: 80%;
         filter: grayscale(100%);
         transition: filter 100ms ease-in;
         transition: ease-in 100ms;
@@ -299,14 +300,12 @@ main {
 }
 
 @media(max-width: 1050px) {
-    .skills {
-        gap: 24px;
-        width: 465px;
+    .skill-container{
+        width: 64px;
     }
 
-    .skill-container>img {
-        height: 62px;
-        width: 62px;
+    .skills{
+        width: 480px;
     }
 
     .bottom {
@@ -315,7 +314,7 @@ main {
     }
 
     .top {
-        margin-left: 0;
+        margin-left: 10px;
         gap: 30px;
     }
 
@@ -330,11 +329,11 @@ main {
     }
 
     .text {
-        height: 160px;
-        width: 475px;
+        height: 250px;
+        width: 500px;
 
         >p {
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 }
@@ -359,8 +358,8 @@ main {
     }
 
     .text {
-        height: 170px;
-        width: 450px;
+        height: 250px;
+        width: 500px;
     }
 
     .bottom {
@@ -371,28 +370,30 @@ main {
 
         >.skills {
             justify-content: flex-start;
-            gap: 33px;
-            width: 400px;
+            gap: 16px;
+            width: 343px;
         }
 
         >.other-skills {
-            margin-top: -120px;
+            margin-top: -140px;
+            padding-left: 80px;
+            align-self: center;
         }
+    }
+
+    .skill-container{
+        width: 96px;
+    }
+}
+
+@media(max-width: 570px){
+.text {
+        height: 280px;
+        width: 360px;
     }
 }
 
 @media(max-width: 500px) {
-    .bottom {
-        >.skills {
-            width: 300px;
-            gap: 20px;
-        }
-
-        >.other-skills {
-            margin-top: -80px;
-        }
-    }
-
     .headline{
         padding-right: 12px;
         >span{
@@ -402,65 +403,28 @@ main {
             font-size: 40px;
         }
     }
-    .text {
-        height: 280px;
-        width: 320px;
-    }
-    .skill-container {
-        >img {
-            height: 45px;
-            width: 45px;
-        }
-
-        >span {
-            font-size: 14px;
-        }
-    }
 }
 
 @media(max-width: 400px){
-    #image-container {
-        width: 120px;
-        margin-left: -160px;
+    .bottom .skills{
+        width: 300px;
     }
 
-    .germanSize{
-        font-size: 20px !important;
-        padding-bottom: 15px;
-        padding-left:15px;
+    .skill-container{
+        width: 70px;
     }
 
-    #click-image,
-    #hover-image,
-    .pull {
-        @include element-size(140px, 140px);
+    .bottom{
+        gap: 0;
+        margin-right: -50px;
+        >.other-skills{
+        margin-top: 0;
+        padding: 0;
     }
-
-    .pull-text{
-        font-size: 26px;
-        padding-top: 0px;
-        >img{
-            height: 20px;
-            width: 30px;
-        }
     }
-
-    #click-image {
-        >h4 {
-            font-size: 14px;
-            padding: 10px 8px;
-        }
-    }
-    .react, .vue-js{
-        >img{
-            height: 30px;
-            width: 30px;
-        }
-        >p{
-            font-size: 16px;
-        }
-    }
+   
     .text{
+        height: 350px;
         width: 300px;
     }
 }
