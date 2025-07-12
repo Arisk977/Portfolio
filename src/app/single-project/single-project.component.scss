@@ -8,7 +8,7 @@ main {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: #0E1013;
-    min-height: 100vh;
+
     color: black;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,7 @@ footer {
 }
 
 .content-wrapper {
+        min-height: 100vh;
     width: 100%;
     max-width: 1920px;
     color: black;

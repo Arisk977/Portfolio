@@ -45,6 +45,7 @@ export class MycraftComponent implements OnInit, OnDestroy{
   }
 
     navigateToProject(projectId: string) {
-      this.router.navigate(['/project', projectId]);
+      this.router.navigate(['/project', projectId]).then(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })});
   }
 }

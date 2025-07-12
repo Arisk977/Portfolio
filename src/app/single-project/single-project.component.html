@@ -9,7 +9,7 @@
         <div class="container-wrapper">
 
             <div class="project-wrapper">
-                <div class="project-details">
+                <div class="project-details" data-aos="fade-right">
                     <div class="headline">
                         <h1>{{project.h1}}</h1>
                         <img [ngStyle]="{ 'width': project.arrowWidth }" src="assets/notebook-line.png" id="blue-line"
@@ -39,7 +39,7 @@
                     </div>
 
                 </div>
-                <div class="project-showcase">
+                <div class="project-showcase" data-aos="fade-left">
                     <div id="images">
                         <img [src]="project.imagePath" alt="project" class="project-img" />
 

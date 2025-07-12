@@ -106,13 +106,7 @@ Wenn Sie auf der Suche nach jemandem sind, der zuverlässig, anpassungsfähig un
 
     navigateTo(id:string, path:string) {
   this.router.navigate([path]).then(() => {
-    setTimeout(() => {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100); // Wartezeit, damit DOM fertig ist
-  });
+    window.scrollTo({ top: 0, behavior: 'smooth' })});
   }
 
 

@@ -4,7 +4,7 @@
 
     <app-header></app-header>
     <div class="container" *ngIf="isGerman; else englishContent">
-      <div class="left">
+      <div class="left" data-aos="fade-right" data-aos-delay="0">
         <h1>Impressum</h1>
         <h2>Angaben gemäß § 5 TMG</h2>
         <p>
@@ -28,7 +28,7 @@
           Urheberrechtsverletzungen werden solche Inhalte umgehend entfernt. </p>
       </div>
 
-      <div class="right">
+      <div class="right" data-aos="fade-left" ata-aos-delay="500">
         <h2>Haftungsausschluss</h2>
         <h3>Haftung für Inhalte</h3>
         <p>
@@ -57,7 +57,7 @@
 
     </div>
     <ng-template #englishContent>
-      <div class="left">
+      <div class="left" data-aos="fade-right" data-aos-delay="500">
         <h1>Legal Notice</h1>
         <h2>Information pursuant to § 5 TMG</h2>
         <p>
@@ -81,7 +81,7 @@
         </p>
       </div>
 
-      <div class="right">
+      <div class="right" data-aos="fade-left" data-aos-delay="500">
         <h2>Disclaimer</h2>
         <h3>Liability for Content</h3>
         <p>
@@ -109,8 +109,8 @@
     </ng-template>
   </div>
 
-  <footer>
+<footer>
     <app-footer-nav></app-footer-nav>
   </footer>
   
-</section>
+</section>  

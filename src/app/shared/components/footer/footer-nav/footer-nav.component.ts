@@ -71,12 +71,6 @@ export class FooterNavComponent {
 
   navigateTo(id: string, path: string) {
     this.router.navigate([path]).then(() => {
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' })});
   }
 }
