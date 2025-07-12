@@ -1,10 +1,10 @@
 <main id="colleagues-thoughts">
-    <section class="top">
+    <section class="top" data-aos="fade-left" >
         <p> <img src="assets/blue-arrow.png" id="blue-arrow" alt=""> {{isGerman? "IN DEREN WORTEN:": "IN THEIR WORDS:"}}</p>
         <h1>{{isGerman? "Meinungen von Kollegen": "Colleagues' Thoughts"}}</h1>
     </section>
     <section class="bottom">
-        <div class="feedback-content">
+        <div class="feedback-content" data-aos="flip-up">
             <app-feedback class="feedback1" [feedback]="feedback1"></app-feedback>
             <app-feedback class="feedback2" [feedback]="feedback2"></app-feedback>
             <app-feedback class="feedback3" [feedback]="feedback3"></app-feedback>

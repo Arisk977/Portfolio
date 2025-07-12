@@ -1,7 +1,7 @@
 <footer id="contact-page">
     <app-svg class="hide-desktop mobile-svg"></app-svg>
     <div class="content">
-        <section class="left">
+        <section class="left" data-aos="fade-right">
             <span class="subtitle">{{ isGerman ? 'KONTAKTIEREN MICH' : 'CONTACT ME' }}</span>
             <h1 [innerHTML]="isGerman ? 'Bereit für eine Zusammenarbeit?' : 'Ready to work together?'"></h1>
             <p [innerHTML]="isGerman ? germanText() : englishText()">
@@ -9,7 +9,7 @@
             <img src="assets/footer-line.png" class="footer-line d_none_mobile" alt="">
            
         </section>
-        <section class="right">
+        <section class="right" data-aos="fade-left">
             <app-svg class="d_none_mobile"></app-svg>
             <app-form (sendComplete)="onSendComplete()"></app-form>
         </section>

@@ -3,6 +3,7 @@
 
 main {
     @include element-size(auto, 100%);
+    min-height: 100vh;
     @include font-style(20px, 400, black);
     padding-top: 50px;
     padding-bottom: 50px;
