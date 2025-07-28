@@ -185,9 +185,7 @@ app-image-frame {
 }
 
 @media(max-height:830px) {
-    .content-wrapper {
-        padding-top: 50px;
-    }
+   
     .bottom{
         margin-top: -50px;
     }
@@ -204,15 +202,23 @@ app-image-frame {
         gap: 10px;
     }
     main {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-bottom: 130px;
     }
 }
 
-@media(max-height:550px) {
+
+
+@media(max-height:600px) {
     main {
-        padding-top: 85px;
+        padding-top: 40px;
         padding-bottom: 150px;
+    }
+}
+
+@media(max-height:540px){
+       main {
+        padding-top: 80px;
+         padding-bottom: 200px;
     }
 }
 

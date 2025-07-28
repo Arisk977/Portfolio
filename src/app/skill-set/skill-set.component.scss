@@ -250,6 +250,12 @@ main {
     visibility: hidden;
 }
 
+@media(max-height: 824px) and (max-width: 750px){
+    main{
+        padding-bottom: 100px;
+    }
+}
+
 @media(max-width: 1300px) {
     .top {
         margin-left: -150px;

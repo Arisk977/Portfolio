@@ -64,7 +64,7 @@ germanPTag(){
   return `Hallo, ich bin Aris.
 <br><br>Programmieren begeistert mich, weil es Logik und Kreativität vereint. Ich setze Ideen gerne in funktionale, nutzerfreundliche Anwendungen um und schätze es, schnell Ergebnisse zu sehen.
 <br><br>Ich lebe in Bad Camberg und arbeite bevorzugt remote, bin aber auch für andere Modelle offen.
-<br><br>Technologien und Trends entwickle ich mich stetig weiter. Offenheit, Lernbereitschaft und Anpassungsfähigkeit zeichnen mich aus.
+<br><br>Ich entwickle meine Fähigkeiten kontinuierlich weiter und halte mich über aktuelle Technologien und Trends auf dem Laufenden. Offenheit, Lernbereitschaft und Anpassungsfähigkeit sind zentrale Eigenschaften, die mich auszeichnen.
 <br><br>Ich gehe Herausforderungen analytisch, kreativ und ausdauernd an - immer mit dem Ziel, gemeinsam effiziente und durchdachte Lösungen zu schaffen.`
 }
 
