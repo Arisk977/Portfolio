@@ -5,4 +5,5 @@ export interface Feedback {
     eng: string;
     img: string;
     mobile_img: string;
+    linkedIn: string;
 }

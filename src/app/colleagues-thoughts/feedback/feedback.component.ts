@@ -45,5 +45,9 @@ get backgroundImage(): string {
   return `url('${imgPath}')`;
 }
 
+navigateTo(url: string): void {
+    window.open(url, '_blank');
+  }
+
 }
 

@@ -15,12 +15,13 @@ export class ColleaguesThoughtsComponent implements OnInit, OnDestroy {
   constructor(private langService: LanguageService) { }
 
   feedback1: Feedback = {
-    name: 'Tobias Lange',
+    name: 'Valentino Guido Strebel',
     title: 'Frontend Developer',
-    deu: `Aris hat das Team wirklich zusammengehalten mit seiner großartigen Organisation und klaren Kommunikation. Ohne sein Engagement wären wir nicht so weit gekommen.`,
-    eng: `Aris really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.`,
+    deu: `Aris war ein zuverlässiger und kompetenter Kollege im Frontend-Projekt. Er überzeugte mit sauberem Code, nutzerfreundlichem Design und effizienter Arbeitsweise. Seine schnelle Analyse komplexer Probleme und pragmatische Lösungsfindung machten die Zusammenarbeit sehr angenehm.`,
+    eng: `Aris was a reliable and skilled colleague in the frontend project. He impressed with clean code, user-friendly design, and efficient work. His quick analysis of complex problems and pragmatic solutions made collaboration a pleasure.`,
     img: 'assets/feedback-card-1.png',
-    mobile_img: 'assets/mobile-feedback.png'
+    mobile_img: 'assets/mobile-feedback.png',
+    linkedIn: 'https://www.linkedin.com/in/valentino-guido-strebel/'
   };
 
   feedback2: Feedback = {
@@ -29,7 +30,8 @@ export class ColleaguesThoughtsComponent implements OnInit, OnDestroy {
     deu: `Es war eine große Freude, mit Aris zusammenzuarbeiten. Er schafft es, das Team zu motivieren und zu Bestleistungen anzuspornen, dabei bringt er immer wieder kreative Ideen für neue Ansätze ein. Für das Wohlbefinden der Teammitglieder ist er stets präsent, hört aufmerksam zu und unterstützt hilfsbereit - und das alles mit einem tollen Sinn für Humor.`,
     eng: `It was a great pleasure to work with Aris. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.`,
     img: 'assets/feedback-card-2.png',
-    mobile_img: 'assets/mobile-feedback-2.png'
+    mobile_img: 'assets/mobile-feedback-2.png',
+    linkedIn: 'https://www.linkedin.com/'
   };
 
   feedback3: Feedback = {
@@ -38,7 +40,8 @@ export class ColleaguesThoughtsComponent implements OnInit, OnDestroy {
     deu: `Aris war ein erstklassiger Kollege im Team bei DA. Sein positives Engagement und seine Bereitschaft, Verantwortung zu übernehmen, haben maßgeblich dazu beigetragen, dass wir unsere Ziele erreicht haben.`,
     eng: `Aris was a top team colleague at DA. His positive commitment and willingness to take on responsibility made a significant contribution to us achieving our goals.`,
     img: 'assets/feedback-card-1.png',
-    mobile_img: 'assets/mobile-feedback.png'
+    mobile_img: 'assets/mobile-feedback.png',
+    linkedIn: 'https://www.linkedin.com/'
   };
 
   ngOnInit(): void {
